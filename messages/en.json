@@ -1,0 +1,18 @@
+{
+  "common": {
+    "appName": "My App",
+    "logout": "Logout",
+    "login": "Login",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "home": {
+    "title": "Welcome to My App",
+    "description": "This is a multi-language application"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  }
+}
