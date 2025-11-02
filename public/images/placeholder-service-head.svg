@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="sh" x1="0%" x2="100%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#B4B8A0"/>
+      <stop offset="100%" stop-color="#E3D8C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="60" fill="url(#sh)"/>
+  <path d="M260 360c80-50 160-50 240 0s160 50 240 0" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-opacity="0.5"/>
+  <circle cx="340" cy="260" r="100" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="620" cy="280" r="120" fill="#FFFFFF" opacity="0.25"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#2F3A36" opacity="0.85">Head Spa Ritual</text>
+  <text x="50%" y="56%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#2F3A36" opacity="0.7">Placeholder</text>
+</svg>

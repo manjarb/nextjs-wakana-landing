@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1280" viewBox="0 0 960 1280">
+  <defs>
+    <linearGradient id="a" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5DACC"/>
+      <stop offset="50%" stop-color="#D6C8B2"/>
+      <stop offset="100%" stop-color="#B4B8A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1280" fill="url(#a)"/>
+  <g fill="none" stroke="#5B6D65" stroke-width="4" opacity="0.45">
+    <path d="M120 180c120 60 240 60 360 0s240-60 360 0"/>
+    <path d="M120 380c120 60 240 60 360 0s240-60 360 0"/>
+    <path d="M120 580c120 60 240 60 360 0s240-60 360 0"/>
+    <path d="M120 780c120 60 240 60 360 0s240-60 360 0"/>
+    <path d="M120 980c120 60 240 60 360 0s240-60 360 0"/>
+  </g>
+  <rect x="180" y="320" width="600" height="640" rx="140" fill="#FFFFFF" opacity="0.27"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="54" fill="#2F3A36" opacity="0.9">Placeholder</text>
+  <text x="50%" y="53%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="96" letter-spacing="0.08em" fill="#2F3A36" opacity="0.8">SANCTUARY</text>
+  <text x="50%" y="59%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="52" fill="#5B6D65" opacity="0.8">Imagery Coming Soon</text>
+</svg>

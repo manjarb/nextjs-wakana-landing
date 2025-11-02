@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f2e8;
+  --foreground: #2f3a36;
+  --wanaka-warm-beige: #d6c8b2;
+  --wanaka-soft-taupe: #c2b8a3;
+  --wanaka-muted-sand: #e3d8c7;
+  --wanaka-olive-mist: #b4b8a0;
+  --wanaka-forest-teal: #5b6d65;
+  --wanaka-slate-grey: #6f7b7a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-wanaka-warm-beige: var(--wanaka-warm-beige);
+  --color-wanaka-soft-taupe: var(--wanaka-soft-taupe);
+  --color-wanaka-muted-sand: var(--wanaka-muted-sand);
+  --color-wanaka-olive-mist: var(--wanaka-olive-mist);
+  --color-wanaka-forest-teal: var(--wanaka-forest-teal);
+  --color-wanaka-slate-grey: var(--wanaka-slate-grey);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f1614;
+    --foreground: #e7eceb;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--wanaka-forest-teal) 70%, white);
+  color: #fdfcfa;
 }

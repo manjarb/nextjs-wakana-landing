@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="siv" x1="0%" x2="100%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#5B6D65"/>
+      <stop offset="100%" stop-color="#B8C4B2"/>
+    </linearGradient>
+    <linearGradient id="sivglass" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="60" fill="url(#siv)"/>
+  <rect x="310" y="180" width="140" height="260" rx="40" fill="url(#sivglass)" opacity="0.8"/>
+  <rect x="510" y="200" width="120" height="240" rx="36" fill="url(#sivglass)" opacity="0.6"/>
+  <path d="M260 420c80-36 160-36 240 0s160 36 240 0" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-opacity="0.35"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#F7F2E8" opacity="0.9">IV Drip Lounge</text>
+  <text x="50%" y="56%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#F7F2E8" opacity="0.7">Placeholder Visual</text>
+</svg>

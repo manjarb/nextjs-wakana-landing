@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="d" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#E3D8C7"/>
+      <stop offset="100%" stop-color="#6F7B7A"/>
+    </linearGradient>
+    <linearGradient id="e" x1="0%" x2="100%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#d)"/>
+  <path d="M0 480c120-80 240-80 360 0s240 80 360 0 240-80 360 0v160H0V480Z" fill="#FFFFFF" opacity="0.18"/>
+  <rect x="220" y="140" width="520" height="360" rx="60" fill="url(#e)" opacity="0.7"/>
+  <text x="50%" y="48%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="52" fill="#2F3A36" opacity="0.9">Sensory Journey</text>
+  <text x="50%" y="58%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="36" fill="#2F3A36" opacity="0.8">Placeholder Image</text>
+</svg>

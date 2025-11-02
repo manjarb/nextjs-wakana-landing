@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="sf" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E7D9"/>
+      <stop offset="100%" stop-color="#D6C8B2"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="60" fill="url(#sf)"/>
+  <circle cx="320" cy="300" r="140" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="600" cy="330" r="110" fill="#FFFFFF" opacity="0.35"/>
+  <path d="M270 420c60-28 120-28 180 0s120 28 180 0" fill="none" stroke="#5B6D65" stroke-width="6" stroke-linecap="round" stroke-opacity="0.55"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="48" fill="#2F3A36" opacity="0.85">Facial Ritual</text>
+  <text x="50%" y="56%" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#5B6D65" opacity="0.7">Placeholder Imagery</text>
+</svg>
