@@ -448,7 +448,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="text-2xl font-semibold tracking-wide text-[#2f3a36]">
-              WANAKA Sanctuary
+              WANAKA
             </p>
             <nav className="hidden items-center gap-6 text-sm font-medium text-[#5b6d65] lg:flex">
               {navItems.map((item) => (
