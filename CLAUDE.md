@@ -24,9 +24,13 @@ npm run start    # Run production server
 
 ### App Router Structure
 - Uses Next.js 16 **App Router** (`/app` directory)
+- **Dynamic locale routing** via `app/[locale]/` pattern
 - **Server Components by default** - Only add `"use client"` when you need interactivity (hooks, event handlers, browser APIs)
 - File-based routing with `page.tsx` and `layout.tsx`
-- Root layout configures fonts (Geist Sans, Geist Mono)
+- Root layout (`app/[locale]/layout.tsx`) configures:
+  - Fonts (Geist Sans, Geist Mono from Google Fonts)
+  - NextIntlClientProvider with locale-specific messages
+  - Static generation for both EN and TH locales
 
 ### Import Pattern
 Always use absolute imports with `@/` alias:
@@ -43,32 +47,43 @@ import Component from '../components/Hero'       // ❌ Avoid
 
 ### Styling with Tailwind CSS v4
 - Uses **Tailwind v4** with inline `@theme` directive in `app/globals.css`
-- **CSS variables** for theming: `--color-background`, `--color-foreground`, `--font-sans`, `--font-mono`
+- **CSS variables** for theming: `--background`, `--foreground`, `--font-sans`, `--font-mono`
 - Prefer utility classes in JSX over custom CSS
 - Dark mode supported via `prefers-color-scheme`
+- Custom selection styling with forest teal background
 
-**WANAKA Brand Colors** (defined but not yet applied to theme):
-- Warm Beige: `#D6C8B2`
-- Soft Taupe: `#C2B8A3`
-- Muted Sand: `#E3D8C7`
-- Olive Mist: `#B4B8A0`
-- Forest Teal: `#5B6D65`
-- Slate Grey: `#6F7B7A`
+**WANAKA Brand Colors** (APPLIED to theme as CSS variables):
+- Warm Beige: `#D6C8B2` → `--wanaka-warm-beige`
+- Soft Taupe: `#C2B8A3` → `--wanaka-soft-taupe`
+- Muted Sand: `#E3D8C7` → `--wanaka-muted-sand`
+- Olive Mist: `#B4B8A0` → `--wanaka-olive-mist`
+- Forest Teal: `#5B6D65` → `--wanaka-forest-teal` (primary brand color)
+- Slate Grey: `#6F7B7A` → `--wanaka-slate-grey`
+
+**Usage in code**: Access via bracket notation in Tailwind classes:
+```typescript
+<div className="bg-[#5b6d65] text-[#f7f2e8]">Forest Teal Background</div>
+```
 
 ## Internationalization (i18n)
 
-**Status**: Dependencies installed, directories prepared, but **NOT YET CONFIGURED**
+**Status**: FULLY CONFIGURED AND OPERATIONAL
 
-- **Library**: `next-intl@4.4.0` (installed but not configured)
-- **Languages**: English (en) and Thai (th) planned
-- **Structure**: Will use `app/[locale]/` pattern once implemented
-- **Guide**: See `I18N_IMPLEMENTATION_GUIDE.md` for complete step-by-step setup
+- **Library**: `next-intl@4.4.0` (fully configured)
+- **Languages**: English (en) and Thai (th)
+- **Structure**: Uses `app/[locale]/` pattern with dynamic routing
+- **Configuration**:
+  - `i18n/config.ts` - Locale definitions and defaults
+  - `i18n/routing.ts` - Routing setup with automatic locale detection
+  - `i18n/request.ts` - Server-side message loading
+- **Translation Files**: `messages/en.json`, `messages/th.json` (structure in place, needs WANAKA-specific content)
+- **Next.js Integration**: Wrapped with `withNextIntl()` plugin
+- **Components**: `LanguageSwitcher.tsx` available for language switching
 
-**Before using i18n features**:
-1. Create `i18n/config.ts`, `i18n/routing.ts`, `i18n/request.ts`
-2. Add translation files: `messages/en.json`, `messages/th.json`
-3. Wrap `next.config.ts` with `withNextIntl()`
-4. Refactor app structure to `app/[locale]/layout.tsx` and `app/[locale]/page.tsx`
+**Next Steps for i18n**:
+1. Replace placeholder content in translation files with actual WANAKA copy
+2. Integrate translation keys into landing page components (currently hardcoded)
+3. Add LanguageSwitcher to header navigation
 
 ## Git Workflow
 
@@ -85,6 +100,35 @@ Follow **Conventional Commits**:
 - Must pass `npm run build`
 - Include PR description, linked issues, screenshots for UI changes
 
+## Project Structure
+
+```
+/
+├── app/
+│   ├── [locale]/              # Dynamic locale routing (en, th)
+│   │   ├── layout.tsx         # Root layout with i18n provider & fonts
+│   │   └── page.tsx           # Main landing page (892 lines)
+│   └── globals.css            # Global styles & WANAKA brand colors
+├── components/
+│   └── LanguageSwitcher.tsx   # Language toggle component
+├── i18n/
+│   ├── config.ts              # Locale configuration (en, th)
+│   ├── routing.ts             # next-intl routing setup
+│   └── request.ts             # Server-side message loader
+├── messages/
+│   ├── en.json                # English translations (needs WANAKA content)
+│   └── th.json                # Thai translations (needs WANAKA content)
+├── public/
+│   ├── images/
+│   │   ├── generated/         # AI-generated service & gallery images
+│   │   └── logo/              # WANAKA logo files
+│   └── clinic.png             # Hero section image
+├── next.config.ts             # Next.js config with i18n plugin
+├── tsconfig.json              # TypeScript strict mode config
+├── package.json               # Dependencies & scripts
+└── [documentation files]      # CLAUDE.md, AGENTS.md, etc.
+```
+
 ## Important Documentation
 
 - **`AGENTS.md`** - Detailed coding conventions, structure, and guidelines
@@ -97,28 +141,86 @@ Follow **Conventional Commits**:
 - Configure external image domains in `next.config.ts` when using `next/image`
 - Keep `.env*` files in `.gitignore`
 
+## Landing Page Content (app/[locale]/page.tsx)
+
+The main landing page is a comprehensive single-page website with the following sections:
+
+1. **Navigation Header** (sticky)
+   - WANAKA logo with tagline
+   - Desktop/mobile navigation menus
+   - "Book a Ritual" CTA button
+
+2. **Hero Section**
+   - Headline: "Small Rituals. Big Rest."
+   - Subheading with brand promise
+   - Two CTAs: "Explore Services" & "Discover The Story"
+   - Hero image with gradient blur effect
+
+3. **Brand Pillars** (3 cards)
+   - Calm Experience, Caring Hands, Clean Craft
+   - Custom SVG icons, hover effects
+
+4. **About Section**
+   - Sanctuary narrative
+   - About image with blur effect
+
+5. **Mission Section** (3 highlights)
+   - Trained & Trusted Hands
+   - Nature-Led Products
+   - Hospitality First
+
+6. **Services Section**
+   - 4 main services with images (Facial, Head Spa, Hand/Feet, IV Drip)
+   - 4 signature journeys (Express Reset, Happy Bar Lounge, Private Retreat, Kids Friendly)
+
+7. **Experience Design**
+   - Multi-sensory journey (soundscapes, aroma zoning, adaptive lighting)
+   - 5 immersive details (Mood Cards, bath bombs, sound bath, gifts, loyalty)
+
+8. **Gallery** (3 images)
+   - Lounge Glow, Calm Corners, Wellness Wing
+   - Hover gradient overlay effects
+
+9. **Contact Section**
+   - Email, Phone, Address
+   - "Enquire Now" CTA
+
+10. **Footer**
+    - Copyright & quick links
+
+**Technical Details**:
+- 892 lines, Server Component
+- 100% Tailwind CSS utility classes
+- Inline SVG icons
+- Next.js Image optimization
+- Hardcoded content (not using i18n translations yet)
+- Mobile-first responsive design
+
 ## Current State
 
 **What's Working**:
-- Fresh Next.js 16 + React 19 setup
+- Next.js 16 + React 19 with App Router
 - TypeScript strict mode
-- Tailwind CSS v4 configured
+- **Full i18n implementation** (next-intl configured, EN/TH languages, locale routing)
+- **Brand colors applied** to Tailwind CSS theme
+- **Comprehensive landing page** with WANAKA content (see section above)
+- Image assets (AI-generated service images, logo, hero image)
 - ESLint with Next.js rules
-- App Router structure
 - Absolute imports via `@/` alias
 
 **What Needs Implementation**:
-- i18n configuration (dependencies ready, config needed)
-- Brand colors applied to Tailwind theme
-- Custom components for WANAKA content
-- Actual landing page content (currently default template)
+- Populate translation files with WANAKA-specific content (currently placeholder text)
+- Integrate i18n keys into landing page (currently hardcoded)
+- Add LanguageSwitcher to navigation header
+- Backend integration for booking/contact forms
 - Testing framework
+- Analytics/tracking setup
 
 ## Common Development Patterns
 
-### Creating a New Page
+### Creating a New Localized Page
 ```typescript
-// app/services/page.tsx
+// app/[locale]/services/page.tsx
 export default function ServicesPage() {
   // Server Component - can async fetch data
   return <div>Services content</div>
@@ -127,14 +229,34 @@ export default function ServicesPage() {
 
 ### Creating an Interactive Component
 ```typescript
-// components/LanguageSwitcher.tsx
+// components/BookingForm.tsx
 "use client"
 
 import { useState } from 'react'
 
-export default function LanguageSwitcher() {
-  const [locale, setLocale] = useState('en')
-  return <button onClick={() => setLocale('th')}>Switch</button>
+export default function BookingForm() {
+  const [name, setName] = useState('')
+  return <form>...</form>
+}
+```
+
+### Using next-intl for Translations
+```typescript
+// Server Component
+import { getTranslations } from 'next-intl/server'
+
+export default async function HomePage() {
+  const t = await getTranslations('home')
+  return <h1>{t('title')}</h1>
+}
+
+// Client Component
+"use client"
+import { useTranslations } from 'next-intl'
+
+export default function ClientComponent() {
+  const t = useTranslations('common')
+  return <button>{t('bookNow')}</button>
 }
 ```
 
@@ -143,4 +265,17 @@ export default function LanguageSwitcher() {
 import Hero from '@/components/Hero'
 import { formatDate } from '@/lib/utils'
 import type { Service } from '@/types/service'
+import { locales } from '@/i18n/config'
+```
+
+### Accessing WANAKA Brand Colors
+```typescript
+// In Tailwind classes (preferred method)
+<div className="bg-[#5b6d65] text-[#f7f2e8]">
+  Forest Teal with Light Background
+</div>
+
+// CSS variables available:
+// --wanaka-warm-beige, --wanaka-soft-taupe, --wanaka-muted-sand
+// --wanaka-olive-mist, --wanaka-forest-teal, --wanaka-slate-grey
 ```

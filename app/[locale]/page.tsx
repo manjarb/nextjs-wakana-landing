@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import MobileMenu from '@/components/MobileMenu';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -445,11 +446,17 @@ export default function HomePage() {
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
       <header className="sticky top-0 z-20 border-b border-[#d6c8b2]/40 bg-[#f7f2e8]/90 backdrop-blur">
-        <div className="mx-auto max-w-6xl px-6 py-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <p className="text-2xl font-semibold tracking-wide text-[#2f3a36]">
-              WANAKA
-            </p>
+        <div className="relative mx-auto max-w-6xl">
+          <div className="flex items-center justify-between gap-4 px-6 py-6">
+            <Link href="#" className="relative h-14 w-[120px] transition hover:opacity-80">
+              <Image
+                src="/images/logo/waka-logo.svg"
+                alt="WANAKA Sanctuary"
+                fill
+                priority
+                className="object-contain object-left"
+              />
+            </Link>
             <nav className="hidden items-center gap-6 text-sm font-medium text-[#5b6d65] lg:flex">
               {navItems.map((item) => (
                 <Link
@@ -464,19 +471,13 @@ export default function HomePage() {
             <div className="flex items-center gap-3">
               <Link
                 href="#contact"
-                className="rounded-full border border-[#5b6d65] px-4 py-2 text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
+                className="hidden rounded-full border border-[#5b6d65] px-4 py-2 text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white lg:block"
               >
                 Book a Ritual
               </Link>
+              <MobileMenu navItems={navItems} />
             </div>
           </div>
-          <nav className="mt-5 flex gap-4 overflow-x-auto text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65] lg:hidden">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="whitespace-nowrap transition hover:text-[#2f3a36]">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </header>
 
@@ -486,7 +487,7 @@ export default function HomePage() {
           className="relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-[#e3d8c7] via-[#f7f2e8] to-[#b4b8a0]/30" />
-          <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:py-32">
+          <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 py-12 lg:grid-cols-2 lg:py-32">
             <div className="space-y-8">
               <span className="inline-flex w-fit items-center rounded-full bg-white/80 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-[#6f7b7a]">
                 Everyday Sanctuary
@@ -495,8 +496,8 @@ export default function HomePage() {
                 Small Rituals. Big Rest.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-[#44544d]">
-                Calm, caring, and clean craft come together in Bangna’s newest wellness sanctuary.
-                WANAKA is the pause between school runs, meetings, and family life — a place where
+                Calm, caring, and clean craft come together in Bangna's newest wellness sanctuary.
+                Wanaka is the pause between school runs, meetings, and family life — a place where
                 modern women and their loved ones breathe, reset, and feel wonderful again.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -560,13 +561,13 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                About WANAKA
+                About Wanaka
               </p>
               <h2 className="text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
                 A sanctuary for your skin, body, and mind.
               </h2>
               <p className="text-lg leading-relaxed text-[#44544d]">
-                Happiness and confidence are born from balance. WANAKA Sanctuary was created so every
+                Happiness and confidence are born from balance. Wanaka Sanctuary was created so every
                 visit feels like coming home to yourself — whether you are a devoted mom, a growing
                 entrepreneur, or a family seeking calm. Warm interiors, mindful therapists, and gentle
                 rituals invite you to pause, feel cared for, and reconnect with what matters.
@@ -616,7 +617,7 @@ export default function HomePage() {
                 </h2>
                 <p className="max-w-xl text-lg leading-relaxed text-[#44544d]">
                   From the first welcome to the final sip of tea, every detail is designed to restore
-                  your glow and sense of presence. WANAKA promises premium, trustworthy care without
+                  your glow and sense of presence. Wanaka promises premium, trustworthy care without
                   pressure — only kindness, skill, and rituals rooted in nature.
                 </p>
               </div>
@@ -725,7 +726,7 @@ export default function HomePage() {
                   A multi-sensory journey that lingers long after you leave.
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-[#44544d]">
-                  Every touchpoint is curated to honor your senses. WANAKA flows like the gentle
+                  Every touchpoint is curated to honor your senses. Wanaka flows like the gentle
                   rhythm of waves: arrive softly, move through guided rituals, and depart feeling
                   balanced, cherished, and renewed.
                 </p>
@@ -869,7 +870,7 @@ export default function HomePage() {
 
       <footer className="bg-[#2f3a36] py-10 text-sm text-white/70">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} WANAKA Sanctuary. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Wanaka Sanctuary. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
             <Link href="#about" className="transition hover:text-white">
               About
