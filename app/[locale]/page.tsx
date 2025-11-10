@@ -484,18 +484,28 @@ export default function HomePage() {
       <main>
         <section
           id="hero"
-          className="relative overflow-hidden"
+          className="relative isolate overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#e3d8c7] via-[#f7f2e8] to-[#b4b8a0]/30" />
-          <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 py-12 lg:grid-cols-2 lg:py-32">
-            <div className="space-y-8">
-              <span className="inline-flex w-fit items-center rounded-full bg-white/80 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-[#6f7b7a]">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/generated/hero-bg.png"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1d1f1c]/80 via-[#1d1f1c]/55 to-[#4a3c31]/20" />
+          </div>
+          <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 text-white lg:py-32">
+            <div className="max-w-2xl space-y-8">
+              <span className="inline-flex w-fit items-center rounded-full bg-white/85 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-[#4b5853]">
                 Everyday Sanctuary
               </span>
-              <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#2f3a36] sm:text-5xl">
+              <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
                 Small Rituals. Big Rest.
               </h1>
-              <p className="max-w-xl text-lg leading-relaxed text-[#44544d]">
+              <p className="text-lg leading-relaxed text-white/85">
                 Calm, caring, and clean craft come together in Bangna's newest wellness sanctuary.
                 Wanaka is the pause between school runs, meetings, and family life — a place where
                 modern women and their loved ones breathe, reset, and feel wonderful again.
@@ -503,31 +513,16 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="#services"
-                  className="rounded-full bg-[#5b6d65] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#46574f]"
+                  className="rounded-full bg-[#f7f2e8]/95 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#2f3a36] transition hover:bg-white"
                 >
                   Explore Services
                 </Link>
                 <Link
                   href="#about"
-                  className="rounded-full border border-[#6f7b7a] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#2f3a36] transition hover:border-[#2f3a36]"
+                  className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white"
                 >
                   Discover The Story
                 </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[32px] bg-[#d6c8b2]/40 blur-3xl" />
-              <div className="relative h-80 rounded-[32px] bg-white/70 shadow-xl shadow-[#d6c8b2]/40 md:h-[28rem]">
-                <div className="relative h-full w-full overflow-hidden rounded-[32px] border border-white/60">
-                  <Image
-                    src="/images/clinic.png"
-                    alt="Soft-lit lounge interior of WANAKA Sanctuary"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 420px, 80vw"
-                  />
-                </div>
               </div>
             </div>
           </div>
