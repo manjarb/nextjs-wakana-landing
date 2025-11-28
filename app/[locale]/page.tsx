@@ -384,8 +384,8 @@ const galleryImages = [
 const contactDetails = [
   {
     label: 'Email',
-    value: 'hello@wanakasanctuary.com',
-    href: 'mailto:hello@wanakasanctuary.com',
+    value: 'wanakasanctuary@gmail.com',
+    href: 'mailto:wanakasanctuary@gmail.com',
     icon: (
       <svg
         className="h-6 w-6 text-white/80"
@@ -404,8 +404,8 @@ const contactDetails = [
   },
   {
     label: 'Phone',
-    value: '062 642 6565',
-    href: 'tel:+66626426565',
+    value: '088 665 1936',
+    href: 'tel:+66886651936',
     icon: (
       <svg
         className="h-6 w-6 text-white/80"
@@ -853,7 +853,7 @@ export default function HomePage() {
                 </p>
               </div>
               <Link
-                href="mailto:hello@wanakasanctuary.com"
+                href="mailto:wanakasanctuary@gmail.com"
                 className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#2f3a36] transition hover:bg-[#f7f2e8]"
               >
                 Enquire Now
