@@ -27,6 +27,14 @@ export function generateStaticParams() {
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wanakasanctuary.com/'),
+  title: 'Wanaka Sanctuary',
+  description: 'Small Rituals. Big Rest.',
+  openGraph: {
+    title: 'Wanaka Sanctuary',
+    description: 'Small Rituals. Big Rest.',
+    siteName: 'Wanaka Sanctuary',
+    type: 'website',
+  },
 };
 
 export default async function LocaleLayout({ children, params }: Props) {
