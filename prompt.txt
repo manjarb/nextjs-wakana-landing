@@ -1,0 +1,10 @@
+
+› we need to create beautiful home page follow content in "WANAKA_Summary_With_Colors.md" and make sure it is included these
+  """
+  1. Menu
+  2. Hero banner section with slogan (Placehodler image is ok for now, we will replace with actual image later)
+  3. About us
+  4. Mission
+  5. services
+  """
+  Feel free to add more sections if you think neccesary to provide all contents we need and make sure the styling is beautiful

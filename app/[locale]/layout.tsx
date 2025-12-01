@@ -25,6 +25,10 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wanakasanctuary.com/'),
+};
+
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
