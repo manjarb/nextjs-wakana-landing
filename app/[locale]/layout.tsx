@@ -30,7 +30,6 @@ export const metadata = {
   title: 'Wanaka Sanctuary',
   description: 'Small Rituals. Big Rest.',
   manifest: '/site.webmanifest',
-  themeColor: '#5b6d65',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -47,11 +46,15 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: '#5b6d65',
+};
+
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
   // Validate that the incoming locale parameter is valid
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as 'en' | 'th')) {
     notFound();
   }
 
