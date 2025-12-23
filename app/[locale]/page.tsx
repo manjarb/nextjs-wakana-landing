@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import MobileMenu from '@/components/MobileMenu';
+import FAQAccordion from '@/components/FAQAccordion';
 
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Mission', href: '#mission' },
   { label: 'Services', href: '#services' },
   { label: 'Experience', href: '#experience' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -78,7 +80,7 @@ const mainServices = [
     description:
       'Bespoke facials that blend calming touch with clean, high-performing products to reawaken glow and confidence.',
     image: {
-      src: '/images/generated/service-facial-massage.png',
+      src: '/images/v2/facial_treatment_01.jpg',
       alt: 'Guest enjoying a bespoke facial massage treatment',
     },
   },
@@ -87,7 +89,7 @@ const mainServices = [
     description:
       'A sensory head spa ritual that relieves fatigue, soothes the nervous system, and invites deep mental rest.',
     image: {
-      src: '/images/generated/service-head-spa.png',
+      src: '/images/v2/relaxation_head_spa_03.jpg',
       alt: 'Immersive head spa ritual with eucalyptus steam',
     },
   },
@@ -105,7 +107,7 @@ const mainServices = [
     description:
       'Scientifically curated IV cocktails that replenish from within, paired with soft lighting and personalized aromas.',
     image: {
-      src: '/images/generated/service-iv-drip-lounge.png',
+      src: '/images/v2/drip_iv.jpg',
       alt: 'Boutique IV drip therapy lounge at WANAKA Sanctuary',
     },
   },
@@ -365,17 +367,17 @@ const immersiveDetails = [
 
 const galleryImages = [
   {
-    src: '/images/generated/gallery-lounge-glow.png',
+    src: '/images/v2/lobby.jpg',
     alt: 'Ambient view of the WANAKA lounge with curved seating',
     label: 'Lounge Glow',
   },
   {
-    src: '/images/generated/gallery-calm-corners.png',
+    src: '/images/v2/family_living_room.jpg',
     alt: 'Calm corner featuring tea ritual and botanical accents',
     label: 'Calm Corners',
   },
   {
-    src: '/images/generated/gallery-wellness-wing.png',
+    src: '/images/v2/outside.jpg',
     alt: 'Perspective down the sanctuary wellness wing',
     label: 'Wellness Wing',
   },
@@ -439,6 +441,135 @@ const contactDetails = [
         <circle cx="12" cy="11" r="2.5" />
       </svg>
     ),
+  },
+];
+
+const faqItems = [
+  {
+    id: 1,
+    questionTH: 'Wellness clinic คืออะไร?',
+    questionEN: 'What is a wellness clinic?',
+    answerTH: 'Wellness clinic คือสถานที่ดูแลสุขภาพแบบองค์รวม เน้นการพักผ่อน ฟื้นฟู และการดูแลอย่างต่อเนื่อง เพื่อให้ร่างกายและจิตใจกลับมาสมดุล เหมาะกับการดูแลในชีวิตประจำวัน ไม่เร่ง ไม่กดดัน สำหรับผู้ที่มองหาพื้นที่ดูแลสุขภาพในโซน บางนา ใกล้ Mega Bangna Wanaka Sanctuary ออกแบบการดูแลให้เข้ากับไลฟ์สไตล์และการกลับมาดูแลซ้ำ — สอบถามได้ทาง LINE @wanaka.th',
+    answerEN: 'A wellness clinic focuses on holistic, ongoing care—supporting rest, recovery, and balance for everyday life. If you\'re seeking consistent wellness care near Bangna and Mega Bangna, Wanaka Sanctuary offers a calm, lifestyle-friendly approach. Add LINE @wanaka.th to learn more.',
+  },
+  {
+    id: 2,
+    questionTH: 'Wellness ต่างจากการรักษาโรคอย่างไร?',
+    questionEN: 'How is wellness different from medical treatment?',
+    answerTH: 'Wellness เน้นการดูแลเชิงป้องกันและความสมดุลในระยะยาว ไม่ใช่การรักษาเมื่อป่วย แต่เป็นการดูแลให้รู้สึกดีและแข็งแรงอย่างสม่ำเสมอ ที่ Wanaka Sanctuary โซนบางนา เราช่วยวางแผนการดูแลที่ทำได้จริงในชีวิตประจำวัน — แอดไลน์ @wanaka.th เพื่อเริ่มต้น',
+    answerEN: 'Wellness focuses on prevention and long-term balance rather than treating illness after it occurs. At Wanaka Sanctuary near Bangna, we support sustainable care you can return to. Add LINE @wanaka.th.',
+  },
+  {
+    id: 3,
+    questionTH: 'นวดหน้าให้ผลลัพธ์เรื่องอะไรบ้าง?',
+    questionEN: 'What benefits can facial massage provide?',
+    answerTH: 'นวดหน้าช่วยคลายความตึงของกล้ามเนื้อใบหน้า กระตุ้นการไหลเวียน และช่วยให้ผิวดูสดใสขึ้นอย่างเป็นธรรมชาติ การทำต่อเนื่องช่วยคงสมดุลผิวและความผ่อนคลาย ที่ Wanaka Sanctuary ใกล้ Mega Bangna Facial Ritual ถูกออกแบบให้เหมาะกับการดูแลระยะยาว — ปรึกษาได้ที่ @wanaka.th',
+    answerEN: 'Facial massage relaxes facial tension, supports circulation, and maintains a naturally refreshed look. At Wanaka Sanctuary near Mega Bangna, our Facial Rituals are designed for ongoing care. Add LINE @wanaka.th.',
+  },
+  {
+    id: 4,
+    questionTH: 'ควรนวดหน้าบ่อยแค่ไหน?',
+    questionEN: 'How often should I get a facial massage?',
+    answerTH: 'โดยทั่วไปหลายคนเลือกทำทุก 2–4 สัปดาห์ เพื่อรักษาสมดุลผิวและความผ่อนคลาย ความถี่ที่เหมาะสมขึ้นกับสภาพผิวและไลฟ์สไตล์ ทีม Wanaka Sanctuary บางนา สามารถช่วยประเมินและวางแผนให้เหมาะกับคุณ — แอดไลน์ @wanaka.th',
+    answerEN: 'Many people benefit from sessions every 2–4 weeks, depending on skin condition and lifestyle. At Wanaka Sanctuary near Bangna, we help personalize your schedule. Add LINE @wanaka.th.',
+  },
+  {
+    id: 5,
+    questionTH: 'Head Spa ช่วยเรื่องอะไรบ้าง?',
+    questionEN: 'What does a head spa help with?',
+    answerTH: 'Head Spa ช่วยคลายความตึงเครียดบริเวณศีรษะ คอ และไหล่ ช่วยให้รู้สึกผ่อนคลายและพักผ่อนได้ดีขึ้น เหมาะกับผู้ที่ทำงานหน้าจอหรือมีความเครียดสะสม ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราเน้นจังหวะการดูแลที่ช้าและสบาย — สอบถามคอร์สได้ที่ @wanaka.th',
+    answerEN: 'Head spa eases tension in the scalp, neck, and shoulders, supporting better relaxation and rest. At Wanaka Sanctuary near Mega Bangna, the focus is calm and comfort. Add LINE @wanaka.th.',
+  },
+  {
+    id: 6,
+    questionTH: 'ควรทำ Head Spa ต่อเนื่องหรือไม่?',
+    questionEN: 'Is regular head spa recommended?',
+    answerTH: 'การทำ Head Spa อย่างต่อเนื่องช่วยให้ร่างกายปรับตัวกับการพักผ่อนที่มีคุณภาพมากขึ้น หลายคนเลือกทำเดือนละ 1–2 ครั้งเพื่อดูแลตัวเอง ที่ Wanaka Sanctuary โซนบางนา เราออกแบบแพ็กเกจให้เหมาะกับการกลับมาทำซ้ำ — แอดไลน์ @wanaka.th',
+    answerEN: 'Regular head spa sessions help build a healthier rest routine. Many choose monthly visits. At Wanaka Sanctuary near Bangna, care is designed for continuity. Add LINE @wanaka.th.',
+  },
+  {
+    id: 7,
+    questionTH: 'IV Drip คืออะไร?',
+    questionEN: 'What is IV drip therapy?',
+    answerTH: 'IV Drip เป็นการดูแลเชิงสนับสนุนด้วยสารน้ำหรือวิตามินบางชนิด เพื่อช่วยเรื่องความสดชื่นและการฟื้นตัว โดยควรมีการประเมินความเหมาะสมก่อนทุกครั้ง ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราเน้นการให้ข้อมูลและการดูแลอย่างพอดี — สอบถามได้ที่ @wanaka.th',
+    answerEN: 'IV drip therapy supports hydration and recovery with proper assessment beforehand. At Wanaka Sanctuary near Mega Bangna, care is thoughtful and balanced. Add LINE @wanaka.th.',
+  },
+  {
+    id: 8,
+    questionTH: 'IV Drip เหมาะกับการดูแลระยะยาวไหม?',
+    questionEN: 'Is IV drip suitable for long-term care?',
+    answerTH: 'หลายคนเลือก IV Drip เป็นส่วนหนึ่งของการดูแลสุขภาพในช่วงที่ร่างกายอ่อนล้า การดูแลแบบพอดีและต่อเนื่องช่วยให้เห็นผลสม่ำเสมอ หากคุณอยู่โซนบางนา ทีม Wanaka Sanctuary พร้อมช่วยวางแผน — แอดไลน์ @wanaka.th',
+    answerEN: 'When used appropriately, IV drips can be part of a consistent wellness routine. At Wanaka Sanctuary near Bangna, we help plan safely. Add LINE @wanaka.th.',
+  },
+  {
+    id: 9,
+    questionTH: 'Skin Booster ช่วยเรื่องผิวอย่างไร?',
+    questionEN: 'How does a skin booster support skin health?',
+    answerTH: 'Skin Booster ช่วยสนับสนุนความชุ่มชื้นและคุณภาพผิว เหมาะกับการดูแลผิวแบบค่อยเป็นค่อยไป การทำต่อเนื่องช่วยให้ผิวดูสุขภาพดีขึ้น ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราเน้นผลลัพธ์ที่ดูเป็นธรรมชาติ — แอดไลน์ @wanaka.th',
+    answerEN: 'Skin boosters support hydration and overall skin quality with gradual improvement. At Wanaka Sanctuary near Mega Bangna, results remain natural. Add LINE @wanaka.th.',
+  },
+  {
+    id: 10,
+    questionTH: 'Botox ควรดูแลต่อเนื่องหรือไม่?',
+    questionEN: 'Is ongoing Botox care recommended?',
+    answerTH: 'Botox มักให้ผลลัพธ์ชั่วคราว การติดตามผลและดูแลอย่างต่อเนื่องช่วยให้ผลลัพธ์ดูสม่ำเสมอและเป็นธรรมชาติ ที่ Wanaka Sanctuary โซนบางนา เราเน้นการติดตามผลและความพอดี — สอบถามแนวทางได้ที่ @wanaka.th',
+    answerEN: 'Botox results are temporary; follow-up and continuity help maintain balanced outcomes. At Wanaka Sanctuary near Bangna, care focuses on natural balance. Add LINE @wanaka.th.',
+  },
+  {
+    id: 11,
+    questionTH: 'ควรเริ่มดูแลสุขภาพและผิวจากอะไรดี?',
+    questionEN: 'How should I start a wellness and skin care routine?',
+    answerTH: 'เริ่มจากเป้าหมายของคุณ เช่น การพักผ่อน (Head Spa), ดูแลผิว (Facial / Skin Booster), หรือฟื้นฟูความอ่อนล้า (IV Drip) แล้วทำอย่างต่อเนื่องในจังหวะที่เหมาะ Wanaka Sanctuary ใกล้ Mega Bangna ช่วยวางแผนให้ดูแลได้จริง — แอดไลน์ @wanaka.th',
+    answerEN: 'Start with your goal—rest, skin maintenance, or recovery—and continue at a sustainable pace. Wanaka Sanctuary near Mega Bangna helps you plan long-term care. Add LINE @wanaka.th.',
+  },
+  {
+    id: 12,
+    questionTH: 'การดูแลสุขภาพแบบ Wellness เหมาะกับคนทำงานยุคนี้อย่างไร?',
+    questionEN: 'How does wellness care fit into a modern working lifestyle?',
+    answerTH: 'คนทำงานยุคนี้มักเผชิญความเครียดสะสม พักผ่อนไม่พอ และใช้ร่างกายเกินสมดุล Wellness จึงช่วยเติม "ช่วงพักที่มีคุณภาพ" ผ่านการดูแลอย่างต่อเนื่อง ไม่เร่ง ไม่ฝืน สำหรับคนทำงานในโซน บางนา ใกล้ Mega Bangna Wanaka Sanctuary ออกแบบบริการให้เข้ากับเวลาจำกัดและการกลับมาดูแลซ้ำ — แอดไลน์ @wanaka.th เพื่อวางแผนที่เหมาะกับชีวิตประจำวัน',
+    answerEN: 'Modern work often leads to accumulated stress and insufficient rest. Wellness care provides intentional, high-quality recovery through consistent routines. Near Bangna and Mega Bangna, Wanaka Sanctuary supports busy lifestyles — add LINE @wanaka.th to plan yours.',
+  },
+  {
+    id: 13,
+    questionTH: 'ถ้าพักผ่อนไม่พอ ควรเริ่มดูแลตัวเองจากอะไร?',
+    questionEN: 'Where should I start if I\'m not getting enough rest?',
+    answerTH: 'การเริ่มจากการผ่อนคลายระบบประสาท เช่น Head Spa หรือ Facial Ritual ช่วยให้ร่างกายค่อยๆ ปรับเข้าสู่การพักผ่อนที่มีคุณภาพ ก่อนเสริมการดูแลด้านอื่น ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราช่วยแนะนำจุดเริ่มต้นที่ไม่หนักและทำได้ต่อเนื่อง — แอดไลน์ @wanaka.th',
+    answerEN: 'Starting with nervous-system relaxation—such as head spa or gentle facial rituals—helps the body relearn quality rest. At Wanaka Sanctuary near Mega Bangna, we guide you step by step. Add LINE @wanaka.th.',
+  },
+  {
+    id: 14,
+    questionTH: 'การดูแลสุขภาพแบบต่อเนื่องสำคัญกว่าการทำครั้งเดียวอย่างไร?',
+    questionEN: 'Why is consistent wellness care more effective than one-time treatments?',
+    answerTH: 'การดูแลต่อเนื่องช่วยให้ร่างกายและผิวปรับตัว เกิดสมดุล และรักษาผลลัพธ์ได้ยาวนานกว่าการทำครั้งเดียวแล้วหยุด ที่ Wanaka Sanctuary โซนบางนา เราออกแบบโปรแกรมให้เหมาะกับการกลับมาดูแลอย่างสม่ำเสมอ — สอบถามได้ทาง @wanaka.th',
+    answerEN: 'Consistency allows the body and skin to adapt and maintain balance, delivering more sustainable results than one-off sessions. At Wanaka Sanctuary near Bangna, continuity is part of the care. Add LINE @wanaka.th.',
+  },
+  {
+    id: 15,
+    questionTH: 'ถ้าไม่เคยทำ IV Drip มาก่อน ควรรู้อะไรบ้าง?',
+    questionEN: 'What should I know before trying IV drip for the first time?',
+    answerTH: 'ควรเริ่มจากการประเมินความเหมาะสม แจ้งประวัติสุขภาพ และเลือกการดูแลที่พอดีกับร่างกาย การเริ่มอย่างค่อยเป็นค่อยไปช่วยให้สบายใจและปลอดภัย ที่ Wanaka Sanctuary ใกล้ Mega Bangna ทีมงานให้ข้อมูลครบก่อนตัดสินใจ — แอดไลน์ @wanaka.th เพื่อสอบถาม',
+    answerEN: 'Start with an assessment, share your health history, and choose an appropriate approach. Beginning gradually supports comfort and safety. At Wanaka Sanctuary near Mega Bangna, we provide clear guidance. Add LINE @wanaka.th.',
+  },
+  {
+    id: 16,
+    questionTH: 'การดูแลผิวแบบ Wellness ต่างจากการดูแลผิวทั่วไปอย่างไร?',
+    questionEN: 'How is wellness-based skin care different from regular skin treatments?',
+    answerTH: 'Wellness skin care เน้นความสมดุล ความสบาย และการดูแลอย่างต่อเนื่อง ไม่เร่งผลลัพธ์ แต่ช่วยให้ผิวค่อยๆ แข็งแรงและดูสุขภาพดี ที่ Wanaka Sanctuary โซนบางนา เราผสาน Facial, Skin Booster และการพักผ่อนเข้าด้วยกัน — แอดไลน์ @wanaka.th',
+    answerEN: 'Wellness skin care emphasizes balance, comfort, and gradual improvement rather than quick fixes. At Wanaka Sanctuary near Bangna, care blends skin treatments with relaxation. Add LINE @wanaka.th.',
+  },
+  {
+    id: 17,
+    questionTH: 'Skin Booster เหมาะกับการดูแลผิวในชีวิตประจำวันหรือไม่?',
+    questionEN: 'Are skin boosters suitable for everyday skin maintenance?',
+    answerTH: 'Skin Booster มักถูกเลือกเป็นส่วนหนึ่งของการดูแลผิวระยะยาว เพื่อช่วยสนับสนุนความชุ่มชื้นและคุณภาพผิวอย่างสม่ำเสมอ ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราช่วยวางแผนความถี่ให้เหมาะกับการใช้ชีวิตจริง — แอดไลน์ @wanaka.th',
+    answerEN: 'Skin boosters can be part of a long-term routine to support hydration and skin quality. At Wanaka Sanctuary near Mega Bangna, frequency is planned around real life. Add LINE @wanaka.th.',
+  },
+  {
+    id: 18,
+    questionTH: 'Botox สามารถทำร่วมกับการดูแลแบบ Wellness ได้ไหม?',
+    questionEN: 'Can Botox be combined with a wellness routine?',
+    answerTH: 'หลายคนเลือกผสาน Botox เข้ากับการดูแลแบบ Wellness เช่น Facial หรือ Head Spa เพื่อให้การดูแลผิวและการพักผ่อนเป็นไปอย่างสมดุล ที่ Wanaka Sanctuary โซนบางนา เราช่วยจัดลำดับการดูแลให้เหมาะและไม่เร่ง — แอดไลน์ @wanaka.th',
+    answerEN: 'Many choose to combine Botox with wellness care such as Facial or Head Spa for balanced skin and relaxation. At Wanaka Sanctuary near Bangna, we sequence care thoughtfully. Add LINE @wanaka.th.',
   },
 ];
 
@@ -506,7 +637,7 @@ export default function HomePage() {
                 Small Rituals. Big Rest.
               </h1>
               <p className="text-lg leading-relaxed text-white/85">
-                Calm, caring, and clean craft come together in Bangna's newest wellness sanctuary.
+                Calm, caring, and clean craft come together in Bangna&apos;s newest wellness sanctuary.
                 Wanaka is the pause between school runs, meetings, and family life — a place where
                 modern women and their loved ones breathe, reset, and feel wonderful again.
               </p>
@@ -573,7 +704,7 @@ export default function HomePage() {
               <div className="relative h-80 rounded-[32px] bg-white/80 shadow-xl shadow-[#d6c8b2]/30 md:h-[26rem]">
                 <div className="relative h-full w-full overflow-hidden rounded-[32px] border border-white/60">
                   <Image
-                    src="/images/generated/about-sanctuary.png"
+                    src="/images/v2/lobby_5.jpg"
                     alt="Serene treatment suite inside WANAKA Sanctuary"
                     fill
                     className="object-cover"
@@ -729,7 +860,7 @@ export default function HomePage() {
               <div className="space-y-10">
                 <div className="relative h-56 overflow-hidden rounded-[32px] border border-white/60 bg-white/70 shadow-lg shadow-[#d6c8b2]/30 sm:h-64">
                   <Image
-                    src="/images/generated/experience-banner.png"
+                    src="/images/v2/lobby_3.jpg"
                     alt="Sensory lighting journey inside WANAKA Sanctuary"
                     fill
                     className="object-cover"
@@ -808,6 +939,38 @@ export default function HomePage() {
         </section>
 
         <section
+          id="faq"
+          className="border-t border-[#d6c8b2]/50 bg-[#e3d8c7]/60"
+        >
+          <div className="mx-auto max-w-4xl px-6 py-24 lg:py-28">
+            <div className="mb-12 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
+                Frequently Asked Questions
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
+                Everything you need to know
+              </h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#44544d]">
+                Find answers to common questions about our wellness services, rituals, and how we can
+                support your journey to balance and calm.
+              </p>
+            </div>
+            <FAQAccordion items={faqItems} />
+            <div className="mt-12 text-center">
+              <p className="text-sm text-[#52635d]">
+                Still have questions?{' '}
+                <Link
+                  href="#contact"
+                  className="font-semibold text-[#5b6d65] underline underline-offset-4 transition hover:text-[#2f3a36]"
+                >
+                  Contact us
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
           id="contact"
           className="relative overflow-hidden border-t border-[#d6c8b2]/50 bg-gradient-to-br from-[#5b6d65] via-[#44544d] to-[#2f3a36] text-white"
         >
@@ -875,6 +1038,9 @@ export default function HomePage() {
             </Link>
             <Link href="#experience" className="transition hover:text-white">
               Experience
+            </Link>
+            <Link href="#faq" className="transition hover:text-white">
+              FAQ
             </Link>
             <Link href="#contact" className="transition hover:text-white">
               Contact
