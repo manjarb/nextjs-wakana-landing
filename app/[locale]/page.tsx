@@ -442,6 +442,66 @@ const contactDetails = [
       </svg>
     ),
   },
+  {
+    label: 'LINE',
+    value: '@wanaka.th',
+    href: 'https://line.me/ti/p/@wanaka.th',
+    icon: (
+      <svg
+        className="h-6 w-6 text-white/80"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <rect x="3" y="6" width="18" height="12" rx="2" />
+        <path d="M9 11h6M9 14h4" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    value: 'WANAKA Sanctuary',
+    href: 'https://www.facebook.com/share/17jTr63L62/?mibextid=wwXIfr',
+    icon: (
+      <svg
+        className="h-6 w-6 text-white/80"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    value: '@wanakasanctuary',
+    href: 'https://www.instagram.com/wanakasanctuary?igsh=MXhjMDUxaXBqNDVvbw==',
+    icon: (
+      <svg
+        className="h-6 w-6 text-white/80"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" />
+      </svg>
+    ),
+  },
 ];
 
 const faqItems = [
@@ -988,14 +1048,14 @@ export default function HomePage() {
             <div className="w-full max-w-md rounded-3xl bg-white/10 p-8 backdrop-blur">
               <div className="space-y-4 text-sm text-white/80">
                 {contactDetails.map((detail) => (
-                  <div key={detail.label} className="flex items-start gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+                  <div key={detail.label} className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
                       {detail.icon}
                     </div>
                     {detail.href ? (
                       <Link
                         href={detail.href}
-                        className="text-white/80 transition hover:text-white"
+                        className="text-white/80 transition hover:text-white hover:underline"
                       >
                         <span className="font-semibold text-white">{detail.label}:</span>{' '}
                         {detail.value}
