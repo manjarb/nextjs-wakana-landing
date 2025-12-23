@@ -927,11 +927,8 @@ export default function HomePage() {
                   sizes="(min-width: 1024px) 340px, 90vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2f3a36]/50 via-transparent to-transparent opacity-80 transition group-hover:opacity-90" />
-                <div className="absolute bottom-6 left-6 right-6 space-y-2 text-white">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   <p className="text-lg font-semibold">{image.label}</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-white/70">
-                    Imagery Coming Soon
-                  </p>
                 </div>
               </div>
             ))}
