@@ -624,13 +624,13 @@ const faqItems = [
     answerTH: 'Skin Booster มักถูกเลือกเป็นส่วนหนึ่งของการดูแลผิวระยะยาว เพื่อช่วยสนับสนุนความชุ่มชื้นและคุณภาพผิวอย่างสม่ำเสมอ ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราช่วยวางแผนความถี่ให้เหมาะกับการใช้ชีวิตจริง — แอดไลน์ @wanaka.th',
     answerEN: 'Skin boosters can be part of a long-term routine to support hydration and skin quality. At Wanaka Sanctuary near Mega Bangna, frequency is planned around real life. Add LINE @wanaka.th.',
   },
-  {
-    id: 18,
-    questionTH: 'Botox สามารถทำร่วมกับการดูแลแบบ Wellness ได้ไหม?',
-    questionEN: 'Can Botox be combined with a wellness routine?',
-    answerTH: 'หลายคนเลือกผสาน Botox เข้ากับการดูแลแบบ Wellness เช่น Facial หรือ Head Spa เพื่อให้การดูแลผิวและการพักผ่อนเป็นไปอย่างสมดุล ที่ Wanaka Sanctuary โซนบางนา เราช่วยจัดลำดับการดูแลให้เหมาะและไม่เร่ง — แอดไลน์ @wanaka.th',
-    answerEN: 'Many choose to combine Botox with wellness care such as Facial or Head Spa for balanced skin and relaxation. At Wanaka Sanctuary near Bangna, we sequence care thoughtfully. Add LINE @wanaka.th.',
-  },
+  // {
+  //   id: 18,
+  //   questionTH: 'Botox สามารถทำร่วมกับการดูแลแบบ Wellness ได้ไหม?',
+  //   questionEN: 'Can Botox be combined with a wellness routine?',
+  //   answerTH: 'หลายคนเลือกผสาน Botox เข้ากับการดูแลแบบ Wellness เช่น Facial หรือ Head Spa เพื่อให้การดูแลผิวและการพักผ่อนเป็นไปอย่างสมดุล ที่ Wanaka Sanctuary โซนบางนา เราช่วยจัดลำดับการดูแลให้เหมาะและไม่เร่ง — แอดไลน์ @wanaka.th',
+  //   answerEN: 'Many choose to combine Botox with wellness care such as Facial or Head Spa for balanced skin and relaxation. At Wanaka Sanctuary near Bangna, we sequence care thoughtfully. Add LINE @wanaka.th.',
+  // },
 ];
 
 export default function HomePage() {
