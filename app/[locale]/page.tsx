@@ -568,13 +568,13 @@ const faqItems = [
     answerTH: 'Skin Booster ช่วยสนับสนุนความชุ่มชื้นและคุณภาพผิว เหมาะกับการดูแลผิวแบบค่อยเป็นค่อยไป การทำต่อเนื่องช่วยให้ผิวดูสุขภาพดีขึ้น ที่ Wanaka Sanctuary ใกล้ Mega Bangna เราเน้นผลลัพธ์ที่ดูเป็นธรรมชาติ — แอดไลน์ @wanaka.th',
     answerEN: 'Skin boosters support hydration and overall skin quality with gradual improvement. At Wanaka Sanctuary near Mega Bangna, results remain natural. Add LINE @wanaka.th.',
   },
-  {
-    id: 10,
-    questionTH: 'Botox ควรดูแลต่อเนื่องหรือไม่?',
-    questionEN: 'Is ongoing Botox care recommended?',
-    answerTH: 'Botox มักให้ผลลัพธ์ชั่วคราว การติดตามผลและดูแลอย่างต่อเนื่องช่วยให้ผลลัพธ์ดูสม่ำเสมอและเป็นธรรมชาติ ที่ Wanaka Sanctuary โซนบางนา เราเน้นการติดตามผลและความพอดี — สอบถามแนวทางได้ที่ @wanaka.th',
-    answerEN: 'Botox results are temporary; follow-up and continuity help maintain balanced outcomes. At Wanaka Sanctuary near Bangna, care focuses on natural balance. Add LINE @wanaka.th.',
-  },
+  // {
+  //   id: 10,
+  //   questionTH: 'Botox ควรดูแลต่อเนื่องหรือไม่?',
+  //   questionEN: 'Is ongoing Botox care recommended?',
+  //   answerTH: 'Botox มักให้ผลลัพธ์ชั่วคราว การติดตามผลและดูแลอย่างต่อเนื่องช่วยให้ผลลัพธ์ดูสม่ำเสมอและเป็นธรรมชาติ ที่ Wanaka Sanctuary โซนบางนา เราเน้นการติดตามผลและความพอดี — สอบถามแนวทางได้ที่ @wanaka.th',
+  //   answerEN: 'Botox results are temporary; follow-up and continuity help maintain balanced outcomes. At Wanaka Sanctuary near Bangna, care focuses on natural balance. Add LINE @wanaka.th.',
+  // },
   {
     id: 11,
     questionTH: 'ควรเริ่มดูแลสุขภาพและผิวจากอะไรดี?',
