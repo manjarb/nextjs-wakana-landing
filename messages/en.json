@@ -14,5 +14,25 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact"
+  },
+  "reviews": {
+    "heading": "Guest Experiences",
+    "title": "Loved by our guests.",
+    "basedOn": "Based on {count} reviews",
+    "viewOnGoogle": "View all on Google"
+  },
+  "location": {
+    "heading": "Location",
+    "title": "How to get here",
+    "getDirections": "Get directions",
+    "openingHours": "Opening Hours",
+    "sun": "Sunday",
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "hours": "8 AM - 8 PM"
   }
 }

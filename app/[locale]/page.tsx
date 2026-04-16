@@ -2,6 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MobileMenu from '@/components/MobileMenu';
 import FAQAccordion from '@/components/FAQAccordion';
+import GoogleReviews from '@/components/GoogleReviews';
+import LocationMap from '@/components/LocationMap';
+import { useTranslations } from 'next-intl';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -9,6 +12,7 @@ const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'Experience', href: '#experience' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Location', href: '#location' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -634,6 +638,8 @@ const faqItems = [
 ];
 
 export default function HomePage() {
+  const tReviews = useTranslations('reviews');
+
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
       <header className="sticky top-0 z-20 border-b border-[#d6c8b2]/40 bg-[#f7f2e8]/90 backdrop-blur">
@@ -997,6 +1003,18 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section id="reviews" className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
+          <div className="mb-12 text-center sm:text-left">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
+              {tReviews('heading')}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
+              {tReviews('title')}
+            </h2>
+          </div>
+          <GoogleReviews />
+        </section>
+
         <section
           id="faq"
           className="border-t border-[#d6c8b2]/50 bg-[#e3d8c7]/60"
@@ -1027,6 +1045,10 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section id="location" className="bg-[#fcfaf7]">
+          <LocationMap />
         </section>
 
         <section
@@ -1102,6 +1124,9 @@ export default function HomePage() {
             </Link>
             <Link href="#faq" className="transition hover:text-white">
               FAQ
+            </Link>
+            <Link href="#location" className="transition hover:text-white">
+              Location
             </Link>
             <Link href="#contact" className="transition hover:text-white">
               Contact
