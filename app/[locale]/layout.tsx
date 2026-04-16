@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/config';
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import FloatingLineButton from '@/components/FloatingLineButton';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,6 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <FloatingLineButton />
       </body>
     </html>
   );

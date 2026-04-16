@@ -63,7 +63,9 @@ export default function MobileMenu({ navItems }: MobileMenuProps) {
           ))}
           <div className="mt-2 px-6">
             <Link
-              href="#contact"
+              href="https://lin.ee/SSGzTmt?utm_source=website&utm_medium=mobile_nav&utm_campaign=book_ritual"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
               className="block w-full rounded-full border border-[#5b6d65] px-5 py-2.5 text-center text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
             >
