@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import TrackedLink from '@/components/TrackedLink';
 import MobileMenu from '@/components/MobileMenu';
 import FAQAccordion from '@/components/FAQAccordion';
 import GoogleReviews from '@/components/GoogleReviews';
@@ -412,6 +413,7 @@ const contactDetails = [
     label: 'Phone',
     value: '088 665 1936',
     href: 'tel:+66886651936',
+    eventName: 'click_tel',
     icon: (
       <svg
         className="h-6 w-6 text-white/80"
@@ -450,6 +452,7 @@ const contactDetails = [
     label: 'LINE',
     value: '@wanaka.th',
     href: 'https://line.me/ti/p/@wanaka.th?utm_source=website&utm_medium=contact_section&utm_campaign=contact_line',
+    eventName: 'click_line_contact',
     icon: (
       <svg
         className="h-6 w-6 text-white/80"
@@ -666,14 +669,15 @@ export default function HomePage() {
               ))}
             </nav>
             <div className="flex items-center gap-3">
-              <Link
+              <TrackedLink
                 href="https://lin.ee/SSGzTmt?utm_source=website&utm_medium=desktop_nav&utm_campaign=book_ritual"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden rounded-full border border-[#5b6d65] px-4 py-2 text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white lg:block"
+                eventName="click_book_ritual"
               >
                 Book a Ritual
-              </Link>
+              </TrackedLink>
               <MobileMenu navItems={navItems} />
             </div>
           </div>
@@ -1077,13 +1081,14 @@ export default function HomePage() {
                       {detail.icon}
                     </div>
                     {detail.href ? (
-                      <Link
+                      <TrackedLink
                         href={detail.href}
                         className="text-white/80 transition hover:text-white hover:underline"
+                        eventName={detail.eventName}
                       >
                         <span className="font-semibold text-white">{detail.label}:</span>{' '}
                         {detail.value}
-                      </Link>
+                      </TrackedLink>
                     ) : (
                       <p>
                         <span className="font-semibold text-white">{detail.label}:</span>{' '}
@@ -1096,14 +1101,15 @@ export default function HomePage() {
                   Membership Preview Available on Request
                 </p>
               </div>
-              <Link
+              <TrackedLink
                 href="https://lin.ee/SSGzTmt?utm_source=website&utm_medium=footer&utm_campaign=enquire_now"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#2f3a36] transition hover:bg-[#f7f2e8]"
+                eventName="click_enquire_now"
               >
                 Enquire Now
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
