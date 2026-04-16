@@ -48,7 +48,7 @@ export default function MobileMenu({ navItems }: MobileMenuProps) {
       {/* Collapsible Mobile Menu - Positioned absolutely */}
       <div
         className={`absolute left-0 right-0 top-full overflow-hidden bg-[#f7f2e8]/95 backdrop-blur transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[600px] opacity-100 overflow-y-auto shadow-xl' : 'max-h-0 opacity-0'
         }`}
       >
         <nav className="flex flex-col gap-4 border-t border-[#d6c8b2]/40 py-4">

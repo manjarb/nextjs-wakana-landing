@@ -647,8 +647,8 @@ export default function HomePage() {
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
       <header className="sticky top-0 z-20 border-b border-[#d6c8b2]/40 bg-[#f7f2e8]/90 backdrop-blur">
         <div className="relative mx-auto max-w-6xl">
-          <div className="flex items-center justify-between gap-4 px-6 py-6">
-            <Link href="#" className="relative h-14 w-[120px] transition hover:opacity-80">
+          <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-6">
+            <Link href="#" className="relative h-10 w-[90px] transition hover:opacity-80 md:h-14 md:w-[120px]">
               <Image
                 src="/images/logo/waka-logo.svg"
                 alt="WANAKA Sanctuary"
