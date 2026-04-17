@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Link, { LinkProps } from "next/link";
 
-interface TrackedLinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>, LinkProps {
+interface TrackedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
   eventName?: string;
   children: React.ReactNode;
 }
@@ -11,7 +11,7 @@ interface TrackedLinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorEle
 export default function TrackedLink({ eventName, onClick, children, ...props }: TrackedLinkProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (eventName && typeof window !== "undefined") {
-      const w = window as any;
+      const w = window as Window & { dataLayer?: Record<string, unknown>[] };
       w.dataLayer = w.dataLayer || [];
       w.dataLayer.push({ event: eventName });
     }
@@ -21,8 +21,8 @@ export default function TrackedLink({ eventName, onClick, children, ...props }: 
   };
 
   return (
-    <Link onClick={handleClick} {...props}>
+    <a onClick={handleClick} {...props}>
       {children}
-    </Link>
+    </a>
   );
 }

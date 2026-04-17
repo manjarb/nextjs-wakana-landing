@@ -39,5 +39,5 @@
 ## Agent-Specific Instructions
 - Keep patches small and focused; follow the structure above.
 - Avoid adding dependencies without a clear, documented need.
+- Keep locale content consolidated in `messages/en.json` and `messages/th.json`. Do not create additional per-feature message files under `messages/`.
 - Update this file when changing commands, structure, or conventions.
-

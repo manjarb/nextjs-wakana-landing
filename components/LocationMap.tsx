@@ -89,7 +89,7 @@ export default function LocationMap() {
              <ul className="mt-8 space-y-4 text-sm text-[#52635d]">
                {days.map((day, idx) => (
                  <li key={day.key} className={`flex justify-between ${idx !== days.length - 1 ? 'border-b border-[#d6c8b2]/30 pb-3' : 'pb-1'}`}>
-                   <span className="font-medium text-[#2f3a36]">{t(day.key as any)}</span>
+                   <span className="font-medium text-[#2f3a36]">{t(day.key as 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat')}</span>
                    <span>{t('hours')}</span>
                  </li>
                ))}

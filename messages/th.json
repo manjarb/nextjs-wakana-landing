@@ -13,6 +13,11 @@
   "navigation": {
     "home": "หน้าแรก",
     "about": "เกี่ยวกับ",
+    "mission": "พันธกิจ",
+    "services": "บริการ",
+    "experience": "บรรยากาศ",
+    "faq": "คำถามที่พบบ่อย",
+    "location": "การเดินทาง",
     "contact": "ติดต่อ"
   },
   "reviews": {
@@ -34,5 +39,531 @@
     "fri": "วันศุกร์",
     "sat": "วันเสาร์",
     "hours": "8:00 - 20:00"
+  },
+  "services": {
+    "heading": "บริการของเรา",
+    "title": "เมนูเพื่อสุขภาพและความงาม",
+    "description": "ค้นพบบริการที่หลากหลายของเรา เพื่อการผ่อนคลาย ฟื้นฟู และบำรุง",
+    "duration": "ระยะเวลา",
+    "price": "ราคา",
+    "bookNow": "จองเลย",
+    "viewFullMenu": "ดูเมนูทั้งหมด"
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "บริการ | Wanaka Sanctuary",
+      "description": "รวมเมนูบริการของ Wanaka Sanctuary ทั้งทรีตเมนต์ผิวหน้า เฮดสปา IV Therapy Aesthetic Treatment และ Skin Booster"
+    },
+    "navItems": [
+      {
+        "label": "ขายดี",
+        "href": "#highlights"
+      },
+      {
+        "label": "ทรีตเมนต์",
+        "href": "#rituals"
+      },
+      {
+        "label": "IV Therapy",
+        "href": "#iv-therapy"
+      },
+      {
+        "label": "Skin Booster",
+        "href": "#skin-booster"
+      },
+      {
+        "label": "ติดต่อ",
+        "href": "#contact"
+      }
+    ],
+    "headerCtaLabel": "จองบริการ",
+    "hero": {
+      "eyebrow": "เมนูบริการ",
+      "title": "รวมเมนูบริการของ WANAKA Sanctuary สำหรับการผ่อนคลาย ฟื้นฟู และดูแลผิวอย่างสมดุล",
+      "description": "รวมบริการจากเมนูล่าสุดของ WANAKA Sanctuary ตั้งแต่ทรีตเมนต์ผิวหน้า เฮดสปา นวดผ่อนคลาย IV Therapy Aesthetic Treatment และ Skin Booster",
+      "primaryCtaLabel": "สอบถามทาง LINE",
+      "secondaryCtaLabel": "ดูเมนู",
+      "stats": [
+        {
+          "value": "6",
+          "label": "หมวดทรีตเมนต์"
+        },
+        {
+          "value": "15",
+          "label": "สูตร IV Therapy"
+        },
+        {
+          "value": "18",
+          "label": "รายการ injectables และ booster"
+        }
+      ]
+    },
+    "highlights": {
+      "eyebrow": "บริการขายดี",
+      "title": "รายการยอดนิยมจากเมนูบริการ",
+      "description": "สรุปบริการที่ลูกค้าถามหาและเลือกใช้บ่อยที่สุด จากเมนูบริการของ WANAKA Sanctuary",
+      "cardEyebrow": "Best Seller"
+    },
+    "bestSellerGroups": [
+      {
+        "title": "Treatment",
+        "caption": "รายการยอดนิยมในหมวดทรีตเมนต์ผิวหน้า นวดศีรษะ และดูแลผิว",
+        "items": [
+          "Wanaka Ritual x Endota Organic Facial Massage",
+          "Deep Head Ritual Head Massage",
+          "Purify Facial Treatment"
+        ]
+      },
+      {
+        "title": "IV Therapy",
+        "caption": "สูตรยอดนิยมสำหรับฟื้นฟูความสดชื่น ความกระจ่างใส และการโฟกัส",
+        "items": [
+          "RejuveCell",
+          "Radiant Luxe",
+          "Brain Booster"
+        ]
+      },
+      {
+        "title": "Skin Booster",
+        "caption": "ตัวเลือกยอดนิยมสำหรับความกระจ่างใส จุดด่างดำ และความชุ่มชื้น",
+        "items": [
+          "Derma Radiance",
+          "Melas Clear",
+          "Filorga"
+        ]
+      }
+    ],
+    "rituals": {
+      "eyebrow": "Treatment Menu",
+      "title": "ทรีตเมนต์สำหรับผิวหน้า หนังศีรษะ ร่างกาย และการพักฟื้นในชีวิตประจำวัน",
+      "description": "รวมบริการทรีตเมนต์และการนวดที่แสดงอยู่ในเมนูบริการของ WANAKA Sanctuary"
+    },
+    "ritualCollections": [
+      {
+        "id": "facial-treatment",
+        "eyebrow": "Facial Treatment",
+        "title": "Facial Treatment",
+        "description": "ทรีตเมนต์ผิวหน้าที่เน้นความชุ่มชื้น การยกกระชับ และการฟื้นคืนสมดุลอย่างอ่อนโยน",
+        "alt": "ทรีตเมนต์ผิวหน้าที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Wanaka Ritual x Endota Organic",
+            "price": "THB 2,800",
+            "duration": "60 นาที",
+            "description": "ดูแลผิวหน้าด้วยการนวดเพื่อความผ่อนคลาย ที่ช่วยเติมความชุ่มชื้นอย่างล้ำลึก และฟื้นคืนสมดุลให้ผิวอย่างอ่อนโยน"
+          },
+          {
+            "title": "Wanaka Timeless Lift",
+            "price": "THB 3,900",
+            "duration": "90 นาที",
+            "description": "เทคนิคการนวดยกกระชับ เสริมความกระชับของผิว ช่วยให้ผิวเรียบเนียน เส้นริ้วดูจางลง กรอบหน้าชัดขึ้น และฟื้นคืนพลังชีวิตให้ผิว เปล่งประกายอย่างอ่อนโยน"
+          }
+        ]
+      },
+      {
+        "id": "head-massage-spa",
+        "eyebrow": "Head Massage & Spa",
+        "title": "Head Massage & Spa",
+        "description": "การดูแลหนังศีรษะและศีรษะเพื่อคลายความตึงเครียดและให้ร่างกายได้พักอย่างลึกขึ้น",
+        "alt": "เฮดสปาและการนวดศีรษะที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Deep Head Ritual (Massage oil)",
+            "price": "THB 1,600",
+            "duration": "75 นาที",
+            "description": "การนวดศีรษะที่ผ่อนคลายอย่างล้ำลึก ช่วยคลายความตึงเครียดจากหนังศีรษะ ขมับ และจิตใจ พร้อมช่วยกระตุ้นการไหลเวียนโลหิต (รวมนวดคอ บ่า ไหล่)"
+          },
+          {
+            "title": "Express-Deep Head Ritual (Massage oil)",
+            "price": "THB 1,000",
+            "duration": "45 นาที",
+            "description": "การนวดศีรษะที่ผ่อนคลายอย่างล้ำลึก ช่วยคลายความตึงเครียดจากหนังศีรษะ ขมับ พร้อมช่วยกระตุ้นการไหลเวียนโลหิต"
+          },
+          {
+            "title": "Relaxation Head Spa (Massage and Shampooing)",
+            "price": "THB 1,600",
+            "duration": "75 นาที",
+            "description": "เฮดสปาที่มอบความผ่อนคลาย ผสานการทำความสะอาดอย่างอ่อนโยนเข้ากับสัมผัสจากธรรมชาติ"
+          }
+        ]
+      },
+      {
+        "id": "aroma-body-massage",
+        "eyebrow": "Aroma Body Massage",
+        "title": "Aroma Body Massage",
+        "description": "การนวดอโรมาที่ค่อย ๆ พาร่างกายกลับสู่ความสงบและผ่อนคลายทั้งตัว",
+        "alt": "การนวดอโรมาที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Rest & Relax Ritual",
+            "price": "THB 1,200 / 1,700 / 2,200",
+            "duration": "60 / 90 / 120 นาที",
+            "description": "คลายความตึงเครียด ฟื้นคืนสมดุล และดื่มด่ำกับช่วงเวลาแห่งการผ่อนคลาย - การรีเซ็ตอย่างสงบสำหรับทั้งร่างกายและจิตใจ"
+          }
+        ]
+      },
+      {
+        "id": "hand-feet",
+        "eyebrow": "Hand & Feet",
+        "title": "Hand & Feet",
+        "description": "บริการดูแลมือและเท้าที่ช่วยผ่อนคลายและคืนสมดุลได้อย่างรวดเร็ว",
+        "alt": "การนวดมือและเท้าที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Hand & Feet Harmony",
+            "price": "THB 700",
+            "duration": "45 นาที",
+            "description": "การนวดมือและเท้าที่ผ่อนคลาย ช่วยคลายความตึงเครียด กระตุ้นการไหลเวียนโลหิต บรรเทาความเครียด และฟื้นคืนความสมดุลให้ร่างกาย"
+          }
+        ]
+      },
+      {
+        "id": "special-menu",
+        "eyebrow": "Special Menu",
+        "title": "Special Menu",
+        "description": "บริการสระและเป่าเบา ๆ ที่จับคู่ได้ดีกับการดูแลหนังศีรษะและเฮดสปา",
+        "alt": "บริการสระผมและเป่าผมที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Hair Refresh Ritual (Wash + Blow)",
+            "price": "THB 500 / 300*",
+            "description": "ทำความสะอาดอย่างอ่อนโยน และด้วยผลิตภัณฑ์ธรรมชาติ พร้อมปลุกความสบายและความผ่อนคลาย",
+            "note": "*เมื่อนวด Deep Head"
+          },
+          {
+            "title": "Unlimited- Hair Refresh Ritual (Wash & Blow)",
+            "price": "THB 3,500 / Month",
+            "description": "ไม่จำกัดครั้ง - ทำความสะอาดอย่างอ่อนโยน และด้วยผลิตภัณฑ์ธรรมชาติ พร้อมปลุกความสบายและความผ่อนคลาย",
+            "badge": "HOT!"
+          }
+        ]
+      },
+      {
+        "id": "other-facial-treatment",
+        "eyebrow": "Other Facial Treatment",
+        "title": "Other Facial Treatment",
+        "description": "ตัวเลือกเสริมสำหรับการดูแลผิวหน้าและการมาสก์ผิวเพิ่มเติม",
+        "alt": "เมนูทรีตเมนต์ผิวหน้าเพิ่มเติมที่ WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Purify Treatment 1 Vitamin",
+            "price": "THB 1,500"
+          },
+          {
+            "title": "Purify Treatment 2 Vitamins",
+            "price": "THB 1,900"
+          },
+          {
+            "title": "Facial Mask",
+            "price": "THB 1,200"
+          }
+        ]
+      }
+    ],
+    "ivTherapy": {
+      "eyebrow": "IV Therapy",
+      "title": "สูตรฟื้นฟูสำหรับผิว ความสดชื่น การโฟกัส และการดูแลร่างกายในแต่ละวัน",
+      "description": "เมนู IV ของ WANAKA ครอบคลุมทั้งความกระจ่างใส การต้านอนุมูลอิสระ ภูมิคุ้มกัน สมอง การดีท็อกซ์ และการฟื้นฟูตามไลฟ์สไตล์",
+      "imageAlt": "ห้อง IV Therapy ที่ WANAKA Sanctuary"
+    },
+    "ivTherapyClusters": [
+      {
+        "title": "Glow & Beauty",
+        "description": "สูตรที่เน้นความกระจ่างใส ความชุ่มชื้น และความเปล่งปลั่งของผิว",
+        "items": [
+          {
+            "title": "Radiant Luxe",
+            "price": "THB 5,900",
+            "description": "บำรุงผิวให้ดูกระจ่างใส เรียบเนียน ฉ่ำวาว ลดความหมองคล้ำ ผิวแลดูอ่อนเยาว์"
+          },
+          {
+            "title": "Soft Glow Renewal",
+            "price": "THB 3,900",
+            "description": "บำรุงผิวให้ดูสดใสชุ่มชื้น"
+          },
+          {
+            "title": "Inner Glow",
+            "price": "THB 3,900",
+            "description": "สารต้านอนุมูลอิสระที่ทรงพลัง ช่วยขับสารพิษและเสริมการทำงานของตับ ช่วยให้ผิวดูกระจ่างใส ช่วยดูแลสุขภาพระดับเซลล์โดยรวม"
+          }
+        ]
+      },
+      {
+        "title": "Anti-Aging & Antioxidant",
+        "description": "ตัวเลือกสำหรับการต้านอนุมูลอิสระและฟื้นฟูระดับเซลล์ในระยะยาว",
+        "items": [
+          {
+            "title": "RejuveCell",
+            "price": "THB 6,900",
+            "description": "ช่วยชะลอความเสื่อมของเซลล์ สร้างพลังงานให้เซลล์ในร่างกาย ทำให้ร่างกายดูอ่อนวัยตั้งแต่ระดับเซลล์ทั่วร่างกาย"
+          },
+          {
+            "title": "Anti-Oxidant",
+            "price": "THB 3,900",
+            "description": "ช่วยต้านอนุมูลอิสระ ฟื้นฟูเซลล์และชะลอความเสื่อมของร่างกาย"
+          }
+        ]
+      },
+      {
+        "title": "Immunity Recovery",
+        "description": "สูตรที่ช่วยเสริมความสดชื่น ภูมิคุ้มกัน และการฟื้นฟูร่างกาย",
+        "items": [
+          {
+            "title": "Immune Booster",
+            "price": "THB 4,900",
+            "description": "เพิ่มภูมิคุ้มกันให้ร่างกายสดชื่นแข็งแรงและเสริมการทำงานของตับให้ดียิ่งขึ้น"
+          },
+          {
+            "title": "Holistic Boost",
+            "price": "THB 4,900",
+            "description": "เสริมพลังงานและเพิ่มภูมิคุ้มกันให้ร่างกาย ฟื้นฟูเซลล์อย่างครอบคลุม ทำให้รู้สึกสดชื่นมากขึ้น"
+          },
+          {
+            "title": "Vit D",
+            "price": "THB 3,900",
+            "description": "เสริมสร้างวิตามิน D ช่วยเพิ่มการดูดซึมแคลเซียมและฟอสฟอรัสจากลำไส้ ช่วยกระตุ้นและควบคุมการทำงานของเซลล์เม็ดเลือดขาวในระบบภูมิคุ้มกันให้ทำงานได้อย่างมีประสิทธิภาพ"
+          }
+        ]
+      },
+      {
+        "title": "Brain Performance",
+        "description": "ตัวเลือกสำหรับการโฟกัส ความจำ และการพักผ่อนอย่างมีคุณภาพ",
+        "items": [
+          {
+            "title": "Brain Booster",
+            "price": "THB 4,900",
+            "description": "ช่วยกระตุ้นการสร้างเซลล์ประสาทใหม่ ช่วยเพิ่มการไหลเวียนเลือดในสมอง เสริมความจำ สมาธิ การรับรู้ข้อมูล ลดความเสื่อมของสมองในผู้สูงอายุ"
+          },
+          {
+            "title": "Harmony Sleep",
+            "price": "THB 3,900",
+            "description": "ช่วยลดความเครียด ผ่อนคลายร่างกาย ส่งเสริมการนอนหลับให้ดีขึ้น และรู้สึกสดชื่นหลังตื่นนอน"
+          }
+        ]
+      },
+      {
+        "title": "Detox & Organ",
+        "description": "สูตรที่ช่วยดูแลระบบย่อย การทำงานของตับ และการฟื้นคืนสมดุลจากภายใน",
+        "items": [
+          {
+            "title": "Liver Detox",
+            "price": "THB 4,900",
+            "description": "ฟื้นฟูและเสริมการดีท็อกซ์ตับ ปกป้องเซลล์ตับจากสารพิษและแอลกอฮอล์ ลดการสะสมไขมันพอกตับ เพิ่มพลังงานให้ร่างกาย"
+          },
+          {
+            "title": "Gastic Balance Super Detox",
+            "price": "THB 4,900",
+            "description": "ปรับสมดุลระบบทางเดินอาหาร ช่วยการทำงานของตับและการขับสารพิษ ลดอาการแน่น ท้องอืด กรดไหลย้อน อ่อนล้า จากระบบย่อยที่เสียสมดุล"
+          },
+          {
+            "title": "Inner Strength",
+            "price": "THB 3,900",
+            "description": "ช่วยสร้างกล้ามเนื้อ กระตุ้นการเผาผลาญ บรรเทาอาการเมื่อยล้า อ่อนเพลีย และช่วยฟื้นฟูพลังงานร่างกาย"
+          }
+        ]
+      },
+      {
+        "title": "Lifestyle",
+        "description": "การฟื้นฟูที่เหมาะกับช่วงชีวิตที่ใช้พลังงานเยอะ การเดินทาง หรือกิจกรรมหนักต่อเนื่อง",
+        "items": [
+          {
+            "title": "Anti-Hangover",
+            "price": "THB 4,900",
+            "description": "ฟื้นฟู ปรับสมดุลร่างกาย จากความอ่อนล้าเช่น จากการเดินทาง หรือช่วงเวลาสังสรรค์"
+          },
+          {
+            "title": "Men's Health",
+            "price": "THB 4,900",
+            "description": "เพิ่มพลังงาน ลดอ่อนล้า สนับสนุนสมรรถภาพและความอึด ฟื้นฟูกล้ามเนื้อหลังออกกำลังกาย / ทำงานหนัก"
+          }
+        ]
+      }
+    ],
+    "aestheticTreatment": {
+      "eyebrow": "Aesthetic Treatment",
+      "title": "เมนูราคาในหมวด injectable และ medical aesthetic",
+      "description": "รวมราคาตามเมนูปัจจุบันของโบท็อกซ์แต่ละแบรนด์ และ We Govy ที่ WANAKA Sanctuary"
+    },
+    "aestheticTreatments": [
+      {
+        "title": "Botox- Allegan 100u",
+        "price": "THB 25,900"
+      },
+      {
+        "title": "Botox- Xeomin 100u",
+        "price": "THB 18,900"
+      },
+      {
+        "title": "Botox- Aestox 100u",
+        "price": "THB 9,900"
+      },
+      {
+        "title": "Botox- Nabota 100u",
+        "price": "THB 9,900"
+      },
+      {
+        "title": "We Govy 0.5mg",
+        "price": "THB 14,900"
+      },
+      {
+        "title": "We Govy 1 mg",
+        "price": "THB 17,900"
+      }
+    ],
+    "skinBooster": {
+      "eyebrow": "Skin Booster",
+      "title": "ตัวเลือกสำหรับความชุ่มชื้น การฟื้นฟู การยกกระชับ และการดูแลเม็ดสีผิว",
+      "intro": "รวม Skin Booster ที่ช่วยดูแลเรื่องความชุ่มชื้น คอลลาเจน การฟื้นฟูผิว รูปหน้า และความกระจ่างใสของผิว",
+      "imageAlt": "ห้องทรีตเมนต์ผิวที่ WANAKA Sanctuary"
+    },
+    "premiumSkinBoosters": [
+      {
+        "title": "Harmonyca",
+        "price": "THB 25,900",
+        "description": "ช่วยเติมเต็มริ้วรอยและความหย่อนคล้อย และยกกระชับผิวไปพร้อมกัน"
+      },
+      {
+        "title": "Profhilo",
+        "price": "THB 25,000",
+        "description": "ช่วยฟื้นฟูและปรับโครงสร้างผิวให้แข็งแรงขึ้น โดยการเพิ่มความชุ่มชื้น กระตุ้นการสร้างคอลลาเจนและอีลาสติน ทำให้ผิวอิ่มฟู กระชับ เรียบเนียน"
+      },
+      {
+        "title": "Juvelook",
+        "price": "THB 17,900",
+        "description": "ช่วยฟื้นฟูผิวโดยการกระตุ้นการสร้างคอลลาเจนและให้ความชุ่มชื้น ทำให้ผิวเรียบเนียน กระจ่างใส ดูแลริ้วรอยตื้น ใต้ตาคล้ำ รูขุมขนกว้าง และผิวขาดความยืดหยุ่น"
+      },
+      {
+        "title": "Rejuran (หน้า)",
+        "price": "THB 11,000",
+        "description": "ฟื้นฟูและซ่อมแซมผิวที่อ่อนแอ เพิ่มความชุ่มชื้นให้ผิวดูอิ่มน้ำ เสริมความแข็งแรงของ skin barrier ช่วยให้ผิวเรียบเนียน ดูกระจ่างใสขึ้น"
+      },
+      {
+        "title": "Rejuran (ใต้ตา)",
+        "price": "THB 11,000",
+        "description": "ฟื้นฟูผิวใต้ตาที่บางและอ่อนแอ เพิ่มความชุ่มชื้น ลดเลือนริ้วรอยเล็ก ๆ รอบดวงตา เสริมความแข็งแรงของผิวบริเวณรอบดวงตา"
+      }
+    ],
+    "everydaySkinBoosters": [
+      {
+        "title": "Radiance & Hydration",
+        "description": "ตัวเลือกที่เน้นเติมความชุ่มชื้น ปรับผิวให้เรียบเนียน และเพิ่มความกระจ่างใส",
+        "items": [
+          {
+            "title": "Filorga",
+            "price": "THB 9,900",
+            "description": "เติมความชุ่มชื้นให้ผิวอย่างล้ำลึก ฟื้นฟูผิวหมองคล้ำให้กลับมาเปล่งประกายอย่างเป็นธรรมชาติ ช่วยลดเลือนริ้วรอยเล็ก ๆ และปรับผิวให้เรียบเนียนขึ้น"
+          },
+          {
+            "title": "Meso Aurora Clear",
+            "price": "THB 4,900",
+            "description": "ช่วยปรับสมดุลผิวให้ผิวดูสว่างใส เรียบเนียน และสีผิวสม่ำเสมอยิ่งขึ้น"
+          },
+          {
+            "title": "Super Glow",
+            "price": "THB 4,900",
+            "description": "ช่วยเติมความชุ่มชื้นลึกถึงชั้นผิว ให้ผิวอิ่มน้ำยาวนาน ปรับพื้นผิวให้เรียบเนียนขึ้น เสริมความกระจ่างใส ให้ผิวดูเปล่งประกายอย่างเป็นธรรมชาติ"
+          },
+          {
+            "title": "Derma Radiance",
+            "price": "THB 4,900",
+            "description": "ช่วยลดเลือนรอยสิว รอยดำ รอยแดง ฝ้ากระ และกระตุ้นการสร้างคอลลาเจนเพื่อเพิ่มความยืดหยุ่นของผิว"
+          }
+        ]
+      },
+      {
+        "title": "Contour & Recovery",
+        "description": "ตัวเลือกที่เน้นกระชับผิว ฟื้นฟูผิว และดูแลรูปหน้าเฉพาะจุด",
+        "items": [
+          {
+            "title": "Meso Fat",
+            "price": "THB 4,900",
+            "description": "สลายไขมันและกระชับสัดส่วนเฉพาะจุด ช่วยสลายไขมันส่วนเกินที่สะสมตามใบหน้า พร้อมช่วยให้ผิวกระชับขึ้น"
+          },
+          {
+            "title": "Collagen Lift",
+            "price": "THB 4,900",
+            "description": "ช่วยลดสิว ผดผื่น ทำให้ผิวแข็งแรงขึ้น ฟื้นฟูผิวให้มีสุขภาพดี และปรับผิวให้กระจ่างใสขึ้น ช่วยเรื่องการไหลเวียนของเลือดในผิว กระตุ้นการสร้างคอลลาเจน และป้องกันการเกิดจุดด่างดำ ฝ้า กระ"
+          },
+          {
+            "title": "Youth Cell",
+            "price": "THB 4,900",
+            "description": "ประกอบไปด้วย DNA ปลาแซลมอน และ Hyaluronic Acid ที่มีความบริสุทธิ์ ฟื้นฟูสภาพผิวหน้าที่แห้งเสีย ลดรอยดำรอยแดงจากสิว ผดผื่น ลดสิวอักเสบ ลดรูขุมขนกว้าง เติมเต็มหลุมสิว"
+          }
+        ]
+      },
+      {
+        "title": "Pigment Support",
+        "description": "ตัวเลือกสำหรับดูแลฝ้า กระ จุดด่างดำ และสีผิวที่ไม่สม่ำเสมอ",
+        "items": [
+          {
+            "title": "Melas Clear",
+            "price": "THB 3,900",
+            "description": "ช่วยลดเลือนฝ้าและภาวะผิวคล้ำเสียสะสม เสริมการสร้างคอลลาเจนและความยืดหยุ่นของผิว ปรับสีผิวให้ดูสม่ำเสมอ เรียบเนียน"
+          },
+          {
+            "title": "Melas Clear (สะกิดด้วยเข็มเล็ก)",
+            "price": "THB 2,900"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "eyebrow": "ติดต่อ",
+      "title": "สอบถามคิว รายละเอียดบริการ และความเหมาะสมก่อนจอง",
+      "description": "ติดต่อทีม WANAKA เพื่อสอบถามคิว ราคา รายละเอียดเมนู และคำแนะนำก่อนรับบริการ",
+      "disclaimer": "บริการด้าน aesthetic และหัตถการบางรายการต้องประเมินความเหมาะสมก่อนรับบริการ",
+      "ctaLabel": "สอบถามตอนนี้"
+    },
+    "contactDetails": [
+      {
+        "id": "line",
+        "label": "LINE",
+        "value": "@wanaka.th"
+      },
+      {
+        "id": "phone",
+        "label": "โทร",
+        "value": "088 665 1936"
+      },
+      {
+        "id": "email",
+        "label": "อีเมล",
+        "value": "wanakasanctuary@gmail.com"
+      },
+      {
+        "id": "address",
+        "label": "ที่อยู่",
+        "value": "99/65 ตำบลบางแก้ว อำเภอบางพลี สมุทรปราการ 10540"
+      }
+    ],
+    "footer": {
+      "copyright": "© {year} Wanaka Sanctuary. สงวนลิขสิทธิ์",
+      "links": [
+        {
+          "label": "ขายดี",
+          "href": "#highlights"
+        },
+        {
+          "label": "ทรีตเมนต์",
+          "href": "#rituals"
+        },
+        {
+          "label": "IV Therapy",
+          "href": "#iv-therapy"
+        },
+        {
+          "label": "Aesthetic",
+          "href": "#aesthetic-treatment"
+        },
+        {
+          "label": "Skin Booster",
+          "href": "#skin-booster"
+        },
+        {
+          "label": "ติดต่อ",
+          "href": "#contact"
+        }
+      ]
+    }
   }
 }

@@ -11,9 +11,10 @@ interface NavItem {
 
 interface MobileMenuProps {
   navItems: NavItem[]
+  ctaLabel?: string
 }
 
-export default function MobileMenu({ navItems }: MobileMenuProps) {
+export default function MobileMenu({ navItems, ctaLabel = 'Book a Ritual' }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => setIsOpen(!isOpen)
@@ -71,7 +72,7 @@ export default function MobileMenu({ navItems }: MobileMenuProps) {
               className="block w-full rounded-full border border-[#5b6d65] px-5 py-2.5 text-center text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
               eventName="click_book_ritual_mobile"
             >
-              Book a Ritual
+              {ctaLabel}
             </TrackedLink>
           </div>
         </nav>

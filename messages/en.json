@@ -13,6 +13,11 @@
   "navigation": {
     "home": "Home",
     "about": "About",
+    "mission": "Mission",
+    "services": "Services",
+    "experience": "Experience",
+    "faq": "FAQ",
+    "location": "Location",
     "contact": "Contact"
   },
   "reviews": {
@@ -34,5 +39,531 @@
     "fri": "Friday",
     "sat": "Saturday",
     "hours": "8 AM - 8 PM"
+  },
+  "services": {
+    "heading": "Our Services",
+    "title": "Wellness & Beauty Menu",
+    "description": "Discover our comprehensive range of treatments designed to relax, restore, and rejuvenate.",
+    "duration": "Duration",
+    "price": "Price",
+    "bookNow": "Book Now",
+    "viewFullMenu": "View Full Menu"
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Services | Wanaka Sanctuary",
+      "description": "Explore the WANAKA Sanctuary service menu, including facial rituals, head spa, IV therapy, aesthetic treatments, and skin boosters."
+    },
+    "navItems": [
+      {
+        "label": "Highlights",
+        "href": "#highlights"
+      },
+      {
+        "label": "Rituals",
+        "href": "#rituals"
+      },
+      {
+        "label": "IV Therapy",
+        "href": "#iv-therapy"
+      },
+      {
+        "label": "Skin Booster",
+        "href": "#skin-booster"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "headerCtaLabel": "Book a Ritual",
+    "hero": {
+      "eyebrow": "Wellness & Beauty Menu",
+      "title": "Explore WANAKA's full service menu for rituals, IV therapy, and skin-focused care.",
+      "description": "This page brings together the latest WANAKA Sanctuary menu - from calming facial and head spa rituals to IV drips, aesthetic treatments, and skin boosters.",
+      "primaryCtaLabel": "Enquire on LINE",
+      "secondaryCtaLabel": "Explore Menu",
+      "stats": [
+        {
+          "value": "6",
+          "label": "ritual collections"
+        },
+        {
+          "value": "15",
+          "label": "IV therapy options"
+        },
+        {
+          "value": "18",
+          "label": "injectables and boosters"
+        }
+      ]
+    },
+    "highlights": {
+      "eyebrow": "Our Best Sellers",
+      "title": "Most-requested treatments across the menu.",
+      "description": "A quick view of the services guests ask for most often, drawn directly from the service menu.",
+      "cardEyebrow": "Best Seller"
+    },
+    "bestSellerGroups": [
+      {
+        "title": "Treatment",
+        "caption": "Guest favorites for facial, head, and purifying care.",
+        "items": [
+          "Wanaka Ritual x Endota Organic Facial Massage",
+          "Deep Head Ritual Head Massage",
+          "Purify Facial Treatment"
+        ]
+      },
+      {
+        "title": "IV Therapy",
+        "caption": "Popular drips for renewal, glow, and sharper focus.",
+        "items": [
+          "RejuveCell",
+          "Radiant Luxe",
+          "Brain Booster"
+        ]
+      },
+      {
+        "title": "Skin Booster",
+        "caption": "Frequently chosen boosters for clarity, pigment care, and hydration.",
+        "items": [
+          "Derma Radiance",
+          "Melas Clear",
+          "Filorga"
+        ]
+      }
+    ],
+    "rituals": {
+      "eyebrow": "Treatment Menu",
+      "title": "Signature rituals for face, scalp, body, and everyday reset.",
+      "description": "Browse the wellness treatments currently listed in the WANAKA service menu."
+    },
+    "ritualCollections": [
+      {
+        "id": "facial-treatment",
+        "eyebrow": "Facial Treatment",
+        "title": "Facial Treatment",
+        "description": "Facial rituals focused on hydration, lifting, and restorative calm.",
+        "alt": "Facial treatment ritual at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Wanaka Ritual x Endota Organic",
+            "price": "THB 2,800",
+            "duration": "60 mins",
+            "description": "A calming facial ritual that deeply replenishes moisture and restores balance to the skin."
+          },
+          {
+            "title": "Wanaka Timeless Lift",
+            "price": "THB 3,900",
+            "duration": "90 mins",
+            "description": "A mindful lifting technique that awakens firmness from within. Smooth lines, redefine contours, and renew skin vitality - restoring a soft, ageless radiance."
+          }
+        ]
+      },
+      {
+        "id": "head-massage-spa",
+        "eyebrow": "Head Massage & Spa",
+        "title": "Head Massage & Spa",
+        "description": "Scalp and head care to release tension and reset the nervous system.",
+        "alt": "Head massage and spa ritual at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Deep Head Ritual (Massage oil)",
+            "price": "THB 1,600",
+            "duration": "75 mins",
+            "description": "A deeply soothing head massage that eases tension from the scalp and temples, improves circulation, and includes neck and shoulder care."
+          },
+          {
+            "title": "Express-Deep Head Ritual (Massage oil)",
+            "price": "THB 1,000",
+            "duration": "45 mins",
+            "description": "A deeply soothing head massage that eases tension from the scalp, temples, and mind while helping improve circulation."
+          },
+          {
+            "title": "Relaxation Head Spa (Massage and Shampooing)",
+            "price": "THB 1,600",
+            "duration": "75 mins",
+            "description": "A calming head spa that blends soft cleansing with nature-inspired touch."
+          }
+        ]
+      },
+      {
+        "id": "aroma-body-massage",
+        "eyebrow": "Aroma Body Massage",
+        "title": "Aroma Body Massage",
+        "description": "Body massage sessions paced for full-body stillness and release.",
+        "alt": "Aroma body massage experience at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Rest & Relax Ritual",
+            "price": "THB 1,200 / 1,700 / 2,200",
+            "duration": "60 / 90 / 120 mins",
+            "description": "Relieve stress, restore balance, and enjoy a slow moment of pure relaxation - a peaceful reset for the body and soul."
+          }
+        ]
+      },
+      {
+        "id": "hand-feet",
+        "eyebrow": "Hand & Feet",
+        "title": "Hand & Feet",
+        "description": "Grounding care for hands and feet when you need fast, targeted relief.",
+        "alt": "Hand and feet massage at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Hand & Feet Harmony",
+            "price": "THB 700",
+            "duration": "45 mins",
+            "description": "A soothing hand and foot massage that melts away tension, improves circulation, eases stress, and restores a sense of balance."
+          }
+        ]
+      },
+      {
+        "id": "special-menu",
+        "eyebrow": "Special Menu",
+        "title": "Special Menu",
+        "description": "Simple hair refresh rituals that pair well with head care visits.",
+        "alt": "Hair refresh ritual at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Hair Refresh Ritual (Wash + Blow)",
+            "price": "THB 500 / 300*",
+            "description": "A refreshing hair and scalp ritual that gently cleanses, and awakens comfort.",
+            "note": "*for Deep Head Service"
+          },
+          {
+            "title": "Unlimited- Hair Refresh Ritual (Wash & Blow)",
+            "price": "THB 3,500 / Month",
+            "description": "A refreshing hair and scalp ritual that gently cleanses, and awakens comfort.",
+            "badge": "Hot"
+          }
+        ]
+      },
+      {
+        "id": "other-facial-treatment",
+        "eyebrow": "Other Facial Treatment",
+        "title": "Other Facial Treatment",
+        "description": "Additional facial options for purifying care and mask-based support.",
+        "alt": "Additional facial treatment options at WANAKA Sanctuary",
+        "items": [
+          {
+            "title": "Purify Treatment 1 Vitamin",
+            "price": "THB 1,500"
+          },
+          {
+            "title": "Purify Treatment 2 Vitamins",
+            "price": "THB 1,900"
+          },
+          {
+            "title": "Facial Mask",
+            "price": "THB 1,200"
+          }
+        ]
+      }
+    ],
+    "ivTherapy": {
+      "eyebrow": "IV Therapy",
+      "title": "Targeted drips for glow, recovery, focus, and everyday resilience.",
+      "description": "The WANAKA IV menu spans beauty support, antioxidant renewal, immunity, brain performance, detox, and lifestyle recovery.",
+      "imageAlt": "Boutique IV therapy room at WANAKA Sanctuary"
+    },
+    "ivTherapyClusters": [
+      {
+        "title": "Glow & Beauty",
+        "description": "Skin-focused formulas designed to support clarity, hydration, and radiance.",
+        "items": [
+          {
+            "title": "Radiant Luxe",
+            "price": "THB 5,900",
+            "description": "Enhances skin clarity and smoothness, revealing a luminous, youthful glow."
+          },
+          {
+            "title": "Soft Glow Renewal",
+            "price": "THB 3,900",
+            "description": "Nourishes the skin for a fresh, hydrated look."
+          },
+          {
+            "title": "Inner Glow",
+            "price": "THB 3,900",
+            "description": "Helps detoxify the body, brightens skin, reduces oxidative stress, and promotes overall cellular health."
+          }
+        ]
+      },
+      {
+        "title": "Anti-Aging & Antioxidant",
+        "description": "Cellular defense and renewal support for long-term vitality.",
+        "items": [
+          {
+            "title": "RejuveCell",
+            "price": "THB 6,900",
+            "description": "Helps slow cellular aging and enhances cellular energy production."
+          },
+          {
+            "title": "Anti-Oxidant",
+            "price": "THB 3,900",
+            "description": "Provides antioxidant support to repair cells and slow down bodily deterioration."
+          }
+        ]
+      },
+      {
+        "title": "Immunity Recovery",
+        "description": "Support for energy, resilience, and immune function.",
+        "items": [
+          {
+            "title": "Immune Booster",
+            "price": "THB 4,900",
+            "description": "Enhances immunity, helping you feel revitalized and resilient."
+          },
+          {
+            "title": "Holistic Boost",
+            "price": "THB 4,900",
+            "description": "Boosts energy and strengthens the immune system, helping you feel refreshed and revitalized."
+          },
+          {
+            "title": "Vit D",
+            "price": "THB 3,900",
+            "description": "Supports vitamin D replenishment, helps calcium and phosphorus absorption, and helps immune cells work more effectively."
+          }
+        ]
+      },
+      {
+        "title": "Brain Performance",
+        "description": "For mental clarity, restorative calm, and cognitive support.",
+        "items": [
+          {
+            "title": "Brain Booster",
+            "price": "THB 4,900",
+            "description": "Promotes neurogenesis and improves brain blood flow to strengthen memory, attention, and cognitive processing."
+          },
+          {
+            "title": "Harmony Sleep",
+            "price": "THB 3,900",
+            "description": "Helps ease stress, relax the body, support better sleep, and leave you feeling refreshed on waking."
+          }
+        ]
+      },
+      {
+        "title": "Detox & Organ",
+        "description": "Digestive and liver-support blends for recovery and internal balance.",
+        "items": [
+          {
+            "title": "Liver Detox",
+            "price": "THB 4,900",
+            "description": "Restores and enhances liver detoxification, protects liver cells from toxins and alcohol, reduces fatty liver accumulation, and boosts energy."
+          },
+          {
+            "title": "Gastric Balance Super Detox",
+            "price": "THB 4,900",
+            "description": "Balances the digestive system, supports liver function and detoxification, and helps ease bloating, reflux, and digestive fatigue."
+          },
+          {
+            "title": "Inner Strength",
+            "price": "THB 3,900",
+            "description": "Enhances vitality, muscle support, and energy restoration."
+          }
+        ]
+      },
+      {
+        "title": "Lifestyle",
+        "description": "Practical recovery support for demanding routines and social schedules.",
+        "items": [
+          {
+            "title": "Anti-Hangover",
+            "price": "THB 4,900",
+            "description": "Helps rebalance the body after fatigue from travel, celebrations, or other draining routines."
+          },
+          {
+            "title": "Men's Health",
+            "price": "THB 4,900",
+            "description": "Boosts energy, reduces fatigue, supports stamina and physical performance."
+          }
+        ]
+      }
+    ],
+    "aestheticTreatment": {
+      "eyebrow": "Aesthetic Treatment",
+      "title": "Injectable and medical-aesthetic menu pricing.",
+      "description": "Current listed prices for botulinum toxin brands and We Govy treatments at WANAKA Sanctuary."
+    },
+    "aestheticTreatments": [
+      {
+        "title": "Botox- Allegan 100u",
+        "price": "THB 25,900"
+      },
+      {
+        "title": "Botox- Xeomin 100u",
+        "price": "THB 18,900"
+      },
+      {
+        "title": "Botox- Aestox 100u",
+        "price": "THB 9,900"
+      },
+      {
+        "title": "Botox- Nabota 100u",
+        "price": "THB 9,900"
+      },
+      {
+        "title": "We Govy 0.5mg",
+        "price": "THB 14,900"
+      },
+      {
+        "title": "We Govy 1 mg",
+        "price": "THB 17,900"
+      }
+    ],
+    "skinBooster": {
+      "eyebrow": "Skin Booster",
+      "title": "Boosters for hydration, repair, contour, and pigment support.",
+      "intro": "Explore advanced boosters for hydration, collagen support, repair, contouring, and overall skin quality.",
+      "imageAlt": "Skin treatment room at WANAKA Sanctuary"
+    },
+    "premiumSkinBoosters": [
+      {
+        "title": "Harmonyca",
+        "price": "THB 25,900",
+        "description": "Combines deep hydration with advanced collagen stimulation, helping to lift, firm, and restore facial volume."
+      },
+      {
+        "title": "Profhilo",
+        "price": "THB 25,000",
+        "description": "Deeply hydrates and remodels the skin."
+      },
+      {
+        "title": "Juvelook",
+        "price": "THB 17,900",
+        "description": "Stimulates collagen regeneration, tightens skin, improves elasticity, and smooths fine lines."
+      },
+      {
+        "title": "Rejuran (Face)",
+        "price": "THB 11,000",
+        "description": "Supports skin repair and regeneration. Improves hydration for a plumper, healthier look. Helps reduce the appearance of fine lines."
+      },
+      {
+        "title": "Rejuran (Undereye)",
+        "price": "THB 11,000",
+        "description": "Helps repair and strengthen thin, fragile under-eye skin. Improves hydration for a smoother appearance. Brightens the under-eye area."
+      }
+    ],
+    "everydaySkinBoosters": [
+      {
+        "title": "Radiance & Hydration",
+        "description": "Brightening and moisture-focused boosters for smoother, clearer-looking skin.",
+        "items": [
+          {
+            "title": "Filorga",
+            "price": "THB 9,900",
+            "description": "Intensely hydrates skin, revitalizes dull skin to enhance natural luminosity, helps reduce the look of fine lines, and refines skin texture."
+          },
+          {
+            "title": "Meso Aurora Clear",
+            "price": "THB 4,900",
+            "description": "Helps rebalance the skin, leaving it brighter, smoother, and more evenly toned."
+          },
+          {
+            "title": "Super Glow",
+            "price": "THB 4,900",
+            "description": "Helps infuse moisture deep into the skin for long-lasting hydration. Improves overall skin texture, enhances radiance, and creates a more luminous look."
+          },
+          {
+            "title": "Derma Radiance",
+            "price": "THB 4,900",
+            "description": "Helps reduce acne marks, dark spots, redness, and freckles while supporting collagen production for better skin elasticity."
+          }
+        ]
+      },
+      {
+        "title": "Contour & Recovery",
+        "description": "Boosters aimed at firmer texture, targeted contouring, and skin recovery.",
+        "items": [
+          {
+            "title": "Meso Fat",
+            "price": "THB 4,900",
+            "description": "Helps dissolve excess fat accumulated in targeted areas of the face while also promoting firmer, tighter skin."
+          },
+          {
+            "title": "Collagen Lift",
+            "price": "THB 4,900",
+            "description": "Enhancing booster that helps improve skin firmness and elasticity by stimulating natural collagen production."
+          },
+          {
+            "title": "Youth Cell",
+            "price": "THB 4,900",
+            "description": "A deep cellular repair treatment that restores skin health. Helps improve skin density, smooth texture, reduce wrinkles, and soften the appearance of scars."
+          }
+        ]
+      },
+      {
+        "title": "Pigment Support",
+        "description": "Options focused on uneven tone, melasma, and accumulated discoloration.",
+        "items": [
+          {
+            "title": "Melas Clear",
+            "price": "THB 3,900",
+            "description": "Diminishes melasma and hyperpigmentation, supports collagen and elasticity, and encourages a clearer, more even skin surface with reduced discoloration."
+          },
+          {
+            "title": "Melas Clear (Microneedling)",
+            "price": "THB 2,900"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Ask about bookings, availability, and treatment fit.",
+      "description": "Message the WANAKA team for appointment support, menu guidance, and pre-booking questions.",
+      "disclaimer": "Some aesthetic and medical services require assessment before treatment.",
+      "ctaLabel": "Enquire Now"
+    },
+    "contactDetails": [
+      {
+        "id": "line",
+        "label": "LINE",
+        "value": "@wanaka.th"
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "value": "088 665 1936"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "value": "wanakasanctuary@gmail.com"
+      },
+      {
+        "id": "address",
+        "label": "Address",
+        "value": "99/65 Tambon Bang Kaeo, Bang Phli District, Samut Prakan 10540"
+      }
+    ],
+    "footer": {
+      "copyright": "© {year} Wanaka Sanctuary. All rights reserved.",
+      "links": [
+        {
+          "label": "Highlights",
+          "href": "#highlights"
+        },
+        {
+          "label": "Rituals",
+          "href": "#rituals"
+        },
+        {
+          "label": "IV Therapy",
+          "href": "#iv-therapy"
+        },
+        {
+          "label": "Aesthetic",
+          "href": "#aesthetic-treatment"
+        },
+        {
+          "label": "Skin Booster",
+          "href": "#skin-booster"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ]
+    }
   }
 }

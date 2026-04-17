@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import TrackedLink from '@/components/TrackedLink';
 import MobileMenu from '@/components/MobileMenu';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -7,15 +7,7 @@ import GoogleReviews from '@/components/GoogleReviews';
 import LocationMap from '@/components/LocationMap';
 import { useTranslations } from 'next-intl';
 
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Mission', href: '#mission' },
-  { label: 'Services', href: '#services' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Location', href: '#location' },
-  { label: 'Contact', href: '#contact' },
-];
+// Navigation items are now defined inside the component for i18n
 
 const brandPillars = [
   {
@@ -642,6 +634,18 @@ const faqItems = [
 
 export default function HomePage() {
   const tReviews = useTranslations('reviews');
+  const tNav = useTranslations('navigation');
+  const tServices = useTranslations('services');
+
+  const navItems = [
+    { label: tNav('about'), href: '#about' },
+    { label: tNav('mission'), href: '#mission' },
+    { label: tNav('services'), href: '/services' },
+    { label: tNav('experience'), href: '#experience' },
+    { label: tNav('faq'), href: '#faq' },
+    { label: tNav('location'), href: '#location' },
+    { label: tNav('contact'), href: '#contact' },
+  ];
 
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
@@ -859,6 +863,12 @@ export default function HomePage() {
                 Choose a signature service or layer treatments together. Every ritual begins with a
                 grounding welcome and ends with a mindful closing — no rush, just restoration.
               </p>
+              <Link
+                href="/services"
+                className="mt-8 inline-flex rounded-full border border-[#5b6d65] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
+              >
+                {tServices('viewFullMenu')}
+              </Link>
             </div>
             <div className="lg:w-2/3">
               <div className="grid gap-6 md:grid-cols-2">
