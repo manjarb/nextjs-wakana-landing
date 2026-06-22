@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import TrackedLink from '@/components/TrackedLink';
-import MobileMenu from '@/components/MobileMenu';
+import SiteHeader from '@/components/SiteHeader';
 import FAQAccordion from '@/components/FAQAccordion';
 import GoogleReviews from '@/components/GoogleReviews';
 import LocationMap from '@/components/LocationMap';
@@ -9,191 +9,28 @@ import { useTranslations } from 'next-intl';
 
 // Navigation items are now defined inside the component for i18n
 
-const brandPillars = [
-  {
-    title: 'Calm Experience',
-    description: 'Sound, scent, and light choreographed for an instant exhale.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M4 9c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
-        <path d="M4 14c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Caring Hands',
-    description: 'Certified therapists who blend precision with heartfelt warmth.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M5 11.5c2-1.5 4-1.5 6 0 2-1.5 4-1.5 6 0" />
-        <path d="M5 11.5V16c0 1.7 1.3 3 3 3h8c1.7 0 3-1.3 3-3v-4.5" />
-        <path d="M9 8.5a3 3 0 1 1 6 0" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Clean Craft',
-    description: 'Nature-led formulas and mindful details you can trust every visit.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M12 4v4" />
-        <path d="M7 6l10 10" />
-        <path d="M4 14.5C4 10 7.5 6 12 6s8 4 8 8.5S16.5 22 12 22s-8-4-8-7.5Z" />
-      </svg>
-    ),
-  },
-];
 
-const mainServices = [
+const serviceCategories = [
   {
-    title: 'Facial Massage & Treatment',
+    title: 'Relaxation Rituals',
     description:
-      'Bespoke facials that blend calming touch with clean, high-performing products to reawaken glow and confidence.',
-    image: {
-      src: '/images/v2/facial_treatment_01.jpg',
-      alt: 'Guest enjoying a bespoke facial massage treatment',
-    },
+      'A collection of facial, head, and body relaxation treatments designed to ease tension, restore balance, and bring your skin, body, and mind back to a calmer state.',
+    image: '/images/v2/relaxation_head_spa_03.jpg',
+    href: '/services/relaxation',
   },
   {
-    title: 'Head Massage & Spa',
+    title: 'Aesthetic Rituals',
     description:
-      'A sensory head spa ritual that relieves fatigue, soothes the nervous system, and invites deep mental rest.',
-    image: {
-      src: '/images/v2/relaxation_head_spa_03.jpg',
-      alt: 'Immersive head spa ritual with eucalyptus steam',
-    },
+      "Facial treatments and skin renewal programs designed to hydrate, refresh, and restore the skin's natural glow — from soothing facials to advanced skin injections.",
+    image: '/images/v2/facial_treatment_01.jpg',
+    href: '/services/aesthetic',
   },
   {
-    title: 'Hand & Feet Massage',
+    title: 'IV Therapy',
     description:
-      'Gentle, precise care for hands and feet — perfect for mothers, frequent flyers, and anyone craving mindful touch.',
-    image: {
-      src: '/images/generated/service-hand-feet-massage.png',
-      alt: 'Mindful hand and feet massage ritual for mothers and daughters',
-    },
-  },
-  {
-    title: 'IV Drip Therapy',
-    description:
-      'Scientifically curated IV cocktails that replenish from within, paired with soft lighting and personalized aromas.',
-    image: {
-      src: '/images/v2/drip_iv.jpg',
-      alt: 'Boutique IV drip therapy lounge at WANAKA Sanctuary',
-    },
-  },
-];
-
-const missionHighlights = [
-  {
-    title: 'Trained & Trusted Hands',
-    description:
-      'Every treatment is delivered by therapists certified to the highest standards, blending precision with heartfelt hospitality.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.4}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M5 11.5c2-1.5 4-1.5 6 0 2-1.5 4-1.5 6 0" />
-        <path d="M5 11.5V16c0 1.7 1.3 3 3 3h8c1.7 0 3-1.3 3-3v-4.5" />
-        <path d="M9 8.5a3 3 0 1 1 6 0" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Nature-Led Products',
-    description:
-      'Clean, safe, and conscious formulations protect every skin type — especially sensitive guests, mothers, and young families.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.4}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M12 4c-4 0-7 3.4-7 7.6 0 6.1 4.2 8.4 7 9.9 2.8-1.5 7-3.8 7-9.9C19 7.4 16 4 12 4Z" />
-        <path d="M9 12c1.2.8 2.4 1 3.8.6 1.4-.4 2.4-1.2 3.2-2.6" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Hospitality First',
-    description:
-      'Thoughtful touches — warm towels, curated playlists, handwritten notes — turn small rituals into memorable everyday luxuries.',
-    icon: (
-      <svg
-        className="h-10 w-10 text-[#5b6d65]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.4}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M12 21c-4.5-2.6-7-5.7-7-9.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 7 5.5c0 3.8-2.5 6.9-7 9.5Z" />
-        <path d="M9.5 12.5 11 14l3.5-3.5" />
-      </svg>
-    ),
-  },
-];
-
-const signatureJourneys = [
-  {
-    title: 'Express Reset',
-    description:
-      '45-minute school-run ritual with facial, head, and palm massage — served with botanical drinks and mindful snacks.',
-  },
-  {
-    title: 'Happy Bar Lounge',
-    description:
-      'A cozy hospitality corner for journaling, refreshments, and lingering moments of quiet before heading home.',
-  },
-  {
-    title: 'Private Retreat',
-    description:
-      'Reserve the sanctuary for families or close friends to share restorative experiences without interruption.',
-  },
-  {
-    title: 'Kids Friendly Rituals',
-    description:
-      'Playful, gentle treatments designed for mothers and daughters to bond through shared self-care.',
+      'Restorative IV wellness rituals designed to support hydration, replenish essential nutrients, and help restore your body\'s natural balance.',
+    image: '/images/v2/drip_iv.jpg',
+    href: '/services/iv-therapy',
   },
 ];
 
@@ -634,59 +471,14 @@ const faqItems = [
 
 export default function HomePage() {
   const tReviews = useTranslations('reviews');
-  const tNav = useTranslations('navigation');
   const tServices = useTranslations('services');
-
-  const navItems = [
-    { label: tNav('about'), href: '#about' },
-    { label: tNav('mission'), href: '#mission' },
-    { label: tNav('services'), href: '/services' },
-    { label: tNav('experience'), href: '#experience' },
-    { label: tNav('faq'), href: '#faq' },
-    { label: tNav('location'), href: '#location' },
-    { label: tNav('contact'), href: '#contact' },
-  ];
+  const tHero = useTranslations('hero');
+  const tPillars = useTranslations('ritualPillars');
+  const tAbout = useTranslations('about');
 
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
-      <header className="sticky top-0 z-20 border-b border-[#d6c8b2]/40 bg-[#f7f2e8]/90 backdrop-blur">
-        <div className="relative mx-auto max-w-6xl">
-          <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-6">
-            <Link href="#" className="relative h-10 w-[90px] transition hover:opacity-80 md:h-14 md:w-[120px]">
-              <Image
-                src="/images/logo/waka-logo.svg"
-                alt="WANAKA Sanctuary"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </Link>
-            <nav className="hidden items-center gap-6 text-sm font-medium text-[#5b6d65] lg:flex">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="transition hover:text-[#2f3a36]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex items-center gap-3">
-              <TrackedLink
-                href="https://lin.ee/SSGzTmt?utm_source=website&utm_medium=desktop_nav&utm_campaign=book_ritual"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden rounded-full border border-[#5b6d65] px-4 py-2 text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white lg:block"
-                eventName="click_book_ritual"
-              >
-                Book a Ritual
-              </TrackedLink>
-              <MobileMenu navItems={navItems} />
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main>
         <section
@@ -712,11 +504,12 @@ export default function HomePage() {
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
                 Small Rituals. Big Rest.
               </h1>
-              <p className="text-lg leading-relaxed text-white/85">
-                Calm, caring, and clean craft come together in Bangna&apos;s newest wellness sanctuary.
-                Wanaka is the pause between school runs, meetings, and family life — a place where
-                modern women and their loved ones breathe, reset, and feel wonderful again.
-              </p>
+              <div id="hero-paragraph" className="flex flex-col gap-4">
+                <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph1')}</p>
+                <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph2')}</p>
+                <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph3')}</p>
+                <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph4')}</p>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="#services"
@@ -728,28 +521,57 @@ export default function HomePage() {
                   href="#about"
                   className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white"
                 >
-                  Discover The Story
+                  {tHero('discoverCta')}
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-[#d6c8b2]/50 bg-white/60">
+        <section id="second-section" className="border-t border-[#d6c8b2]/50 bg-white/60">
           <div className="mx-auto grid max-w-5xl gap-6 px-6 py-12 sm:grid-cols-3">
-            {brandPillars.map((pillar) => (
+            {([
+              {
+                key: 'soul',
+                icon: (
+                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M4 9c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
+                    <path d="M4 14c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
+                  </svg>
+                ),
+              },
+              {
+                key: 'body',
+                icon: (
+                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M12 3v4M8 5l2 2M16 5l-2 2" />
+                    <path d="M9 9h6l1 6H8l1-6Z" />
+                    <path d="M10 15v4M14 15v4" />
+                  </svg>
+                ),
+              },
+              {
+                key: 'skin',
+                icon: (
+                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M12 4c-4 0-7 3.4-7 7.6 0 6.1 4.2 8.4 7 9.9 2.8-1.5 7-3.8 7-9.9C19 7.4 16 4 12 4Z" />
+                    <path d="M9 12c1.2.8 2.4 1 3.8.6 1.4-.4 2.4-1.2 3.2-2.6" />
+                  </svg>
+                ),
+              },
+            ] as const).map(({ key, icon }) => (
               <div
-                key={pillar.title}
+                key={key}
                 className="group rounded-3xl border border-[#d6c8b2]/60 bg-white/80 p-6 shadow-sm shadow-[#d6c8b2]/20 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d6c8b2]/40"
               >
                 <div className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#f7f2e8] p-3 text-[#5b6d65]">
-                  {pillar.icon}
+                  {icon}
                 </div>
                 <h3 className="text-lg font-semibold text-[#2f3a36]">
-                  {pillar.title}
+                  {tPillars(`${key}.title`)}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[#52635d]">
-                  {pillar.description}
+                  {tPillars(`${key}.description`)}
                 </p>
               </div>
             ))}
@@ -763,17 +585,21 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                About Wanaka
+                {tAbout('eyebrow')}
               </p>
               <h2 className="text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
-                A sanctuary for your skin, body, and mind.
+                {tAbout('title')}
               </h2>
-              <p className="text-lg leading-relaxed text-[#44544d]">
-                Happiness and confidence are born from balance. Wanaka Sanctuary was created so every
-                visit feels like coming home to yourself — whether you are a devoted mom, a growing
-                entrepreneur, or a family seeking calm. Warm interiors, mindful therapists, and gentle
-                rituals invite you to pause, feel cared for, and reconnect with what matters.
-              </p>
+              <div className="flex flex-col gap-4">
+                <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph1')}</p>
+                <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph2')}</p>
+                <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph3')}</p>
+                <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph4')}</p>
+              </div>
+              <div className="pt-2">
+                <p className="font-semibold text-[#2f3a36]">{tAbout('signatureName')}</p>
+                <p className="text-sm italic text-[#6f7b7a]">{tAbout('signatureTagline')}</p>
+              </div>
             </div>
             <div className="relative">
               <div className="absolute -inset-6 rounded-[32px] bg-[#d6c8b2]/40 blur-3xl" />
@@ -793,130 +619,51 @@ export default function HomePage() {
         </section>
 
         <section
-          id="mission"
-          className="border-y border-[#d6c8b2]/50 bg-[#e3d8c7]/60"
-        >
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div className="relative">
-              <div className="absolute -inset-5 rounded-[32px] bg-[#d6c8b2]/40 blur-3xl" />
-              <div className="relative h-64 overflow-hidden rounded-[32px] border border-white/50 bg-white/60 shadow-xl shadow-[#d6c8b2]/30 md:h-80">
-                <Image
-                  src="/images/generated/mission-hero.png"
-                  alt="Mindful ritual collage representing WANAKA mission"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 440px, 90vw"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <div className="space-y-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                  Mission
-                </p>
-                <h2 className="text-3xl font-semibold text-[#2f3a36] sm:text-4xl">
-                  Craft moments that feel wonderful.
-                </h2>
-                <p className="max-w-xl text-lg leading-relaxed text-[#44544d]">
-                  From the first welcome to the final sip of tea, every detail is designed to restore
-                  your glow and sense of presence. Wanaka promises premium, trustworthy care without
-                  pressure — only kindness, skill, and rituals rooted in nature.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {missionHighlights.map((highlight) => (
-                  <div
-                    key={highlight.title}
-                    className="flex gap-4 rounded-3xl bg-white/80 p-6 shadow-lg shadow-[#d6c8b2]/30"
-                  >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f7f2e8] text-[#5b6d65]">
-                      {highlight.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#2f3a36]">
-                        {highlight.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[#52635d]">
-                        {highlight.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
           id="services"
           className="mx-auto max-w-6xl px-6 py-24 lg:py-28"
         >
-          <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
-            <div className="lg:w-1/3">
+          <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
                 Services
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
-                Rituals that fit real life, crafted for calm and visible results.
+              <h2 className="text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
+                Rituals designed to ease tension, restore balance, and bring calm.
               </h2>
-              <p className="mt-6 text-sm leading-relaxed text-[#52635d]">
-                Choose a signature service or layer treatments together. Every ritual begins with a
-                grounding welcome and ends with a mindful closing — no rush, just restoration.
-              </p>
-              <Link
-                href="/services"
-                className="mt-8 inline-flex rounded-full border border-[#5b6d65] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
-              >
-                {tServices('viewFullMenu')}
-              </Link>
             </div>
-            <div className="lg:w-2/3">
-              <div className="grid gap-6 md:grid-cols-2">
-                {mainServices.map((service) => (
-                  <div
-                    key={service.title}
-                    className="group flex h-full flex-col justify-between rounded-3xl border border-[#d6c8b2]/70 bg-white/80 p-6 shadow-md shadow-[#d6c8b2]/20 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#d6c8b2]/40"
-                  >
-                    <div>
-                      <div className="relative mb-5 h-40 overflow-hidden rounded-[24px] border border-white/60 bg-[#f7f2e8] shadow-inner shadow-[#d6c8b2]/30">
-                        <Image
-                          src={service.image.src}
-                          alt={service.image.alt}
-                          fill
-                          className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                          sizes="(min-width: 1024px) 260px, 90vw"
-                        />
-                      </div>
-                      <h3 className="text-lg font-semibold text-[#2f3a36]">
-                        {service.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-[#52635d]">
-                        {service.description}
-                      </p>
-                    </div>
-                    <span className="mt-6 inline-flex items-center text-xs font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                      Calm • Caring • Clean
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <Link
+              href="/services"
+              className="shrink-0 rounded-full border border-[#5b6d65] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white"
+            >
+              {tServices('viewFullMenu')}
+            </Link>
+          </div>
 
-              <div className="mt-10 rounded-3xl bg-[#5b6d65] p-8 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
-                  Signature Journeys
-                </p>
-                <div className="mt-6 grid gap-6 md:grid-cols-2">
-                  {signatureJourneys.map((journey) => (
-                    <div key={journey.title}>
-                      <h4 className="text-lg font-semibold">{journey.title}</h4>
-                      <p className="mt-3 text-sm leading-relaxed text-white/80">
-                        {journey.description}
-                      </p>
-                    </div>
-                  ))}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceCategories.map((cat) => (
+              <Link
+                key={cat.title}
+                href={cat.href}
+                className="group flex flex-col rounded-3xl border border-[#d6c8b2]/70 bg-white/80 shadow-md shadow-[#d6c8b2]/20 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#d6c8b2]/40 overflow-hidden"
+              >
+                <div className="relative h-52 shrink-0 bg-[#f7f2e8]">
+                  <Image
+                    src={cat.image}
+                    alt={cat.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    sizes="(min-width: 1024px) 360px, 90vw"
+                  />
                 </div>
-              </div>
-            </div>
+                <div className="flex flex-col gap-3 p-6">
+                  <h3 className="text-lg font-semibold text-[#2f3a36]">{cat.title}</h3>
+                  <p className="text-sm leading-relaxed text-[#52635d]">{cat.description}</p>
+                  <span className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65] transition group-hover:text-[#2f3a36]">
+                    Explore →
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 

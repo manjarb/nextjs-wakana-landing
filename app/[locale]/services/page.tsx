@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import MobileMenu from '@/components/MobileMenu';
+import SiteHeader from '@/components/SiteHeader';
 import TrackedLink from '@/components/TrackedLink';
 
 type Props = {
@@ -11,36 +11,6 @@ type Props = {
 type NavItem = {
   label: string;
   href: string;
-};
-
-type MenuItem = {
-  title: string;
-  price: string;
-  duration?: string;
-  description?: string;
-  note?: string;
-  badge?: string;
-};
-
-type Collection = {
-  id: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  alt: string;
-  items: MenuItem[];
-};
-
-type Cluster = {
-  title: string;
-  description: string;
-  items: MenuItem[];
-};
-
-type HighlightGroup = {
-  title: string;
-  caption: string;
-  items: string[];
 };
 
 type Stat = {
@@ -67,11 +37,10 @@ type HighlightsContent = SectionContent & {
   cardEyebrow: string;
 };
 
-type SkinBoosterContent = {
-  eyebrow: string;
+type HighlightGroup = {
   title: string;
-  intro: string;
-  imageAlt: string;
+  caption: string;
+  items: string[];
 };
 
 type ContactContent = {
@@ -88,19 +57,13 @@ type ContactDetail = {
   value: string;
 };
 
-const ritualCollectionImages: Record<string, string> = {
-  'facial-treatment': '/images/v2/facial_treatment_01.jpg',
-  'head-massage-spa': '/images/v2/relaxation_head_spa_03.jpg',
-  'aroma-body-massage': '/images/v2/lobby_6.jpg',
-  'hand-feet': '/images/generated/service-hand-feet-massage.png',
-  'special-menu': '/images/v2/hair_drier_01.jpg',
-  'other-facial-treatment': '/images/v2/facial_treatment_03.jpg',
+const categoryImages: Record<string, string> = {
+  relaxation: '/images/v2/relaxation_head_spa_03.jpg',
+  aesthetic: '/images/v2/facial_treatment_01.jpg',
+  iv: '/images/v2/drip_iv.jpg',
 };
 
-const contactDetailMeta: Record<
-  string,
-  { href?: string; eventName?: string }
-> = {
+const contactDetailMeta: Record<string, { href?: string; eventName?: string }> = {
   line: {
     href: 'https://line.me/ti/p/@wanaka.th?utm_source=website&utm_medium=services_page&utm_campaign=contact_line',
     eventName: 'click_line_services_contact',
@@ -119,77 +82,59 @@ const contactDetailMeta: Record<
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'servicesPage.meta' });
-
-  return {
-    title: t('title'),
-    description: t('description'),
-  };
+  return { title: t('title'), description: t('description') };
 }
 
 export default async function ServicesPage({ params }: Props) {
   const { locale } = await params;
+
   const t = await getTranslations({ locale, namespace: 'servicesPage' });
+  const tRelaxation = await getTranslations({ locale, namespace: 'relaxationPage' });
+  const tAesthetic = await getTranslations({ locale, namespace: 'aestheticPage' });
+  const tIvTherapy = await getTranslations({ locale, namespace: 'ivTherapyPage' });
 
   const hero = t.raw('hero') as HeroContent;
   const highlights = t.raw('highlights') as HighlightsContent;
   const rituals = t.raw('rituals') as SectionContent;
-  const ivTherapy = t.raw('ivTherapy') as SectionContent & { imageAlt: string };
-  const aestheticTreatment = t.raw('aestheticTreatment') as SectionContent;
-  const skinBooster = t.raw('skinBooster') as SkinBoosterContent;
   const contact = t.raw('contact') as ContactContent;
 
-  const navItems = t.raw('navItems') as NavItem[];
   const footerLinks = t.raw('footer.links') as NavItem[];
   const bestSellerGroups = t.raw('bestSellerGroups') as HighlightGroup[];
-  const ritualCollections = t.raw('ritualCollections') as Collection[];
-  const ivTherapyClusters = t.raw('ivTherapyClusters') as Cluster[];
-  const premiumSkinBoosters = t.raw('premiumSkinBoosters') as MenuItem[];
-  const everydaySkinBoosters = t.raw('everydaySkinBoosters') as Cluster[];
-  const aestheticTreatments = t.raw('aestheticTreatments') as MenuItem[];
   const contactDetails = t.raw('contactDetails') as ContactDetail[];
+
+  const categoryCards = [
+    {
+      key: 'relaxation',
+      href: '/services/relaxation' as const,
+      image: categoryImages.relaxation,
+      eyebrow: tRelaxation('hero.eyebrow'),
+      title: tRelaxation('hero.title'),
+      description: tRelaxation('hero.description'),
+    },
+    {
+      key: 'aesthetic',
+      href: '/services/aesthetic' as const,
+      image: categoryImages.aesthetic,
+      eyebrow: tAesthetic('hero.eyebrow'),
+      title: tAesthetic('hero.title'),
+      description: tAesthetic('hero.description'),
+    },
+    {
+      key: 'iv',
+      href: '/services/iv-therapy' as const,
+      image: categoryImages.iv,
+      eyebrow: tIvTherapy('hero.eyebrow'),
+      title: tIvTherapy('hero.title'),
+      description: tIvTherapy('hero.description'),
+    },
+  ];
 
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
-      <header className="sticky top-0 z-20 border-b border-[#d6c8b2]/40 bg-[#f7f2e8]/90 backdrop-blur">
-        <div className="relative mx-auto max-w-6xl">
-          <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-6">
-            <Link href="/" className="relative h-10 w-[90px] transition hover:opacity-80 md:h-14 md:w-[120px]">
-              <Image
-                src="/images/logo/waka-logo.svg"
-                alt="WANAKA Sanctuary"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </Link>
-            <nav className="hidden items-center gap-6 text-sm font-medium text-[#5b6d65] lg:flex">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="transition hover:text-[#2f3a36]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex items-center gap-3">
-              <TrackedLink
-                href="https://lin.ee/SSGzTmt?utm_source=website&utm_medium=services_nav&utm_campaign=book_ritual"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden rounded-full border border-[#5b6d65] px-4 py-2 text-sm font-medium text-[#5b6d65] transition hover:bg-[#5b6d65] hover:text-white lg:block"
-                eventName="click_book_ritual_services_nav"
-              >
-                {t('headerCtaLabel')}
-              </TrackedLink>
-              <MobileMenu navItems={navItems} ctaLabel={t('headerCtaLabel')} />
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main>
+        {/* Hero */}
         <section id="hero" className="relative isolate overflow-hidden">
           <div className="absolute inset-0">
             <Image
@@ -228,7 +173,7 @@ export default async function ServicesPage({ params }: Props) {
                     {hero.primaryCtaLabel}
                   </TrackedLink>
                   <Link
-                    href="#rituals"
+                    href="#categories"
                     className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white"
                   >
                     {hero.secondaryCtaLabel}
@@ -245,6 +190,7 @@ export default async function ServicesPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Highlights */}
         <section id="highlights" className="border-y border-[#d6c8b2]/50 bg-white/60">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <SectionHeading
@@ -261,12 +207,8 @@ export default async function ServicesPage({ params }: Props) {
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
                     {highlights.cardEyebrow}
                   </p>
-                  <h2 className="mt-4 text-2xl font-semibold text-[#2f3a36]">
-                    {group.title}
-                  </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-[#52635d]">
-                    {group.caption}
-                  </p>
+                  <h2 className="mt-4 text-2xl font-semibold text-[#2f3a36]">{group.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-[#52635d]">{group.caption}</p>
                   <ol className="mt-6 space-y-3 text-sm text-[#44544d]">
                     {group.items.map((item, index) => (
                       <li
@@ -286,168 +228,51 @@ export default async function ServicesPage({ params }: Props) {
           </div>
         </section>
 
-        <section id="rituals" className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
+        {/* Category overview */}
+        <section id="categories" className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
           <SectionHeading
             eyebrow={rituals.eyebrow}
             title={rituals.title}
             description={rituals.description}
           />
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {ritualCollections.map((collection) => (
-              <article
-                key={collection.id}
-                id={collection.id}
-                className="overflow-hidden rounded-[32px] border border-[#d6c8b2]/70 bg-white/85 shadow-lg shadow-[#d6c8b2]/25"
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-3">
+            {categoryCards.map((card) => (
+              <Link
+                key={card.key}
+                href={card.href}
+                className="group flex flex-col overflow-hidden rounded-[32px] border border-[#d6c8b2]/70 bg-white/85 shadow-lg shadow-[#d6c8b2]/25 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#d6c8b2]/40"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 shrink-0 overflow-hidden">
                   <Image
-                    src={ritualCollectionImages[collection.id]}
-                    alt={collection.alt}
+                    src={card.image}
+                    alt={card.title}
                     fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 480px, 92vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                    sizes="(min-width: 1024px) 340px, 92vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2f3a36]/70 via-[#2f3a36]/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2f3a36]/65 via-[#2f3a36]/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                      {collection.eyebrow}
+                      {card.eyebrow}
                     </p>
-                    <h2 className="mt-2 text-2xl font-semibold leading-tight">
-                      {collection.title}
-                    </h2>
+                    <h2 className="mt-2 text-2xl font-semibold leading-tight">{card.title}</h2>
                   </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-sm leading-relaxed text-[#52635d]">
-                    {collection.description}
+                <div className="flex flex-1 flex-col gap-4 p-6">
+                  <p className="flex-1 text-sm leading-relaxed text-[#52635d]">
+                    {card.description}
                   </p>
-                  <div className="mt-6 space-y-4">
-                    {collection.items.map((item) => (
-                      <MenuItemCard key={`${collection.id}-${item.title}`} item={item} />
-                    ))}
-                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65] transition group-hover:text-[#2f3a36]">
+                    Explore →
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
 
-        <section id="iv-therapy" className="border-y border-[#d6c8b2]/50 bg-[#e3d8c7]/60">
-          <div className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
-            <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-              <div className="space-y-6 lg:max-w-2xl">
-                <SectionHeading
-                  eyebrow={ivTherapy.eyebrow}
-                  title={ivTherapy.title}
-                  description={ivTherapy.description}
-                />
-              </div>
-
-              <div className="relative h-72 overflow-hidden rounded-[32px] border border-white/50 bg-white/50 shadow-xl shadow-[#d6c8b2]/25 lg:h-[22rem]">
-                <Image
-                  src="/images/v2/drip_iv_02.jpg"
-                  alt={ivTherapy.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 560px, 92vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2f3a36]/45 via-[#2f3a36]/10 to-transparent" />
-              </div>
-            </div>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {ivTherapyClusters.map((cluster) => (
-                <article
-                  key={cluster.title}
-                  className="rounded-[32px] border border-white/60 bg-white/80 p-6 shadow-md shadow-[#d6c8b2]/20 lg:p-7"
-                >
-                  <h2 className="text-xl font-semibold text-[#2f3a36]">
-                    {cluster.title}
-                  </h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#52635d]">
-                    {cluster.description}
-                  </p>
-                  <div className="mt-5 space-y-3">
-                    {cluster.items.map((item) => (
-                      <MenuItemCard key={`${cluster.title}-${item.title}`} item={item} compact />
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="aesthetic-treatment" className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <article className="rounded-[32px] border border-[#d6c8b2]/70 bg-white/85 p-8 shadow-lg shadow-[#d6c8b2]/25">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                {aestheticTreatment.eyebrow}
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#2f3a36]">
-                {aestheticTreatment.title}
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-[#52635d]">
-                {aestheticTreatment.description}
-              </p>
-              <div className="mt-8 space-y-3">
-                {aestheticTreatments.map((item) => (
-                  <div
-                    key={item.title}
-                    className="flex items-center justify-between gap-4 rounded-2xl bg-[#f7f2e8]/85 px-5 py-4"
-                  >
-                    <span className="font-medium text-[#2f3a36]">{item.title}</span>
-                    <span className="rounded-full bg-[#5b6d65] px-4 py-1.5 text-sm font-semibold text-white">
-                      {item.price}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </article>
-
-            <article
-              id="skin-booster"
-              className="rounded-[32px] border border-[#d6c8b2]/70 bg-white/85 p-8 shadow-lg shadow-[#d6c8b2]/25"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-                {skinBooster.eyebrow}
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#2f3a36]">
-                {skinBooster.title}
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-[#52635d]">
-                {skinBooster.intro}
-              </p>
-              <div className="mt-8 space-y-4">
-                {premiumSkinBoosters.map((item) => (
-                  <MenuItemCard key={item.title} item={item} />
-                ))}
-              </div>
-            </article>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {everydaySkinBoosters.map((cluster) => (
-              <article
-                key={cluster.title}
-                className="rounded-[32px] border border-[#d6c8b2]/70 bg-white/85 p-6 shadow-md shadow-[#d6c8b2]/20"
-              >
-                <h3 className="text-2xl font-semibold text-[#2f3a36]">
-                  {cluster.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#52635d]">
-                  {cluster.description}
-                </p>
-                <div className="mt-6 space-y-3">
-                  {cluster.items.map((item) => (
-                    <MenuItemCard key={`${cluster.title}-${item.title}`} item={item} compact />
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
+        {/* Contact */}
         <section
           id="contact"
           className="relative overflow-hidden border-t border-[#d6c8b2]/50 bg-gradient-to-br from-[#5b6d65] via-[#44544d] to-[#2f3a36] text-white"
@@ -458,19 +283,14 @@ export default async function ServicesPage({ params }: Props) {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
                 {contact.eyebrow}
               </p>
-              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-                {contact.title}
-              </h2>
-              <p className="text-base leading-relaxed text-white/80">
-                {contact.description}
-              </p>
+              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">{contact.title}</h2>
+              <p className="text-base leading-relaxed text-white/80">{contact.description}</p>
             </div>
 
             <div className="w-full max-w-md rounded-3xl bg-white/10 p-8 backdrop-blur">
               <div className="space-y-4 text-sm text-white/80">
                 {contactDetails.map((detail) => {
                   const meta = contactDetailMeta[detail.id] ?? {};
-
                   return (
                     <div key={detail.id}>
                       {meta.href ? (
@@ -536,15 +356,9 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-3xl space-y-4">
-      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
-        {eyebrow}
-      </p>
-      <h2 className="text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">
-        {title}
-      </h2>
-      <p className="text-lg leading-relaxed text-[#44544d]">
-        {description}
-      </p>
+      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">{eyebrow}</p>
+      <h2 className="text-3xl font-semibold leading-tight text-[#2f3a36] sm:text-4xl">{title}</h2>
+      <p className="text-lg leading-relaxed text-[#44544d]">{description}</p>
     </div>
   );
 }
@@ -554,55 +368,6 @@ function StatCard({ value, label }: Stat) {
     <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur">
       <p className="text-2xl font-semibold text-white">{value}</p>
       <p className="mt-2 text-sm leading-relaxed text-white/75">{label}</p>
-    </div>
-  );
-}
-
-function MenuItemCard({
-  item,
-  compact = false,
-}: {
-  item: MenuItem;
-  compact?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-3xl bg-[#f7f2e8]/85 ${
-        compact ? 'px-4 py-4' : 'px-5 py-5'
-      }`}
-    >
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="max-w-[80%]">
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className={`${compact ? 'text-base' : 'text-lg'} font-semibold text-[#2f3a36]`}>
-              {item.title}
-            </h3>
-            {item.badge ? (
-              <span className="rounded-full bg-[#5b6d65] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
-                {item.badge}
-              </span>
-            ) : null}
-          </div>
-          {item.duration ? (
-            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#6f7b7a]">
-              {item.duration}
-            </p>
-          ) : null}
-        </div>
-        <span className="rounded-full bg-[#5b6d65] px-4 py-2 text-sm font-semibold text-white">
-          {item.price}
-        </span>
-      </div>
-      {item.description ? (
-        <p className={`text-sm leading-relaxed text-[#52635d] ${compact ? 'mt-3' : 'mt-4'}`}>
-          {item.description}
-        </p>
-      ) : null}
-      {item.note ? (
-        <p className="mt-3 text-xs leading-relaxed text-[#6f7b7a]">
-          {item.note}
-        </p>
-      ) : null}
     </div>
   );
 }

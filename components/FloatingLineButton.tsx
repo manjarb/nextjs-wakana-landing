@@ -1,7 +1,10 @@
 import TrackedLink from '@/components/TrackedLink';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 
-export default function FloatingLineButton() {
+export default async function FloatingLineButton() {
+  const t = await getTranslations('floatingButton');
+
   return (
     <div className="fixed bottom-6 right-6 z-[100] md:bottom-8 md:right-8">
       <TrackedLink
@@ -20,7 +23,7 @@ export default function FloatingLineButton() {
           className="h-6 w-6 object-contain"
           unoptimized
         />
-        <span className="font-semibold text-white tracking-wide text-lg sm:text-base">จองเลย</span>
+        <span className="font-semibold text-white tracking-wide text-lg sm:text-base">{t('bookNow')}</span>
       </TrackedLink>
     </div>
   );

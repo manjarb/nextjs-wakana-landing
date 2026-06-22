@@ -1,4 +1,35 @@
 {
+  "about": {
+    "eyebrow": "About Wanaka",
+    "title": "A Sanctuary for Your Skin, Body, and Mind",
+    "paragraph1": "Wanaka Sanctuary was created from the founder's wish to build a wellness space where every care feels personal, gentle, and sincere.",
+    "paragraph2": "In today's busy rhythm, many people spend their days caring for work, family, and everyone around them — often forgetting to pause for themselves. Wanaka was born to be that pause: a quiet wellness sanctuary near Mega Bangna where modern facial treatments, body massage, relaxation rituals, and restorative care meet warm hospitality.",
+    "paragraph3": "Here, we believe beauty and wellness should feel calm, thoughtful, and comforting. From mindful facial rituals to body relaxation and skin renewal treatments, every detail is designed to help you feel cared for, rebalanced, and softly renewed.",
+    "paragraph4": "A small escape, made with care — for the days you need to rest, restore, and return to yourself.",
+    "signatureName": "Wanaka Sanctuary",
+    "signatureTagline": "Small Rituals . Big Rest"
+  },
+  "ritualPillars": {
+    "soul": {
+      "title": "Soul Relaxation Rituals",
+      "description": "Relaxing massage and head spa rituals to ease tension, calm the mind, and bring your body back to balance."
+    },
+    "body": {
+      "title": "Body Recharge Rituals",
+      "description": "IV therapy and restorative body treatments created to reduce fatigue, improve comfort, and support renewed energy."
+    },
+    "skin": {
+      "title": "Skin Revive Rituals",
+      "description": "Facial treatments and skin boosters to hydrate, nourish, and revive your skin's natural glow."
+    }
+  },
+  "hero": {
+    "paragraph1": "At Wānaka Sanctuary, we believe that true happiness and confidence begin with a balanced body and mind. When you take time to care for yourself, your skin, your body, and your inner wellbeing, you create space to release fatigue, restore energy, and reconnect with yourself. This gentle act of self-care helps strengthen the balance between how you feel, how you look, and how you move through everyday life.",
+    "paragraph2": "Wānaka Sanctuary is a wellness sanctuary near Mega Bangna, created as a calm and private space where you can rest, recharge, and nurture yourself. Whether you are looking for a relaxing facial treatment, body massage, head massage, IV drip therapy, or a quiet moment to unwind, our sanctuary is here to support your journey back to balance.",
+    "paragraph3": "More than a wellness and beauty space, Wānaka is also a place to spend meaningful time with the people you love. It is a place where you can slow down, reconnect, and strengthen your bond with your children, family, or someone special.",
+    "paragraph4": "Wānaka Sanctuary is your sanctuary for skin, body, and mind.",
+    "discoverCta": "Discover WANAKA"
+  },
   "common": {
     "appName": "My App",
     "logout": "Logout",
@@ -12,13 +43,37 @@
   },
   "navigation": {
     "home": "Home",
-    "about": "About",
-    "mission": "Mission",
+    "about": "About Wanaka",
     "services": "Services",
-    "experience": "Experience",
+    "packages": "Packages",
+    "space": "Space",
+    "reviews": "Reviews",
     "faq": "FAQ",
-    "location": "Location",
-    "contact": "Contact"
+    "contact": "Contact / Book Now",
+    "bookNow": "Book a Ritual",
+    "dropdown": {
+      "allServices": "All Services",
+      "relaxationRituals": "Relaxation Rituals",
+      "aestheticRituals": "Aesthetic Rituals",
+      "ivTherapy": "IV Therapy",
+      "packages": "Packages",
+      "facialMassage": "Facial Massage",
+      "headSpa": "Head Spa & Head Massage",
+      "aromaBody": "Aroma Body Massage",
+      "handFeet": "Hand & Feet Massage",
+      "facialTreatments": "Facial Treatments",
+      "skinBooster": "Skin Booster",
+      "bioStimulator": "Bio-stimulator",
+      "botox": "Botox",
+      "glowBeautyIv": "Glow & Beauty",
+      "antiAgingIv": "Anti-Aging & Antioxidant",
+      "immunityRecoveryIv": "Immunity & Recovery",
+      "brainPerformanceIv": "Brain Performance",
+      "lifestyleIv": "Lifestyle",
+      "momMorningEscape": "Mom Morning Escape",
+      "activeRecoveryRitual": "Active Recovery Ritual",
+      "jetLagRecoveryRitual": "Jet Lag Recovery Ritual"
+    }
   },
   "reviews": {
     "heading": "Guest Experiences",
@@ -39,6 +94,9 @@
     "fri": "Friday",
     "sat": "Saturday",
     "hours": "8 AM - 8 PM"
+  },
+  "floatingButton": {
+    "bookNow": "BOOK NOW"
   },
   "services": {
     "heading": "Our Services",
@@ -564,6 +622,217 @@
           "href": "#contact"
         }
       ]
+    }
+  },
+  "relaxationPage": {
+    "meta": {
+      "title": "Relaxation Rituals | WANAKA Sanctuary",
+      "description": "Explore facial massage, head spa, aroma body massage, and hand & feet treatments at WANAKA Sanctuary near Bangna and Mega Bangna."
+    },
+    "hero": {
+      "eyebrow": "Relaxation Rituals",
+      "title": "Treatments for face, scalp, and body.",
+      "description": "A collection of facial, head, and body relaxation treatments designed to ease tension, restore balance, and bring your skin, body, and mind back to a calmer state.",
+      "breadcrumb": "All Services"
+    },
+    "cta": {
+      "enquire": "Enquire on LINE",
+      "allServices": "All Services"
+    }
+  },
+  "aestheticPage": {
+    "meta": {
+      "title": "Aesthetic Rituals – Skin Revive Rituals | WANAKA Sanctuary",
+      "description": "Facial treatments and skin renewal programs at WANAKA Sanctuary near Bangna and Mega Bangna. Skin boosters, injectables, and advanced skin care."
+    },
+    "hero": {
+      "breadcrumb": "All Services",
+      "eyebrow": "Aesthetic Rituals",
+      "title": "Skin Revive Rituals",
+      "description": "Facial treatments and skin renewal programs designed to hydrate, refresh, and restore the skin's natural glow. From soothing facial care to advanced skin injections, each treatment is selected to support healthier-looking, well-rested, and radiant skin."
+    },
+    "cta": {
+      "enquire": "Enquire on LINE",
+      "allServices": "All Services"
+    }
+  },
+  "ivTherapyPage": {
+    "meta": {
+      "title": "IV Therapy – Drip Wellness Rituals | WANAKA Sanctuary",
+      "description": "Restorative IV therapy wellness rituals at WANAKA Sanctuary near Bangna and Mega Bangna. Support hydration, immunity, skin glow, and overall wellbeing."
+    },
+    "hero": {
+      "breadcrumb": "All Services",
+      "eyebrow": "IV Therapy",
+      "title": "IV Therapy",
+      "description": "A restorative IV therapy wellness ritual designed to support hydration, replenish essential nutrients, and help restore your body's natural balance. Each IV drip formula is selected to support different lifestyle needs — from skin radiance and energy support to immunity, recovery, sleep, and overall wellbeing."
+    },
+    "disclaimer": "The IV Therapy formulas shown on this website are only part of our available options. For more details or personalized recommendations, please contact our admin team.",
+    "cta": {
+      "enquire": "Enquire on LINE",
+      "allServices": "All Services"
+    },
+    "groups": [
+      {
+        "id": "glow-beauty",
+        "title": "Glow & Beauty",
+        "items": [
+          {
+            "title": "Radiant Luxe",
+            "description": "An advanced beauty IV drip designed to support skin radiance, clarity, and smoothness, helping the skin appear luminous, refreshed, and youthful-looking."
+          },
+          {
+            "title": "Soft Glow Renewal",
+            "description": "A gentle skin glow IV therapy formula designed to nourish the skin from within, support hydration, and promote a fresh, healthy-looking glow."
+          }
+        ]
+      },
+      {
+        "id": "anti-aging",
+        "title": "Anti-Aging & Antioxidant",
+        "items": [
+          {
+            "title": "RejuveCell",
+            "description": "A restorative antioxidant IV therapy formula designed to support cellular wellness, protect against oxidative stress, and help promote energy production at the cellular level."
+          }
+        ]
+      },
+      {
+        "id": "immunity-recovery",
+        "title": "Immunity & Recovery",
+        "items": [
+          {
+            "title": "Holistic Boost",
+            "description": "A revitalizing IV drip designed to support energy, hydration, and immune wellness, helping the body feel refreshed and rebalanced."
+          },
+          {
+            "title": "Immune Booster",
+            "description": "An immunity-support IV therapy formula designed to help strengthen the body's natural defenses and support resilience during busy or tiring periods."
+          },
+          {
+            "title": "Vit D",
+            "description": "A vitamin D wellness support formula designed to support immune function, bone health, mood balance, and overall wellbeing."
+          }
+        ]
+      },
+      {
+        "id": "brain-performance",
+        "title": "Brain Performance",
+        "items": [
+          {
+            "title": "Brain Booster",
+            "description": "A cognitive wellness IV drip designed to support mental clarity, focus, and energy, ideal for those experiencing fatigue, demanding schedules, or mental overload."
+          },
+          {
+            "title": "Harmony Sleep",
+            "description": "A calming wellness formula designed to support relaxation, nervous system balance, and better rest quality for those seeking a more peaceful reset."
+          }
+        ]
+      },
+      {
+        "id": "lifestyle",
+        "title": "Lifestyle",
+        "items": [
+          {
+            "title": "Men's Health",
+            "description": "A wellness IV therapy formula designed to support energy, stamina, physical performance, and recovery from daily fatigue."
+          },
+          {
+            "title": "Anti-Hangover",
+            "description": "A restorative IV drip designed to support hydration and recovery after late nights, travel, social occasions, or physical tiredness."
+          }
+        ]
+      }
+    ]
+  },
+  "serviceDetail": {
+    "labels": {
+      "whatToExpect": "What to expect",
+      "bestFor": "Best for",
+      "duration": "Duration",
+      "enquireOnLine": "Enquire on LINE",
+      "allServices": "All Services",
+      "category": {
+        "relaxation": "Relaxation Rituals",
+        "aesthetic": "Aesthetic Rituals",
+        "iv": "IV Therapy"
+      }
+    },
+    "wanaka-ritual-endota-organic": {
+      "meta": {
+        "title": "Wanaka Ritual x Endota Organic Facial Massage | WANAKA Sanctuary",
+        "description": "A calming organic facial massage for deep hydration and skin balance at WANAKA Sanctuary near Bangna and Mega Bangna. 60 mins."
+      },
+      "title": "Wanaka Ritual x Endota Organic",
+      "subtitle": "Organic Facial Massage for Deep Hydration and Skin Balance",
+      "lead": "Wanaka Ritual x Endota Organic is a calming facial massage designed for those who wish to restore comfort, hydration, and balance to the skin. Using organic skincare from Endota, this ritual focuses on gentle touch, mindful techniques, and deeply nourishing care to help tired skin feel refreshed and comforted.\n\nThis facial treatment is ideal for skin that feels dry, dull, stressed, or lacking softness. Through slow facial massage movements, the ritual helps encourage relaxation while allowing the skin to receive moisture and nourishment more effectively.",
+      "whatToExpect": "Your treatment begins with gentle cleansing, followed by organic skincare application and relaxing facial massage techniques. Each step is designed to soothe the skin, replenish moisture, and leave your complexion feeling soft, calm, and naturally radiant.",
+      "bestFor": "Dry or dehydrated skin, tired-looking skin, sensitive-feeling skin."
+    },
+    "wanaka-timeless-lift": {
+      "meta": {
+        "title": "Wanaka Timeless Lift Facial Massage | WANAKA Sanctuary",
+        "description": "A lifting facial massage to firm, refine, and restore radiance at WANAKA Sanctuary near Bangna and Mega Bangna. 90 mins."
+      },
+      "title": "Wanaka Timeless Lift",
+      "subtitle": "Lifting Facial Massage to Firm, Refine, and Restore Radiance",
+      "lead": "Wanaka Timeless Lift is a mindful lifting facial massage created to support firmer-looking skin, smoother facial lines, and more defined facial contours. This 90-minute ritual combines slow, intentional massage techniques with a deeply relaxing experience, helping the face look refreshed without feeling rushed.\n\nThe treatment is designed for those who feel their skin has lost firmness, definition, or youthful vitality. Through carefully guided lifting movements, the ritual helps awaken the skin, improve the appearance of tiredness, and bring back a softer, more radiant look.",
+      "whatToExpect": "This ritual includes facial preparation, lifting massage techniques, and soothing skin care steps to support a refreshed and more sculpted appearance.",
+      "bestFor": "Dull or tired-looking skin, loss of firmness, facial puffiness, soft facial contours, and guests looking for a relaxing lifting facial treatment near Bangna and Mega Bangna."
+    },
+    "deep-head-ritual": {
+      "meta": {
+        "title": "Deep Head Ritual – Head Massage near Mega Bangna | WANAKA Sanctuary",
+        "description": "A deeply soothing head, neck, shoulder, and upper back massage for stress relief and deep relaxation near Mega Bangna. 75 mins."
+      },
+      "title": "Deep Head Ritual",
+      "subtitle": "Head, Neck, Shoulder & Upper Back Massage for Deep Relaxation",
+      "lead": "Deep Head Ritual is a deeply soothing head massage designed to ease tension around the scalp, neck, shoulders, and upper back. This ritual is ideal for those who carry stress from work, screen time, busy schedules, or daily fatigue.\n\nThe treatment focuses on slow, grounding massage techniques that help release built-up tension and encourage a sense of lightness.",
+      "whatToExpect": "Your experience includes head, scalp, neck, shoulder, and upper back massage with natural oil. Calming movements are designed to help improve comfort, support circulation, and create deep relaxation.",
+      "bestFor": "Office workers, frequent screen users, stress-related tension, tiredness, heavy head feeling, neck and shoulder discomfort, and anyone looking for a relaxing head massage near Mega Bangna."
+    },
+    "relaxation-head-spa": {
+      "meta": {
+        "title": "Relaxation Head Spa near Bangna & Mega Bangna | WANAKA Sanctuary",
+        "description": "A calming head spa with massage and shampooing for a fresh, light feeling near Bangna, Srinakarin, and Mega Bangna. 75 mins."
+      },
+      "title": "Relaxation Head Spa",
+      "subtitle": "Head Spa with Massage and Shampooing for a Fresh, Light Feeling",
+      "lead": "Relaxation Head Spa is a calming head spa ritual that blends gentle massage, soft cleansing, and shampooing into one relaxing experience. Designed to refresh the scalp and ease the mind.\n\nThe ritual begins with a nature-inspired touch, helping you slow down from the busy rhythm of the day. Gentle scalp massage and cleansing help create a fresh sensation while the relaxing atmosphere supports emotional calm and comfort.",
+      "whatToExpect": "Your head spa experience includes relaxing scalp massage, gentle shampooing, cleansing care, and calming touch designed to refresh the scalp and restore a sense of ease.",
+      "bestFor": "Tired scalp, stress, mental fatigue, post-work relaxation, self-care days, and anyone looking for a relaxing head spa near Bangna, Srinakarin, or Mega Bangna."
+    },
+    "rest-relax-ritual": {
+      "meta": {
+        "title": "Rest & Relax Ritual – Aroma Body Massage near Mega Bangna | WANAKA Sanctuary",
+        "description": "A full-body aroma massage for stress relief and deep relaxation near Mega Bangna. Available in 60, 90, and 120 mins."
+      },
+      "title": "Rest & Relax Ritual",
+      "subtitle": "Aroma Body Massage for Stress Relief and Full-Body Relaxation",
+      "lead": "Rest & Relax Ritual is an aroma body massage designed to relieve stress, ease body tension, and bring the body and mind back to balance. Available in 60, 90, and 120-minute sessions, this ritual allows you to choose the level of rest your body needs.\n\nUsing calming massage movements and a peaceful atmosphere, this treatment helps you slow down and release the heaviness of daily life. It is ideal for those who feel physically tired, emotionally drained, or simply in need of quiet personal time.",
+      "whatToExpect": "Your treatment includes full-body aroma massage with relaxing techniques focused on comfort, tension relief, and overall relaxation. Longer sessions allow more time for deeper rest and a more complete body reset.",
+      "bestFor": "Stress, body fatigue, muscle tension, busy lifestyles, after-work relaxation, weekend self-care, and anyone looking for an aroma body massage near Mega Bangna."
+    },
+    "body-scrub": {
+      "meta": {
+        "title": "Body Scrub Ritual – Full-Body Exfoliation near Bangna | WANAKA Sanctuary",
+        "description": "A gentle full-body exfoliation treatment for smooth and renewed skin near Bangna and Mega Bangna. 60 mins."
+      },
+      "title": "Body Scrub",
+      "subtitle": "Full-Body Exfoliation Treatment for Smooth and Renewed Skin",
+      "lead": "Body Scrub is a gentle full-body exfoliation ritual designed to refresh dull, tired skin and restore a softer, smoother feeling. This treatment helps remove dead skin buildup while leaving the body feeling clean, polished, and renewed.",
+      "whatToExpect": "Your treatment includes gentle full-body exfoliation with relaxing care to help smooth the skin, refresh dullness, and leave the body feeling soft and renewed.",
+      "bestFor": "Dull skin, rough texture, dry-feeling skin, pre-event skin preparation, body care routines, and anyone looking for a relaxing body scrub treatment near Bangna and Mega Bangna."
+    },
+    "hand-feet-harmony": {
+      "meta": {
+        "title": "Hand & Feet Harmony Massage near Mega Bangna | WANAKA Sanctuary",
+        "description": "A soothing hands and feet massage for tension relief and better circulation near Mega Bangna. 45 mins."
+      },
+      "title": "Hand & Feet Harmony",
+      "subtitle": "Hands and Feet Massage for Tension Relief and Balance",
+      "lead": "A soothing hands and feet massage designed to ease tension, support better circulation, and restore a sense of balance. Ideal for those who spend long hours standing, walking, working, or using their hands throughout the day.",
+      "bestFor": "Long hours of standing or walking, office workers, tired hands and feet, targeted relief — and anyone looking for a hand and foot massage near Mega Bangna."
     }
   }
 }

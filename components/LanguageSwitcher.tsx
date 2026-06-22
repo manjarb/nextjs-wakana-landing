@@ -1,7 +1,12 @@
 "use client";
 
 import { useParams, usePathname, useRouter } from 'next/navigation';
-import { locales, localeNames, type Locale } from '@/i18n/config';
+import { locales, type Locale } from '@/i18n/config';
+
+const localeCodes: Record<Locale, string> = {
+  en: 'EN',
+  th: 'TH',
+};
 
 export default function LanguageSwitcher() {
   const params = useParams();
@@ -11,25 +16,35 @@ export default function LanguageSwitcher() {
   const currentLocale = params.locale as Locale;
 
   const handleChange = (newLocale: Locale) => {
-    // Replace the locale in the current pathname
+    if (newLocale === currentLocale) return;
+    // Replace the locale segment in the current pathname
     const segments = pathname.split('/');
     segments[1] = newLocale;
-    const newPathname = segments.join('/');
-
-    router.push(newPathname);
+    router.push(segments.join('/'));
   };
 
   return (
-    <select
-      value={currentLocale}
-      onChange={(e) => handleChange(e.target.value as Locale)}
-      className="border rounded px-2 py-1 bg-white dark:bg-zinc-800 dark:text-white"
+    <div
+      className="flex items-center gap-1 text-sm font-medium text-[#5b6d65]"
+      aria-label="Language switcher"
     >
-      {locales.map((locale) => (
-        <option key={locale} value={locale}>
-          {localeNames[locale]}
-        </option>
+      {locales.map((locale, index) => (
+        <span key={locale} className="flex items-center gap-1">
+          {index > 0 && <span className="text-[#5b6d65]/40">|</span>}
+          <button
+            type="button"
+            onClick={() => handleChange(locale)}
+            aria-current={locale === currentLocale}
+            className={`rounded px-1 transition ${
+              locale === currentLocale
+                ? 'font-semibold text-[#2f3a36]'
+                : 'text-[#5b6d65]/70 hover:text-[#2f3a36]'
+            }`}
+          >
+            {localeCodes[locale]}
+          </button>
+        </span>
       ))}
-    </select>
+    </div>
   );
 }
