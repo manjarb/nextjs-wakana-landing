@@ -15,21 +15,21 @@ const serviceCategories = [
     title: 'Relaxation Rituals',
     description:
       'A collection of facial, head, and body relaxation treatments designed to ease tension, restore balance, and bring your skin, body, and mind back to a calmer state.',
-    image: '/images/v2/relaxation_head_spa_03.jpg',
+    image: '/images/services/relaxation/aroma-body/facial-massage_01.webp',
     href: '/services/relaxation',
   },
   {
     title: 'Aesthetic Rituals',
     description:
       "Facial treatments and skin renewal programs designed to hydrate, refresh, and restore the skin's natural glow — from soothing facials to advanced skin injections.",
-    image: '/images/v2/facial_treatment_01.jpg',
+    image: '/images/services/aesthetic/facial-treatments/1.webp',
     href: '/services/aesthetic',
   },
   {
     title: 'IV Therapy',
     description:
       'Restorative IV wellness rituals designed to support hydration, replenish essential nutrients, and help restore your body\'s natural balance.',
-    image: '/images/v2/drip_iv.jpg',
+    image: '/images/services/iv-therapy/1.webp',
     href: '/services/iv-therapy',
   },
 ];
@@ -475,6 +475,7 @@ export default function HomePage() {
   const tHero = useTranslations('hero');
   const tPillars = useTranslations('ritualPillars');
   const tAbout = useTranslations('about');
+  const tReviewVideo = useTranslations('reviewVideo');
 
   return (
     <div className="bg-[#f7f2e8] text-[#2f3a36]">
@@ -606,11 +607,55 @@ export default function HomePage() {
               <div className="relative h-80 rounded-[32px] bg-white/80 shadow-xl shadow-[#d6c8b2]/30 md:h-[26rem]">
                 <div className="relative h-full w-full overflow-hidden rounded-[32px] border border-white/60">
                   <Image
-                    src="/images/v2/lobby_5.jpg"
-                    alt="Serene treatment suite inside WANAKA Sanctuary"
+                    src="/images/rooms/central-hall.webp"
+                    alt="Central hall lounge inside WANAKA Sanctuary"
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 460px, 85vw"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="review"
+          className="border-y border-[#d6c8b2]/50 bg-[#5b6d65]"
+        >
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-24">
+            <div className="max-w-xl space-y-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+                {tReviewVideo('eyebrow')}
+              </p>
+              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+                {tReviewVideo('title')}
+              </h2>
+              <p className="text-lg leading-relaxed text-white/78">
+                {tReviewVideo('description')}
+              </p>
+              <TrackedLink
+                href="https://youtube.com/shorts/OeMxxXx-PdI?feature=share"
+                target="_blank"
+                rel="noopener noreferrer"
+                eventName="click_youtube_short_review"
+                className="inline-flex w-fit items-center rounded-full border border-white/65 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white hover:bg-white hover:text-[#2f3a36]"
+              >
+                {tReviewVideo('watchOnYoutube')}
+              </TrackedLink>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[22rem] overflow-hidden rounded-[32px] border border-white/25 bg-[#2f3a36] p-3 shadow-2xl shadow-[#2f3a36]/35">
+                <div className="overflow-hidden rounded-[24px] bg-black">
+                  <iframe
+                    src="https://www.youtube.com/embed/OeMxxXx-PdI?rel=0&modestbranding=1"
+                    title={tReviewVideo('iframeTitle')}
+                    className="aspect-[9/16] w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                   />
                 </div>
               </div>

@@ -9,6 +9,13 @@
     "signatureName": "Wanaka Sanctuary",
     "signatureTagline": "Small Rituals . Big Rest"
   },
+  "reviewVideo": {
+    "eyebrow": "Review",
+    "title": "สัมผัสบรรยากาศวานากา",
+    "description": "ชมภาพบรรยากาศสั้น ๆ ของพื้นที่สงบ เป็นส่วนตัว และอบอุ่นภายใน Wanaka Sanctuary",
+    "watchOnYoutube": "ดูบน YouTube",
+    "iframeTitle": "วิดีโอรีวิว Wanaka Sanctuary"
+  },
   "ritualPillars": {
     "soul": {
       "title": "Soul Relaxation Rituals",

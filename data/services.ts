@@ -3,8 +3,8 @@
 // All human-facing copy lives in messages/{en,th}.json under the `serviceDetail`
 // namespace, keyed by `slug` (mirroring the existing `servicesPage` pattern).
 //
-// NOTE: every `image` below points at an existing placeholder. New photography
-// is still being prepared — replace these when assets land. // TODO: replace image
+// NOTE: image paths point to checked-in public assets and are intentionally
+// non-translatable; human-facing alt/copy lives in messages/{en,th}.json.
 
 export type ServiceCategory = 'relaxation' | 'aesthetic' | 'iv';
 
@@ -57,7 +57,7 @@ export const services: ServiceEntry[] = [
     slug: 'wanaka-ritual-endota-organic',
     category: 'relaxation',
     group: 'facial-massage',
-    image: '/images/v2/facial_treatment_01.jpg',
+    image: '/images/services/relaxation/aroma-body/facial-massage_01.webp',
     durations: ['60'],
     hasFullDetail: true,
   },
@@ -73,7 +73,7 @@ export const services: ServiceEntry[] = [
     slug: 'deep-head-ritual',
     category: 'relaxation',
     group: 'head-spa',
-    image: '/images/v2/relaxation_head_spa.jpg',
+    image: '/images/services/relaxation/aroma-body/deep_head_ritual_01.webp',
     durations: ['75'],
     hasFullDetail: true,
   },
@@ -89,7 +89,7 @@ export const services: ServiceEntry[] = [
     slug: 'rest-relax-ritual',
     category: 'relaxation',
     group: 'aroma-body',
-    image: '/images/v2/lobby_6.jpg',
+    image: '/images/services/relaxation/aroma-body/1.webp',
     durations: ['60', '90', '120'],
     hasFullDetail: true,
   },
@@ -97,7 +97,7 @@ export const services: ServiceEntry[] = [
     slug: 'body-scrub',
     category: 'relaxation',
     group: 'aroma-body',
-    image: '/images/v2/facial_treatment_03.jpg',
+    image: '/images/services/relaxation/aroma-body/3.webp',
     durations: ['60'],
     hasFullDetail: true,
   },
@@ -115,28 +115,28 @@ export const services: ServiceEntry[] = [
     slug: 'purify-facial',
     category: 'aesthetic',
     group: 'facial-treatments',
-    image: '/images/v2/facial_treatment_01.jpg',
+    image: '/images/services/aesthetic/facial-treatments/1.webp',
     hasFullDetail: false,
   },
   {
     slug: 'under-eye',
     category: 'aesthetic',
     group: 'facial-treatments',
-    image: '/images/v2/facial_treatment_02.jpg',
+    image: '/images/services/aesthetic/facial-treatments/2.webp',
     hasFullDetail: false,
   },
   {
     slug: 'v-lift',
     category: 'aesthetic',
     group: 'facial-treatments',
-    image: '/images/v2/facial_treatment_03.jpg',
+    image: '/images/services/aesthetic/facial-treatments/1.webp',
     hasFullDetail: false,
   },
   {
     slug: 'facial-mask',
     category: 'aesthetic',
     group: 'facial-treatments',
-    image: '/images/v2/facial_treatment_01.jpg',
+    image: '/images/services/aesthetic/facial-treatments/2.webp',
     hasFullDetail: false,
   },
   {
@@ -157,7 +157,7 @@ export const services: ServiceEntry[] = [
     slug: 'botox',
     category: 'aesthetic',
     group: 'botox',
-    image: '/images/v2/facial_treatment_02.jpg',
+    image: '/images/services/aesthetic/injectable-treatments/3.webp',
     hasFullDetail: false,
   },
 
@@ -166,49 +166,49 @@ export const services: ServiceEntry[] = [
     slug: 'radiant-luxe',
     category: 'iv',
     group: 'glow-beauty',
-    image: '/images/v2/drip_iv.jpg',
+    image: '/images/services/iv-therapy/4.webp',
     hasFullDetail: false,
   },
   {
     slug: 'soft-glow-renewal',
     category: 'iv',
     group: 'glow-beauty',
-    image: '/images/v2/drip_iv_02.jpg',
+    image: '/images/services/iv-therapy/2.webp',
     hasFullDetail: false,
   },
   {
     slug: 'holistic-boost',
     category: 'iv',
     group: 'immunity-recovery',
-    image: '/images/v2/drip_iv_02.jpg',
+    image: '/images/services/iv-therapy/3.webp',
     hasFullDetail: false,
   },
   {
     slug: 'immune-booster',
     category: 'iv',
     group: 'immunity-recovery',
-    image: '/images/v2/drip_iv.jpg',
+    image: '/images/services/iv-therapy/1.webp',
     hasFullDetail: false,
   },
   {
     slug: 'vit-d',
     category: 'iv',
     group: 'immunity-recovery',
-    image: '/images/v2/drip_iv_02.jpg',
+    image: '/images/services/iv-therapy/3.webp',
     hasFullDetail: false,
   },
   {
     slug: 'anti-hangover',
     category: 'iv',
     group: 'lifestyle',
-    image: '/images/v2/drip_iv_02.jpg',
+    image: '/images/services/iv-therapy/1.webp',
     hasFullDetail: false,
   },
   {
     slug: 'mens-health',
     category: 'iv',
     group: 'lifestyle',
-    image: '/images/v2/drip_iv.jpg',
+    image: '/images/services/iv-therapy/4.webp',
     hasFullDetail: false,
   },
 ];

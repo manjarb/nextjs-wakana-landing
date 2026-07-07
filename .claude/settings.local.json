@@ -4,7 +4,8 @@
       "WebSearch",
       "Bash(npm run lint:*)",
       "Bash(grep:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/th.json','utf8'\\)\\); console.log\\('JSON OK'\\)\")"
     ],
     "deny": [],
     "ask": []

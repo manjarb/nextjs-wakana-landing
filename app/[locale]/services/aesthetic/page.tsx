@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import SiteHeader from '@/components/SiteHeader';
@@ -10,10 +11,19 @@ type Props = {
 type MenuItem = {
   title: string;
   price?: string;
+  duration?: string;
   description?: string;
 };
 
 type Cluster = {
+  title: string;
+  description: string;
+  items: MenuItem[];
+};
+
+type RitualCollection = {
+  id: string;
+  eyebrow: string;
   title: string;
   description: string;
   items: MenuItem[];
@@ -33,6 +43,31 @@ type ContactSection = {
 const BOOK_HREF =
   'https://lin.ee/SSGzTmt?utm_source=website&utm_medium=aesthetic_page&utm_campaign=book_ritual';
 
+const facialTreatmentImages = [
+  '/images/services/aesthetic/facial-treatments/1.webp',
+  '/images/services/aesthetic/facial-treatments/2.webp',
+];
+
+const facialRoomImage = {
+  src: '/images/rooms/wanaka-room-2.webp',
+  alt: 'Facial treatment room at WANAKA Sanctuary',
+};
+
+const injectableImages = [
+  {
+    src: '/images/services/aesthetic/injectable-treatments/1.webp',
+    alt: 'Injectable treatment consultation at WANAKA Sanctuary',
+  },
+  {
+    src: '/images/services/aesthetic/injectable-treatments/2.webp',
+    alt: 'Precision injectable treatment at WANAKA Sanctuary',
+  },
+  {
+    src: '/images/services/aesthetic/injectable-treatments/3.webp',
+    alt: 'Aesthetic injectable treatment at WANAKA Sanctuary',
+  },
+];
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'aestheticPage.meta' });
@@ -44,7 +79,12 @@ export default async function AestheticPage({ params }: Props) {
 
   const tPage = await getTranslations({ locale, namespace: 'aestheticPage' });
   const tServices = await getTranslations({ locale, namespace: 'servicesPage' });
+  const tNav = await getTranslations({ locale, namespace: 'navigation.dropdown' });
 
+  const ritualCollections = tServices.raw('ritualCollections') as RitualCollection[];
+  const facialTreatments = ritualCollections.filter((collection) =>
+    ['facial-treatment', 'other-facial-treatment'].includes(collection.id),
+  );
   const skinBooster = tServices.raw('skinBooster') as SectionMeta;
   const premiumSkinBoosters = tServices.raw('premiumSkinBoosters') as MenuItem[];
   const everydaySkinBoosters = tServices.raw('everydaySkinBoosters') as Cluster[];
@@ -81,6 +121,93 @@ export default async function AestheticPage({ params }: Props) {
       {/* Skin Booster section */}
       <div className="mx-auto max-w-6xl space-y-16 px-6 pb-20">
 
+        {/* Facial Treatments section */}
+        <div id="facial-treatments">
+          <div className="mb-10 flex items-center gap-4">
+            <h2 className="shrink-0 text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65]">
+              {tNav('facialTreatments')}
+            </h2>
+            <div className="h-px flex-1 bg-[#d6c8b2]/60" />
+          </div>
+
+          <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20 lg:aspect-[16/7]">
+            <Image
+              src={facialRoomImage.src}
+              alt={facialRoomImage.alt}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 1120px, 92vw"
+            />
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {facialTreatmentImages.map((image, index) => (
+                <div
+                  key={image}
+                  className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20"
+                >
+                  <Image
+                    src={image}
+                    alt={`Facial treatment at WANAKA Sanctuary ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 45vw, 92vw"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-8">
+              {facialTreatments.map((collection) => (
+                <section key={collection.id}>
+                  <div className="mb-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#5b6d65]">
+                      {collection.eyebrow}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold text-[#2f3a36] sm:text-2xl">
+                      {collection.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#52635d]">
+                      {collection.description}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4">
+                    {collection.items.map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-xl border border-[#d6c8b2]/50 bg-white/70 px-5 py-4"
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <p className="text-sm font-semibold text-[#2f3a36]">{item.title}</p>
+                          <div className="flex shrink-0 flex-wrap gap-2">
+                            {item.duration && (
+                              <span className="rounded-full bg-[#f7f2e8] px-3 py-1 text-xs font-medium text-[#6f7b7a]">
+                                {item.duration}
+                              </span>
+                            )}
+                            {item.price && (
+                              <span className="rounded-full bg-[#f0ebe0] px-3 py-1 text-xs font-medium text-[#5b6d65]">
+                                {item.price}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        {item.description && (
+                          <p className="mt-2 text-sm leading-relaxed text-[#52635d]">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Section heading */}
         <div id="skin-booster">
           <div className="mb-10 flex items-center gap-4">
@@ -96,6 +223,7 @@ export default async function AestheticPage({ params }: Props) {
               <p className="mt-2 text-sm leading-relaxed text-[#52635d]">{skinBooster.intro}</p>
             )}
           </div>
+
         </div>
 
         {/* Premium boosters */}
@@ -175,6 +303,23 @@ export default async function AestheticPage({ params }: Props) {
           <p className="mb-6 text-xl font-semibold text-[#2f3a36] sm:text-2xl">
             {aestheticTreatment.title}
           </p>
+
+          <div className="mb-8 grid gap-4 sm:grid-cols-3">
+            {injectableImages.map((image) => (
+              <div
+                key={image.src}
+                className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 340px, (min-width: 640px) 30vw, 92vw"
+                />
+              </div>
+            ))}
+          </div>
 
           <div className="overflow-hidden rounded-2xl border border-[#d6c8b2]/60 bg-white/80">
             {aestheticTreatments.map((item, i) => (

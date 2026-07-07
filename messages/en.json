@@ -9,6 +9,13 @@
     "signatureName": "Wanaka Sanctuary",
     "signatureTagline": "Small Rituals . Big Rest"
   },
+  "reviewVideo": {
+    "eyebrow": "Review",
+    "title": "See the sanctuary in motion.",
+    "description": "Watch a short glimpse of the calm, private atmosphere waiting inside Wanaka Sanctuary.",
+    "watchOnYoutube": "Watch on YouTube",
+    "iframeTitle": "Wanaka Sanctuary review video"
+  },
   "ritualPillars": {
     "soul": {
       "title": "Soul Relaxation Rituals",

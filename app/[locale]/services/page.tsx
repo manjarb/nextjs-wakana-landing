@@ -58,9 +58,9 @@ type ContactDetail = {
 };
 
 const categoryImages: Record<string, string> = {
-  relaxation: '/images/v2/relaxation_head_spa_03.jpg',
-  aesthetic: '/images/v2/facial_treatment_01.jpg',
-  iv: '/images/v2/drip_iv.jpg',
+  relaxation: '/images/rooms/wanaka-room-1.webp',
+  aesthetic: '/images/rooms/vip-room-1.webp',
+  iv: '/images/rooms/iv-drip-room.webp',
 };
 
 const contactDetailMeta: Record<string, { href?: string; eventName?: string }> = {
@@ -138,7 +138,7 @@ export default async function ServicesPage({ params }: Props) {
         <section id="hero" className="relative isolate overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/v2/lobby_7.jpg"
+              src="/images/rooms/central-hall.webp"
               alt=""
               fill
               priority

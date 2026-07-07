@@ -27,6 +27,11 @@ type Labels = {
 const BOOK_HREF =
   'https://lin.ee/SSGzTmt?utm_source=website&utm_medium=relaxation_page&utm_campaign=book_ritual';
 
+const relaxationGroupImages: Record<string, string[]> = {
+  'facial-massage': ['/images/rooms/wanaka-room-1.webp'],
+  'head-spa': ['/images/rooms/head-spa-room.webp'],
+};
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'relaxationPage.meta' });
@@ -78,127 +83,163 @@ export default async function RelaxationPage({ params }: Props) {
 
       {/* Service groups */}
       <div className="mx-auto max-w-6xl space-y-20 px-6 pb-28">
-        {groupedServices.map(({ group, items }) => (
-          <div key={group.id} id={group.id}>
-            {/* Group heading */}
-            <div className="mb-10 flex items-center gap-4">
-              <h2 className="shrink-0 text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65]">
-                {tNav(group.labelKey)}
-              </h2>
-              <div className="h-px flex-1 bg-[#d6c8b2]/60" />
-            </div>
+        {groupedServices.map(({ group, items }) => {
+          const groupLabel = tNav(group.labelKey);
+          const groupImages = relaxationGroupImages[group.id] ?? [];
 
-            {/* Service entries */}
-            <div className="space-y-10">
-              {items.map((service) => {
-                let detail: ServiceDetail = {
-                  title: service.slug,
-                  subtitle: '',
-                  lead: '',
-                };
-                try {
-                  detail = tDetail.raw(service.slug) as ServiceDetail;
-                } catch {
-                  // fallback
-                }
+          return (
+            <div key={group.id} id={group.id}>
+              {/* Group heading */}
+              <div className="mb-10 flex items-center gap-4">
+                <h2 className="shrink-0 text-xs font-semibold uppercase tracking-[0.3em] text-[#5b6d65]">
+                  {groupLabel}
+                </h2>
+                <div className="h-px flex-1 bg-[#d6c8b2]/60" />
+              </div>
 
-                const durationLabel =
-                  service.durations && service.durations.length > 0
-                    ? service.durations.join(' / ') + ' mins'
-                    : null;
+              {groupImages.length > 0 && (
+                <div
+                  className={`mb-8 grid gap-4 sm:grid-cols-2 ${
+                    groupImages.length === 1
+                      ? 'sm:grid-cols-1 lg:grid-cols-1'
+                      : groupImages.length > 2
+                        ? 'lg:grid-cols-3'
+                        : 'lg:grid-cols-2'
+                  }`}
+                >
+                  {groupImages.map((image, index) => (
+                    <div
+                      key={image}
+                      className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20"
+                    >
+                      <Image
+                        src={image}
+                        alt={`${groupLabel} treatment at WANAKA Sanctuary ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes={
+                          groupImages.length === 1
+                            ? '(min-width: 1024px) 1120px, 92vw'
+                            : '(min-width: 1024px) 540px, (min-width: 640px) 45vw, 92vw'
+                        }
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
 
-                const leadParas = detail.lead
-                  ? detail.lead.split('\n\n').filter(Boolean)
-                  : [];
+              {/* Service entries */}
+              <div className="space-y-10">
+                {items.map((service) => {
+                  let detail: ServiceDetail = {
+                    title: service.slug,
+                    subtitle: '',
+                    lead: '',
+                  };
+                  try {
+                    detail = tDetail.raw(service.slug) as ServiceDetail;
+                  } catch {
+                    // fallback
+                  }
 
-                return (
-                  <article
-                    key={service.slug}
-                    className="overflow-hidden rounded-3xl border border-[#d6c8b2]/60 bg-white/80 shadow-sm shadow-[#d6c8b2]/20"
-                  >
-                    <div className="grid lg:grid-cols-[2fr_3fr]">
-                      {/* Image */}
-                      <div className="relative aspect-[4/3] bg-[#f0ebe0] lg:aspect-auto lg:min-h-[320px]">
-                        <Image
-                          src={service.image}
-                          alt={detail.title}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 36vw, 100vw"
-                        />
-                      </div>
+                  const durationLabel =
+                    service.durations && service.durations.length > 0
+                      ? service.durations.join(' / ') + ' mins'
+                      : null;
 
-                      {/* Content */}
-                      <div className="flex flex-col gap-5 p-7 lg:p-9">
-                        {/* Title row */}
-                        <div className="flex flex-wrap items-start justify-between gap-3">
-                          <div>
-                            <h3 className="text-xl font-semibold text-[#2f3a36] lg:text-2xl">
-                              {detail.title}
-                            </h3>
-                            {detail.subtitle && (
-                              <p className="mt-1 text-sm font-medium text-[#5b6d65]">
-                                {detail.subtitle}
-                              </p>
-                            )}
-                          </div>
-                          {durationLabel && (
-                            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#d6c8b2] bg-[#f7f2e8] px-3 py-1.5 text-xs font-medium text-[#6f7b7a]">
-                              <svg
-                                className="h-3 w-3 text-[#5b6d65]"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={1.5}
-                              >
-                                <circle cx="12" cy="12" r="9" />
-                                <path strokeLinecap="round" d="M12 7v5l3 3" />
-                              </svg>
-                              {durationLabel}
-                            </span>
-                          )}
+                  const leadParas = detail.lead
+                    ? detail.lead.split('\n\n').filter(Boolean)
+                    : [];
+
+                  return (
+                    <article
+                      key={service.slug}
+                      className="overflow-hidden rounded-3xl border border-[#d6c8b2]/60 bg-white/80 shadow-sm shadow-[#d6c8b2]/20"
+                    >
+                      <div className="grid lg:grid-cols-[2fr_3fr]">
+                        {/* Image */}
+                        <div className="relative aspect-[4/3] bg-[#f0ebe0] lg:aspect-auto lg:min-h-[320px]">
+                          <Image
+                            src={service.image}
+                            alt={detail.title}
+                            fill
+                            className="object-cover"
+                            sizes="(min-width: 1024px) 36vw, 100vw"
+                          />
                         </div>
 
-                        {/* Lead paragraphs */}
-                        {leadParas.length > 0 && (
-                          <div className="space-y-3 text-sm leading-relaxed text-[#52635d]">
-                            {leadParas.map((para, i) => (
-                              <p key={i}>{para}</p>
-                            ))}
+                        {/* Content */}
+                        <div className="flex flex-col gap-5 p-7 lg:p-9">
+                          {/* Title row */}
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <h3 className="text-xl font-semibold text-[#2f3a36] lg:text-2xl">
+                                {detail.title}
+                              </h3>
+                              {detail.subtitle && (
+                                <p className="mt-1 text-sm font-medium text-[#5b6d65]">
+                                  {detail.subtitle}
+                                </p>
+                              )}
+                            </div>
+                            {durationLabel && (
+                              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#d6c8b2] bg-[#f7f2e8] px-3 py-1.5 text-xs font-medium text-[#6f7b7a]">
+                                <svg
+                                  className="h-3 w-3 text-[#5b6d65]"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  strokeWidth={1.5}
+                                >
+                                  <circle cx="12" cy="12" r="9" />
+                                  <path strokeLinecap="round" d="M12 7v5l3 3" />
+                                </svg>
+                                {durationLabel}
+                              </span>
+                            )}
                           </div>
-                        )}
 
-                        {/* What to Expect */}
-                        {service.hasFullDetail && detail.whatToExpect && (
-                          <div className="rounded-2xl bg-[#f7f2e8] px-5 py-4">
-                            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#5b6d65]">
-                              {labels.whatToExpect}
-                            </p>
-                            <p className="text-sm leading-relaxed text-[#52635d]">
-                              {detail.whatToExpect}
-                            </p>
-                          </div>
-                        )}
+                          {/* Lead paragraphs */}
+                          {leadParas.length > 0 && (
+                            <div className="space-y-3 text-sm leading-relaxed text-[#52635d]">
+                              {leadParas.map((para, i) => (
+                                <p key={i}>{para}</p>
+                              ))}
+                            </div>
+                          )}
 
-                        {/* Best For */}
-                        {detail.bestFor && (
-                          <div>
-                            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#5b6d65]">
-                              {labels.bestFor}
-                            </p>
-                            <p className="text-sm leading-relaxed text-[#6f7b7a]">
-                              {detail.bestFor}
-                            </p>
-                          </div>
-                        )}
+                          {/* What to Expect */}
+                          {service.hasFullDetail && detail.whatToExpect && (
+                            <div className="rounded-2xl bg-[#f7f2e8] px-5 py-4">
+                              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#5b6d65]">
+                                {labels.whatToExpect}
+                              </p>
+                              <p className="text-sm leading-relaxed text-[#52635d]">
+                                {detail.whatToExpect}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Best For */}
+                          {detail.bestFor && (
+                            <div>
+                              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#5b6d65]">
+                                {labels.bestFor}
+                              </p>
+                              <p className="text-sm leading-relaxed text-[#6f7b7a]">
+                                {detail.bestFor}
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                );
-              })}
+                    </article>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* CTA strip */}

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import SiteHeader from '@/components/SiteHeader';
@@ -20,6 +21,30 @@ type IvGroup = {
 
 const BOOK_HREF =
   'https://lin.ee/SSGzTmt?utm_source=website&utm_medium=iv_therapy_page&utm_campaign=book_ritual';
+
+const ivRoomImage = {
+  src: '/images/rooms/iv-drip-room.webp',
+  alt: 'Private IV drip therapy room at WANAKA Sanctuary',
+};
+
+const ivTherapyImages = [
+  {
+    src: '/images/services/iv-therapy/1.webp',
+    alt: 'IV therapy guest at WANAKA Sanctuary',
+  },
+  {
+    src: '/images/services/iv-therapy/2.webp',
+    alt: 'Bright IV therapy lounge at WANAKA Sanctuary',
+  },
+  {
+    src: '/images/services/iv-therapy/3.webp',
+    alt: 'IV drip therapy chair at WANAKA Sanctuary',
+  },
+  {
+    src: '/images/services/iv-therapy/4.webp',
+    alt: 'Sunlit IV therapy room at WANAKA Sanctuary',
+  },
+];
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -63,6 +88,33 @@ export default async function IvTherapyPage({ params }: Props) {
 
       {/* Groups */}
       <div className="mx-auto max-w-6xl space-y-14 px-6 pb-24">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20 lg:aspect-[16/7]">
+          <Image
+            src={ivRoomImage.src}
+            alt={ivRoomImage.alt}
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 1120px, 92vw"
+          />
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {ivTherapyImages.map((image) => (
+            <div
+              key={image.src}
+              className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#f0ebe0] shadow-sm shadow-[#d6c8b2]/20"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 260px, (min-width: 640px) 45vw, 92vw"
+              />
+            </div>
+          ))}
+        </div>
+
         {groups.map((group) => (
           <div key={group.title} id={group.id}>
             {/* Group heading */}
