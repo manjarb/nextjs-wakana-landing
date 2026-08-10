@@ -16,7 +16,7 @@ Add a dedicated Packages section to the localized homepage so visitors can view 
 
 ## Visual design
 
-Use a restrained editorial gallery that fits the homepage's existing warm sanctuary palette. On large screens, place the three artworks in equal-width columns aligned along their top edges. Preserve each source image's full aspect ratio; the square Active Balance artwork will therefore end higher than the two portrait artworks, forming a deliberate staggered lower edge.
+Use a restrained editorial gallery that fits the homepage's existing warm sanctuary palette. From the medium breakpoint upward, place the artworks in two equal-width columns aligned along their top edges. The third artwork starts a second row aligned to the left, creating a simple 2+1 layout. Preserve each source image's full aspect ratio; the square Active Balance artwork will therefore end higher than the adjacent portrait artwork.
 
 On small screens, stack the artworks vertically at full available width. Give each image a subtle border and soft corner radius consistent with the existing interface. Do not place titles, descriptions, prices, or buttons beneath the artwork because that information is already embedded in the supplied creative.
 
@@ -37,7 +37,7 @@ Update the Packages link in the desktop dropdown trigger, every desktop package 
 ## Responsive behavior
 
 - Mobile: one column, full-width artwork, natural aspect ratios.
-- Medium and larger screens: three equal-width columns, top aligned, natural aspect ratios.
+- Medium and larger screens: two equal-width columns, top aligned, natural aspect ratios; the third artwork starts a second row aligned left.
 - No cropping or fixed-height containers.
 
 ## Verification
