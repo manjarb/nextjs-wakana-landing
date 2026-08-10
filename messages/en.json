@@ -2,10 +2,9 @@
   "about": {
     "eyebrow": "About Wanaka",
     "title": "A Sanctuary for Your Skin, Body, and Mind",
-    "paragraph1": "Wanaka Sanctuary was created from the founder's wish to build a wellness space where every care feels personal, gentle, and sincere.",
-    "paragraph2": "In today's busy rhythm, many people spend their days caring for work, family, and everyone around them — often forgetting to pause for themselves. Wanaka was born to be that pause: a quiet wellness sanctuary near Mega Bangna where modern facial treatments, body massage, relaxation rituals, and restorative care meet warm hospitality.",
-    "paragraph3": "Here, we believe beauty and wellness should feel calm, thoughtful, and comforting. From mindful facial rituals to body relaxation and skin renewal treatments, every detail is designed to help you feel cared for, rebalanced, and softly renewed.",
-    "paragraph4": "A small escape, made with care — for the days you need to rest, restore, and return to yourself.",
+    "paragraph1": "Wanaka Sanctuary is a calm wellness and beauty sanctuary near Mega Bangna, created from the founder's wish to make self-care feel personal, gentle, and sincere.",
+    "paragraph2": "Designed as a quiet pause from everyday life, Wanaka offers facial treatments, body massage, relaxation rituals, and skin renewal care in a warm, private space.",
+    "paragraph3": "Every detail is created to help you rest, restore balance, and return to yourself — feeling cared for, refreshed, and softly renewed.",
     "signatureName": "Wanaka Sanctuary",
     "signatureTagline": "Small Rituals . Big Rest"
   },
@@ -31,10 +30,9 @@
     }
   },
   "hero": {
-    "paragraph1": "At Wānaka Sanctuary, we believe that true happiness and confidence begin with a balanced body and mind. When you take time to care for yourself, your skin, your body, and your inner wellbeing, you create space to release fatigue, restore energy, and reconnect with yourself. This gentle act of self-care helps strengthen the balance between how you feel, how you look, and how you move through everyday life.",
-    "paragraph2": "Wānaka Sanctuary is a wellness sanctuary near Mega Bangna, created as a calm and private space where you can rest, recharge, and nurture yourself. Whether you are looking for a relaxing facial treatment, body massage, head massage, IV drip therapy, or a quiet moment to unwind, our sanctuary is here to support your journey back to balance.",
-    "paragraph3": "More than a wellness and beauty space, Wānaka is also a place to spend meaningful time with the people you love. It is a place where you can slow down, reconnect, and strengthen your bond with your children, family, or someone special.",
-    "paragraph4": "Wānaka Sanctuary is your sanctuary for skin, body, and mind.",
+    "paragraph1": "Wānaka Sanctuary is a calm wellness and beauty sanctuary near Mega Bangna, created for those who want to care for their skin, body, and mind in a private, restorative space.",
+    "paragraph2": "Through facial treatments, body massage, head massage, IV drip therapy, and gentle self-care rituals, we help you slow down, release fatigue, restore energy, and reconnect with your natural balance.",
+    "paragraph3": "More than a place for wellness, Wānaka is a sanctuary for meaningful rest — whether you come alone, with family, or with someone you love.",
     "discoverCta": "Discover WANAKA"
   },
   "common": {
@@ -80,6 +78,15 @@
       "momMorningEscape": "Mom Morning Escape",
       "activeRecoveryRitual": "Active Recovery Ritual",
       "jetLagRecoveryRitual": "Jet Lag Recovery Ritual"
+    }
+  },
+  "packages": {
+    "heading": "Packages",
+    "description": "Thoughtfully paired rituals for the moments when you need a deeper reset.",
+    "images": {
+      "momMorningEscape": "Mom Morning Escape package artwork",
+      "activeBalance": "Active Balance Program package artwork",
+      "jetLagRecovery": "Jet Lag Recovery Rituals package artwork"
     }
   },
   "reviews": {
@@ -772,8 +779,7 @@
       },
       "title": "Wanaka Ritual x Endota Organic",
       "subtitle": "Organic Facial Massage for Deep Hydration and Skin Balance",
-      "lead": "Wanaka Ritual x Endota Organic is a calming facial massage designed for those who wish to restore comfort, hydration, and balance to the skin. Using organic skincare from Endota, this ritual focuses on gentle touch, mindful techniques, and deeply nourishing care to help tired skin feel refreshed and comforted.\n\nThis facial treatment is ideal for skin that feels dry, dull, stressed, or lacking softness. Through slow facial massage movements, the ritual helps encourage relaxation while allowing the skin to receive moisture and nourishment more effectively.",
-      "whatToExpect": "Your treatment begins with gentle cleansing, followed by organic skincare application and relaxing facial massage techniques. Each step is designed to soothe the skin, replenish moisture, and leave your complexion feeling soft, calm, and naturally radiant.",
+      "lead": "Wanaka Ritual x Endota Organic is a calming facial massage at Wanaka Sanctuary near Mega Bangna, designed to restore comfort, hydration, and balance to dry, dull, or tired skin.\n\nUsing organic skincare from Endota and gentle mindful massage techniques, this facial treatment helps nourish the skin, encourage relaxation, and leave your complexion feeling refreshed, soft, and comforted.",
       "bestFor": "Dry or dehydrated skin, tired-looking skin, sensitive-feeling skin."
     },
     "wanaka-timeless-lift": {
@@ -783,9 +789,14 @@
       },
       "title": "Wanaka Timeless Lift",
       "subtitle": "Lifting Facial Massage to Firm, Refine, and Restore Radiance",
-      "lead": "Wanaka Timeless Lift is a mindful lifting facial massage created to support firmer-looking skin, smoother facial lines, and more defined facial contours. This 90-minute ritual combines slow, intentional massage techniques with a deeply relaxing experience, helping the face look refreshed without feeling rushed.\n\nThe treatment is designed for those who feel their skin has lost firmness, definition, or youthful vitality. Through carefully guided lifting movements, the ritual helps awaken the skin, improve the appearance of tiredness, and bring back a softer, more radiant look.",
-      "whatToExpect": "This ritual includes facial preparation, lifting massage techniques, and soothing skin care steps to support a refreshed and more sculpted appearance.",
+      "lead": "Wanaka Timeless Lift is a 90-minute lifting facial massage designed to support firmer-looking skin, smoother facial lines, and more defined facial contours.\n\nUsing slow, intentional massage techniques, this mindful facial treatment helps refresh tired-looking skin, restore a softer youthful glow, and create a naturally lifted appearance without feeling rushed.",
       "bestFor": "Dull or tired-looking skin, loss of firmness, facial puffiness, soft facial contours, and guests looking for a relaxing lifting facial treatment near Bangna and Mega Bangna."
+    },
+    "wanaka-guasha-ritual": {
+      "title": "Wanaka Guasha Ritual",
+      "subtitle": "",
+      "lead": "Meet the Wanaka Guasha Ritual — a calming facial ritual designed to release tension, support lymphatic drainage, encourage circulation, and bring back a naturally refreshed glow.\n\nThrough gentle guasha movements and mindful touch, this ritual helps your skin feel softer, lighter, less puffy, and beautifully relaxed.",
+      "bestFor": "Tired, puffy, or dull-looking skin, facial tension"
     },
     "deep-head-ritual": {
       "meta": {
@@ -794,8 +805,7 @@
       },
       "title": "Deep Head Ritual",
       "subtitle": "Head, Neck, Shoulder & Upper Back Massage for Deep Relaxation",
-      "lead": "Deep Head Ritual is a deeply soothing head massage designed to ease tension around the scalp, neck, shoulders, and upper back. This ritual is ideal for those who carry stress from work, screen time, busy schedules, or daily fatigue.\n\nThe treatment focuses on slow, grounding massage techniques that help release built-up tension and encourage a sense of lightness.",
-      "whatToExpect": "Your experience includes head, scalp, neck, shoulder, and upper back massage with natural oil. Calming movements are designed to help improve comfort, support circulation, and create deep relaxation.",
+      "lead": "Deep Head Ritual is a 75-minute head, shoulder, and upper back massage designed for deep relaxation and tension relief.\n\nIdeal for stress, screen time, busy schedules, or daily fatigue, this soothing head massage uses slow, grounding techniques to release built-up tension and leave you feeling lighter, calmer, and deeply rested.",
       "bestFor": "Office workers, frequent screen users, stress-related tension, tiredness, heavy head feeling, neck and shoulder discomfort, and anyone looking for a relaxing head massage near Mega Bangna."
     },
     "relaxation-head-spa": {
@@ -805,8 +815,7 @@
       },
       "title": "Relaxation Head Spa",
       "subtitle": "Head Spa with Massage and Shampooing for a Fresh, Light Feeling",
-      "lead": "Relaxation Head Spa is a calming head spa ritual that blends gentle massage, soft cleansing, and shampooing into one relaxing experience. Designed to refresh the scalp and ease the mind.\n\nThe ritual begins with a nature-inspired touch, helping you slow down from the busy rhythm of the day. Gentle scalp massage and cleansing help create a fresh sensation while the relaxing atmosphere supports emotional calm and comfort.",
-      "whatToExpect": "Your head spa experience includes relaxing scalp massage, gentle shampooing, cleansing care, and calming touch designed to refresh the scalp and restore a sense of ease.",
+      "lead": "Relaxation Head Spa is a calming head spa ritual that combines gentle scalp massage, soft cleansing, and shampooing to refresh the scalp and ease the mind.\n\nDesigned for stress, screen time, and daily fatigue, this soothing head spa experience helps you slow down, feel lighter, and enjoy a fresh, deeply relaxed sensation.",
       "bestFor": "Tired scalp, stress, mental fatigue, post-work relaxation, self-care days, and anyone looking for a relaxing head spa near Bangna, Srinakarin, or Mega Bangna."
     },
     "rest-relax-ritual": {
@@ -816,8 +825,7 @@
       },
       "title": "Rest & Relax Ritual",
       "subtitle": "Aroma Body Massage for Stress Relief and Full-Body Relaxation",
-      "lead": "Rest & Relax Ritual is an aroma body massage designed to relieve stress, ease body tension, and bring the body and mind back to balance. Available in 60, 90, and 120-minute sessions, this ritual allows you to choose the level of rest your body needs.\n\nUsing calming massage movements and a peaceful atmosphere, this treatment helps you slow down and release the heaviness of daily life. It is ideal for those who feel physically tired, emotionally drained, or simply in need of quiet personal time.",
-      "whatToExpect": "Your treatment includes full-body aroma massage with relaxing techniques focused on comfort, tension relief, and overall relaxation. Longer sessions allow more time for deeper rest and a more complete body reset.",
+      "lead": "Rest & Relax Ritual is an aroma body massage designed to relieve stress, ease body tension, and restore balance to the body and mind.\n\nAvailable in 60, 90, and 120-minute sessions, this calming body massage is ideal for physical fatigue, emotional stress, or anyone needing quiet personal time to slow down, release heaviness, and feel deeply relaxed.",
       "bestFor": "Stress, body fatigue, muscle tension, busy lifestyles, after-work relaxation, weekend self-care, and anyone looking for an aroma body massage near Mega Bangna."
     },
     "body-scrub": {
@@ -828,7 +836,6 @@
       "title": "Body Scrub",
       "subtitle": "Full-Body Exfoliation Treatment for Smooth and Renewed Skin",
       "lead": "Body Scrub is a gentle full-body exfoliation ritual designed to refresh dull, tired skin and restore a softer, smoother feeling. This treatment helps remove dead skin buildup while leaving the body feeling clean, polished, and renewed.",
-      "whatToExpect": "Your treatment includes gentle full-body exfoliation with relaxing care to help smooth the skin, refresh dullness, and leave the body feeling soft and renewed.",
       "bestFor": "Dull skin, rough texture, dry-feeling skin, pre-event skin preparation, body care routines, and anyone looking for a relaxing body scrub treatment near Bangna and Mega Bangna."
     },
     "hand-feet-harmony": {

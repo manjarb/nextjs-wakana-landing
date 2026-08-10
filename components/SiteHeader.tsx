@@ -35,16 +35,16 @@ export default function SiteHeader() {
   ];
 
   const mobilePackagesChildren: NavItem[] = [
-    { label: tDrop('momMorningEscape'), href: '/#services' },
-    { label: tDrop('activeRecoveryRitual'), href: '/#services' },
-    { label: tDrop('jetLagRecoveryRitual'), href: '/#services' },
+    { label: tDrop('momMorningEscape'), href: '/#packages' },
+    { label: tDrop('activeRecoveryRitual'), href: '/#packages' },
+    { label: tDrop('jetLagRecoveryRitual'), href: '/#packages' },
   ];
 
   const mobileNavItems: NavItem[] = [
     { label: tNav('home'), href: '/' },
     { label: tNav('about'), href: '/#about' },
     { label: tNav('services'), href: '/services', children: mobileServicesChildren },
-    { label: tNav('packages'), href: '/#services', children: mobilePackagesChildren },
+    { label: tNav('packages'), href: '/#packages', children: mobilePackagesChildren },
     { label: tNav('space'), href: '/#space' },
     { label: tNav('reviews'), href: '/#reviews' },
     { label: tNav('faq'), href: '/#faq' },

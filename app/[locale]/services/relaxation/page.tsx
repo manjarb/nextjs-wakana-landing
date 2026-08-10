@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import SiteHeader from '@/components/SiteHeader';
 import TrackedLink from '@/components/TrackedLink';
 import { getGroupsByCategory, services } from '@/data/services';
+import type { ServiceEntry } from '@/data/services';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -28,8 +29,24 @@ const BOOK_HREF =
   'https://lin.ee/SSGzTmt?utm_source=website&utm_medium=relaxation_page&utm_campaign=book_ritual';
 
 const relaxationGroupImages: Record<string, string[]> = {
-  'facial-massage': ['/images/rooms/wanaka-room-1.webp'],
-  'head-spa': ['/images/rooms/head-spa-room.webp'],
+};
+
+const relaxationServiceImages: Record<string, string> = {
+  'wanaka-ritual-endota-organic': '/images/v3/massage/Wanaka_x_Endota.png',
+  'wanaka-timeless-lift': '/images/v3/massage/Timeless_Lift.png',
+  'deep-head-ritual': '/images/v3/massage/DeepHead_Ritual.png',
+  'relaxation-head-spa': '/images/v3/massage/Relaxation_Head_Spa.png',
+  'rest-relax-ritual': '/images/v3/massage/Rest_Relax_ritual.png',
+  'body-scrub': '/images/v3/massage/Body_Scrub.png',
+};
+
+const wanakaGuashaRitual: ServiceEntry = {
+  slug: 'wanaka-guasha-ritual',
+  category: 'relaxation',
+  group: 'facial-massage',
+  image: '/images/generated/service-facial-massage.png',
+  durations: ['60'],
+  hasFullDetail: false,
 };
 
 export async function generateMetadata({ params }: Props) {
@@ -48,6 +65,10 @@ export default async function RelaxationPage({ params }: Props) {
   const labels = tDetail.raw('labels') as Labels;
   const relaxationGroups = getGroupsByCategory('relaxation');
   const relaxationServices = services.filter((s) => s.category === 'relaxation');
+  const timelessLiftIndex = relaxationServices.findIndex(
+    (service) => service.slug === 'wanaka-timeless-lift',
+  );
+  relaxationServices.splice(timelessLiftIndex + 1, 0, wanakaGuashaRitual);
 
   const groupedServices = relaxationGroups.map((group) => ({
     group,
@@ -160,7 +181,7 @@ export default async function RelaxationPage({ params }: Props) {
                         {/* Image */}
                         <div className="relative aspect-[4/3] bg-[#f0ebe0] lg:aspect-auto lg:min-h-[320px]">
                           <Image
-                            src={service.image}
+                            src={relaxationServiceImages[service.slug] ?? service.image}
                             alt={detail.title}
                             fill
                             className="object-cover"

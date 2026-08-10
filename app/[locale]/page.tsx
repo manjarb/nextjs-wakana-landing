@@ -5,6 +5,7 @@ import SiteHeader from '@/components/SiteHeader';
 import FAQAccordion from '@/components/FAQAccordion';
 import GoogleReviews from '@/components/GoogleReviews';
 import LocationMap from '@/components/LocationMap';
+import SanctuaryCarousel from '@/components/SanctuaryCarousel';
 import { useTranslations } from 'next-intl';
 
 // Navigation items are now defined inside the component for i18n
@@ -29,10 +30,31 @@ const serviceCategories = [
     title: 'IV Therapy',
     description:
       'Restorative IV wellness rituals designed to support hydration, replenish essential nutrients, and help restore your body\'s natural balance.',
-    image: '/images/services/iv-therapy/1.webp',
+    image: '/images/services/iv-therapy/iv_02.png',
     href: '/services/iv-therapy',
   },
 ];
+
+const packageArtworks = [
+  {
+    key: 'momMorningEscape',
+    src: '/images/v3/packages/Mom_Morning_Escape.png',
+    width: 1122,
+    height: 1402,
+  },
+  {
+    key: 'jetLagRecovery',
+    src: '/images/v3/packages/Jet_Lag_Recovery.png',
+    width: 1122,
+    height: 1402,
+  },
+  {
+    key: 'activeBalance',
+    src: '/images/v3/packages/Active_Balance.jpg',
+    width: 1280,
+    height: 1280,
+  }
+] as const;
 
 const multiSensoryJourney = [
   {
@@ -196,24 +218,6 @@ const immersiveDetails = [
         <path d="m7 8 5-2 5 2" />
       </svg>
     ),
-  },
-];
-
-const galleryImages = [
-  {
-    src: '/images/v2/lobby.jpg',
-    alt: 'Ambient view of the WANAKA lounge with curved seating',
-    label: 'Lounge Glow',
-  },
-  {
-    src: '/images/v2/family_living_room.jpg',
-    alt: 'Calm corner featuring tea ritual and botanical accents',
-    label: 'Calm Corners',
-  },
-  {
-    src: '/images/v2/outside.jpg',
-    alt: 'Perspective down the sanctuary wellness wing',
-    label: 'Wellness Wing',
   },
 ];
 
@@ -472,6 +476,7 @@ const faqItems = [
 export default function HomePage() {
   const tReviews = useTranslations('reviews');
   const tServices = useTranslations('services');
+  const tPackages = useTranslations('packages');
   const tHero = useTranslations('hero');
   const tPillars = useTranslations('ritualPillars');
   const tAbout = useTranslations('about');
@@ -509,7 +514,6 @@ export default function HomePage() {
                 <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph1')}</p>
                 <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph2')}</p>
                 <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph3')}</p>
-                <p className="text-lg leading-relaxed text-white/85">{tHero('paragraph4')}</p>
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -534,39 +538,23 @@ export default function HomePage() {
             {([
               {
                 key: 'soul',
-                icon: (
-                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M4 9c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
-                    <path d="M4 14c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0" />
-                  </svg>
-                ),
+                icon: '/images/icons/HOME_ICON_Soul_Relaxation_Ritual.png',
               },
               {
                 key: 'body',
-                icon: (
-                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M12 3v4M8 5l2 2M16 5l-2 2" />
-                    <path d="M9 9h6l1 6H8l1-6Z" />
-                    <path d="M10 15v4M14 15v4" />
-                  </svg>
-                ),
+                icon: '/images/icons/HOME_ICON_Body_Recharge_Rituals.png',
               },
               {
                 key: 'skin',
-                icon: (
-                  <svg className="h-10 w-10 text-[#5b6d65]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M12 4c-4 0-7 3.4-7 7.6 0 6.1 4.2 8.4 7 9.9 2.8-1.5 7-3.8 7-9.9C19 7.4 16 4 12 4Z" />
-                    <path d="M9 12c1.2.8 2.4 1 3.8.6 1.4-.4 2.4-1.2 3.2-2.6" />
-                  </svg>
-                ),
+                icon: '/images/icons/HOME_ICON_Skin_Revive_Rituals.png',
               },
             ] as const).map(({ key, icon }) => (
               <div
                 key={key}
                 className="group rounded-3xl border border-[#d6c8b2]/60 bg-white/80 p-6 shadow-sm shadow-[#d6c8b2]/20 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d6c8b2]/40"
               >
-                <div className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#f7f2e8] p-3 text-[#5b6d65]">
-                  {icon}
+                <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f7f2e8] p-1">
+                  <Image src={icon} alt="" width={1366} height={768} className="h-auto w-full object-contain" aria-hidden />
                 </div>
                 <h3 className="text-lg font-semibold text-[#2f3a36]">
                   {tPillars(`${key}.title`)}
@@ -595,7 +583,6 @@ export default function HomePage() {
                 <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph1')}</p>
                 <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph2')}</p>
                 <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph3')}</p>
-                <p className="text-lg leading-relaxed text-[#44544d]">{tAbout('paragraph4')}</p>
               </div>
               <div className="pt-2">
                 <p className="font-semibold text-[#2f3a36]">{tAbout('signatureName')}</p>
@@ -612,50 +599,6 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 460px, 85vw"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="review"
-          className="border-y border-[#d6c8b2]/50 bg-[#5b6d65]"
-        >
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-24">
-            <div className="max-w-xl space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
-                {tReviewVideo('eyebrow')}
-              </p>
-              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-                {tReviewVideo('title')}
-              </h2>
-              <p className="text-lg leading-relaxed text-white/78">
-                {tReviewVideo('description')}
-              </p>
-              <TrackedLink
-                href="https://youtube.com/shorts/OeMxxXx-PdI?feature=share"
-                target="_blank"
-                rel="noopener noreferrer"
-                eventName="click_youtube_short_review"
-                className="inline-flex w-fit items-center rounded-full border border-white/65 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white hover:bg-white hover:text-[#2f3a36]"
-              >
-                {tReviewVideo('watchOnYoutube')}
-              </TrackedLink>
-            </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[22rem] overflow-hidden rounded-[32px] border border-white/25 bg-[#2f3a36] p-3 shadow-2xl shadow-[#2f3a36]/35">
-                <div className="overflow-hidden rounded-[24px] bg-black">
-                  <iframe
-                    src="https://www.youtube.com/embed/OeMxxXx-PdI?rel=0&modestbranding=1"
-                    title={tReviewVideo('iframeTitle')}
-                    className="aspect-[9/16] w-full"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
                   />
                 </div>
               </div>
@@ -713,6 +656,40 @@ export default function HomePage() {
         </section>
 
         <section
+          id="packages"
+          className="scroll-mt-24 border-y border-[#d6c8b2]/50 bg-white/60"
+        >
+          <div className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-semibold text-[#2f3a36] sm:text-4xl">
+                {tPackages('heading')}
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-[#52635d]">
+                {tPackages('description')}
+              </p>
+            </div>
+
+            <div className="mt-12 grid items-start gap-6 md:grid-cols-2">
+              {packageArtworks.map((artwork) => (
+                <div
+                  key={artwork.key}
+                  className="overflow-hidden rounded-[28px] border border-[#d6c8b2]/60 bg-white shadow-sm shadow-[#d6c8b2]/20"
+                >
+                  <Image
+                    src={artwork.src}
+                    alt={tPackages(`images.${artwork.key}`)}
+                    width={artwork.width}
+                    height={artwork.height}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
           id="experience"
           className="border-t border-[#d6c8b2]/50 bg-[#f7f2e8]/90"
         >
@@ -741,36 +718,6 @@ export default function HomePage() {
                     sizes="(min-width: 1024px) 420px, 90vw"
                   />
                 </div>
-                <div className="rounded-3xl border border-[#d6c8b2]/70 bg-white/80 p-6 shadow-md shadow-[#d6c8b2]/20">
-                  <h3 className="text-lg font-semibold text-[#2f3a36]">
-                    Multi-sensory Notes
-                  </h3>
-                  <ul className="mt-4 space-y-4 text-sm leading-relaxed text-[#52635d]">
-                    {multiSensoryJourney.map((item) => (
-                      <li key={item.text} className="flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#f7f2e8] text-[#5b6d65]">
-                          {item.icon}
-                        </div>
-                        <span>{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-[#d6c8b2]/70 bg-white/80 p-6 shadow-md shadow-[#d6c8b2]/20">
-                  <h3 className="text-lg font-semibold text-[#2f3a36]">
-                    Immersive Details
-                  </h3>
-                  <ul className="mt-4 space-y-4 text-sm leading-relaxed text-[#52635d]">
-                    {immersiveDetails.map((detail) => (
-                      <li key={detail.text} className="flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#f7f2e8] text-[#5b6d65]">
-                          {detail.icon}
-                        </div>
-                        <span>{detail.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -787,29 +734,67 @@ export default function HomePage() {
               </h2>
             </div>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((image) => (
-              <div
-                key={image.src}
-                className="group relative h-80 overflow-hidden rounded-[32px] border border-white/50 bg-white/60 shadow-lg shadow-[#d6c8b2]/30 sm:h-96"
+          <SanctuaryCarousel />
+        </section>
+
+        <section
+          id="reviews"
+          className="border-y border-[#d6c8b2]/50 bg-[#5b6d65]"
+        >
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-24">
+            <div className="max-w-xl space-y-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+                {tReviewVideo('eyebrow')}
+              </p>
+              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+                {tReviewVideo('title')}
+              </h2>
+              <p className="text-lg leading-relaxed text-white/78">
+                {tReviewVideo('description')}
+              </p>
+              <TrackedLink
+                href="https://youtube.com/shorts/OeMxxXx-PdI?feature=share"
+                target="_blank"
+                rel="noopener noreferrer"
+                eventName="click_youtube_short_review"
+                className="inline-flex w-fit items-center rounded-full border border-white/65 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white hover:bg-white hover:text-[#2f3a36]"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 340px, 90vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2f3a36]/50 via-transparent to-transparent opacity-80 transition group-hover:opacity-90" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <p className="text-lg font-semibold">{image.label}</p>
+                {tReviewVideo('watchOnYoutube')}
+              </TrackedLink>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-6 lg:justify-end">
+              <div className="relative w-full max-w-[16rem] overflow-hidden rounded-[32px] border border-white/25 bg-[#2f3a36] p-3 shadow-2xl shadow-[#2f3a36]/35">
+                <div className="overflow-hidden rounded-[24px] bg-black">
+                  <iframe
+                    src="https://www.youtube.com/embed/OeMxxXx-PdI?rel=0&modestbranding=1"
+                    title={tReviewVideo('iframeTitle')}
+                    className="aspect-[9/16] w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
                 </div>
               </div>
-            ))}
+              <div className="relative w-full max-w-[16rem] overflow-hidden rounded-[32px] border border-white/25 bg-[#2f3a36] p-3 shadow-2xl shadow-[#2f3a36]/35">
+                <div className="overflow-hidden rounded-[24px] bg-black">
+                  <iframe
+                    src="https://www.youtube.com/embed/ydrqRePWvm8?rel=0&modestbranding=1"
+                    title={tReviewVideo('iframeTitle')}
+                    className="aspect-[9/16] w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="reviews" className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
+        <section className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
           <div className="mb-12 text-center sm:text-left">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#6f7b7a]">
               {tReviews('heading')}

@@ -16,7 +16,7 @@ export default function PackagesDropdown() {
   return (
     <div className="group relative">
       <Link
-        href="/#services"
+        href="/#packages"
         className="flex items-center gap-1 transition hover:text-[#2f3a36] group-focus-within:text-[#2f3a36]"
       >
         {tNav('packages')}
@@ -40,7 +40,7 @@ export default function PackagesDropdown() {
             {packageItems.map((key) => (
               <li key={key}>
                 <Link
-                  href="/#services"
+                  href="/#packages"
                   className="block text-sm text-[#52635d] transition hover:text-[#5b6d65]"
                 >
                   {t(key)}
